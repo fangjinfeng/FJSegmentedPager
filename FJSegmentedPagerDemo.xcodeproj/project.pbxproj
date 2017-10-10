@@ -1,0 +1,747 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 48;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		302CD6B81F7DE064007E8926 /* FJSecondShopViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 302CD6B71F7DE064007E8926 /* FJSecondShopViewController.m */; };
+		302CD6BC1F7DE228007E8926 /* QNPersonalHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 302CD6B91F7DE227007E8926 /* QNPersonalHeaderView.m */; };
+		302CD6BD1F7DE244007E8926 /* QNPersonalHeaderView.h in Sources */ = {isa = PBXBuildFile; fileRef = 302CD6BB1F7DE227007E8926 /* QNPersonalHeaderView.h */; };
+		302CD6BE1F7DE244007E8926 /* QNPersonalHeaderView.xib in Sources */ = {isa = PBXBuildFile; fileRef = 302CD6BA1F7DE227007E8926 /* QNPersonalHeaderView.xib */; };
+		303A68741F8CBF7700D04C16 /* FJFirstShopViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 303A68731F8CBF7700D04C16 /* FJFirstShopViewController.m */; };
+		303A687E1F8CCCD100D04C16 /* UIViewController+FJCurrentViewController.h in Sources */ = {isa = PBXBuildFile; fileRef = 303A687C1F8CCCC000D04C16 /* UIViewController+FJCurrentViewController.h */; };
+		303A687F1F8CCCD100D04C16 /* UIViewController+FJCurrentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 303A687D1F8CCCC000D04C16 /* UIViewController+FJCurrentViewController.m */; };
+		3054BD031F7DD14E001243C5 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 3054BD021F7DD14E001243C5 /* AppDelegate.m */; };
+		3054BD061F7DD14E001243C5 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3054BD051F7DD14E001243C5 /* ViewController.m */; };
+		3054BD091F7DD14E001243C5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3054BD071F7DD14E001243C5 /* Main.storyboard */; };
+		3054BD0B1F7DD14E001243C5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3054BD0A1F7DD14E001243C5 /* Assets.xcassets */; };
+		3054BD0E1F7DD14E001243C5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3054BD0C1F7DD14E001243C5 /* LaunchScreen.storyboard */; };
+		3054BD111F7DD14E001243C5 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 3054BD101F7DD14E001243C5 /* main.m */; };
+		3054BD1B1F7DD14E001243C5 /* FJSegmentedPagerDemoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 3054BD1A1F7DD14E001243C5 /* FJSegmentedPagerDemoTests.m */; };
+		3054BD261F7DD14E001243C5 /* FJSegmentedPagerDemoUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 3054BD251F7DD14E001243C5 /* FJSegmentedPagerDemoUITests.m */; };
+		3054BD4C1F7DD2A7001243C5 /* FJBaseTableView.h in Sources */ = {isa = PBXBuildFile; fileRef = 3054BD351F7DD243001243C5 /* FJBaseTableView.h */; };
+		3054BD4D1F7DD2A7001243C5 /* FJBaseTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3054BD361F7DD243001243C5 /* FJBaseTableView.m */; };
+		3054BD4E1F7DD2A7001243C5 /* FJConfigModel.h in Sources */ = {isa = PBXBuildFile; fileRef = 3054BD371F7DD243001243C5 /* FJConfigModel.h */; };
+		3054BD4F1F7DD2A7001243C5 /* FJConfigModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 3054BD381F7DD243001243C5 /* FJConfigModel.m */; };
+		3054BD501F7DD2A7001243C5 /* FJContainerBaseViewController.h in Sources */ = {isa = PBXBuildFile; fileRef = 3054BD391F7DD243001243C5 /* FJContainerBaseViewController.h */; };
+		3054BD511F7DD2A7001243C5 /* FJContainerBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3054BD3A1F7DD243001243C5 /* FJContainerBaseViewController.m */; };
+		3054BD521F7DD2A7001243C5 /* FJDetailContentBaseViewController.h in Sources */ = {isa = PBXBuildFile; fileRef = 3054BD3B1F7DD243001243C5 /* FJDetailContentBaseViewController.h */; };
+		3054BD531F7DD2A7001243C5 /* FJDetailContentBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3054BD3C1F7DD243001243C5 /* FJDetailContentBaseViewController.m */; };
+		3054BD541F7DD2A7001243C5 /* FJDoubleDeckRollCell.h in Sources */ = {isa = PBXBuildFile; fileRef = 3054BD3D1F7DD243001243C5 /* FJDoubleDeckRollCell.h */; };
+		3054BD551F7DD2A7001243C5 /* FJDoubleDeckRollCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3054BD3E1F7DD243001243C5 /* FJDoubleDeckRollCell.m */; };
+		3054BD561F7DD2A7001243C5 /* FJDoubleDeckRollDefine.h in Sources */ = {isa = PBXBuildFile; fileRef = 3054BD3F1F7DD243001243C5 /* FJDoubleDeckRollDefine.h */; };
+		3054BD571F7DD2A7001243C5 /* FJDoubleDeckRollView.h in Sources */ = {isa = PBXBuildFile; fileRef = 3054BD401F7DD243001243C5 /* FJDoubleDeckRollView.h */; };
+		3054BD581F7DD2A7001243C5 /* FJDoubleDeckRollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3054BD411F7DD243001243C5 /* FJDoubleDeckRollView.m */; };
+		3054BD591F7DD2A7001243C5 /* FJDetailContentView.h in Sources */ = {isa = PBXBuildFile; fileRef = 3054BD431F7DD243001243C5 /* FJDetailContentView.h */; };
+		3054BD5A1F7DD2A7001243C5 /* FJDetailContentView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3054BD441F7DD243001243C5 /* FJDetailContentView.m */; };
+		3054BD5B1F7DD2A7001243C5 /* FJPageCollectionViewCell.h in Sources */ = {isa = PBXBuildFile; fileRef = 3054BD451F7DD243001243C5 /* FJPageCollectionViewCell.h */; };
+		3054BD5C1F7DD2A7001243C5 /* FJPageCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3054BD461F7DD243001243C5 /* FJPageCollectionViewCell.m */; };
+		3054BD5D1F7DD2B1001243C5 /* FJTagCollectionViewCell.h in Sources */ = {isa = PBXBuildFile; fileRef = 3054BD481F7DD243001243C5 /* FJTagCollectionViewCell.h */; };
+		3054BD5E1F7DD2B1001243C5 /* FJTagCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3054BD491F7DD243001243C5 /* FJTagCollectionViewCell.m */; };
+		3054BD5F1F7DD2B1001243C5 /* FJTitleTagSectionView.h in Sources */ = {isa = PBXBuildFile; fileRef = 3054BD4A1F7DD243001243C5 /* FJTitleTagSectionView.h */; };
+		3054BD601F7DD2B1001243C5 /* FJTitleTagSectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3054BD4B1F7DD243001243C5 /* FJTitleTagSectionView.m */; };
+		308FFF0B1F7E165E003CE28E /* icon_wode_leijishouyi@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 308FFF071F7DF939003CE28E /* icon_wode_leijishouyi@2x.png */; };
+		308FFF0C1F7E165E003CE28E /* icon_wode_leijishouyi@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 308FFF061F7DF939003CE28E /* icon_wode_leijishouyi@3x.png */; };
+		308FFF0D1F7E165E003CE28E /* icon_wode_kuajishouyi@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 308FFF081F7DF949003CE28E /* icon_wode_kuajishouyi@2x.png */; };
+		308FFF0E1F7E165E003CE28E /* icon_wode_kuajishouyi@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 308FFF091F7DF949003CE28E /* icon_wode_kuajishouyi@3x.png */; };
+		308FFF0F1F7E165E003CE28E /* icon_tongyong_xiaoxi@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 308FFF051F7DF922003CE28E /* icon_tongyong_xiaoxi@2x.png */; };
+		308FFF101F7E165E003CE28E /* icon_tongyong_xiaoxi@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 308FFF041F7DF922003CE28E /* icon_tongyong_xiaoxi@3x.png */; };
+		308FFF111F7E165E003CE28E /* icon_tongyong_zhibidongxiao@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 308FFF0A1F7DF970003CE28E /* icon_tongyong_zhibidongxiao@2x.png */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		3054BD171F7DD14E001243C5 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3054BCF61F7DD14D001243C5 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 3054BCFD1F7DD14E001243C5;
+			remoteInfo = FJSegmentedPagerDemo;
+		};
+		3054BD221F7DD14E001243C5 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3054BCF61F7DD14D001243C5 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 3054BCFD1F7DD14E001243C5;
+			remoteInfo = FJSegmentedPagerDemo;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		302CD6B61F7DE064007E8926 /* FJSecondShopViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FJSecondShopViewController.h; sourceTree = "<group>"; };
+		302CD6B71F7DE064007E8926 /* FJSecondShopViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FJSecondShopViewController.m; sourceTree = "<group>"; };
+		302CD6B91F7DE227007E8926 /* QNPersonalHeaderView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = QNPersonalHeaderView.m; sourceTree = "<group>"; };
+		302CD6BA1F7DE227007E8926 /* QNPersonalHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = QNPersonalHeaderView.xib; sourceTree = "<group>"; };
+		302CD6BB1F7DE227007E8926 /* QNPersonalHeaderView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = QNPersonalHeaderView.h; sourceTree = "<group>"; };
+		303A68721F8CBF7700D04C16 /* FJFirstShopViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FJFirstShopViewController.h; sourceTree = "<group>"; };
+		303A68731F8CBF7700D04C16 /* FJFirstShopViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FJFirstShopViewController.m; sourceTree = "<group>"; };
+		303A687C1F8CCCC000D04C16 /* UIViewController+FJCurrentViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIViewController+FJCurrentViewController.h"; sourceTree = "<group>"; };
+		303A687D1F8CCCC000D04C16 /* UIViewController+FJCurrentViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+FJCurrentViewController.m"; sourceTree = "<group>"; };
+		3054BCFE1F7DD14E001243C5 /* FJSegmentedPagerDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FJSegmentedPagerDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		3054BD011F7DD14E001243C5 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		3054BD021F7DD14E001243C5 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		3054BD041F7DD14E001243C5 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		3054BD051F7DD14E001243C5 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		3054BD081F7DD14E001243C5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		3054BD0A1F7DD14E001243C5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		3054BD0D1F7DD14E001243C5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		3054BD0F1F7DD14E001243C5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3054BD101F7DD14E001243C5 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		3054BD161F7DD14E001243C5 /* FJSegmentedPagerDemoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FJSegmentedPagerDemoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		3054BD1A1F7DD14E001243C5 /* FJSegmentedPagerDemoTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FJSegmentedPagerDemoTests.m; sourceTree = "<group>"; };
+		3054BD1C1F7DD14E001243C5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3054BD211F7DD14E001243C5 /* FJSegmentedPagerDemoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FJSegmentedPagerDemoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		3054BD251F7DD14E001243C5 /* FJSegmentedPagerDemoUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FJSegmentedPagerDemoUITests.m; sourceTree = "<group>"; };
+		3054BD271F7DD14E001243C5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3054BD351F7DD243001243C5 /* FJBaseTableView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FJBaseTableView.h; sourceTree = "<group>"; };
+		3054BD361F7DD243001243C5 /* FJBaseTableView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FJBaseTableView.m; sourceTree = "<group>"; };
+		3054BD371F7DD243001243C5 /* FJConfigModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FJConfigModel.h; sourceTree = "<group>"; };
+		3054BD381F7DD243001243C5 /* FJConfigModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FJConfigModel.m; sourceTree = "<group>"; };
+		3054BD391F7DD243001243C5 /* FJContainerBaseViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FJContainerBaseViewController.h; sourceTree = "<group>"; };
+		3054BD3A1F7DD243001243C5 /* FJContainerBaseViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FJContainerBaseViewController.m; sourceTree = "<group>"; };
+		3054BD3B1F7DD243001243C5 /* FJDetailContentBaseViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FJDetailContentBaseViewController.h; sourceTree = "<group>"; };
+		3054BD3C1F7DD243001243C5 /* FJDetailContentBaseViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FJDetailContentBaseViewController.m; sourceTree = "<group>"; };
+		3054BD3D1F7DD243001243C5 /* FJDoubleDeckRollCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FJDoubleDeckRollCell.h; sourceTree = "<group>"; };
+		3054BD3E1F7DD243001243C5 /* FJDoubleDeckRollCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FJDoubleDeckRollCell.m; sourceTree = "<group>"; };
+		3054BD3F1F7DD243001243C5 /* FJDoubleDeckRollDefine.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FJDoubleDeckRollDefine.h; sourceTree = "<group>"; };
+		3054BD401F7DD243001243C5 /* FJDoubleDeckRollView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FJDoubleDeckRollView.h; sourceTree = "<group>"; };
+		3054BD411F7DD243001243C5 /* FJDoubleDeckRollView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FJDoubleDeckRollView.m; sourceTree = "<group>"; };
+		3054BD431F7DD243001243C5 /* FJDetailContentView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FJDetailContentView.h; sourceTree = "<group>"; };
+		3054BD441F7DD243001243C5 /* FJDetailContentView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FJDetailContentView.m; sourceTree = "<group>"; };
+		3054BD451F7DD243001243C5 /* FJPageCollectionViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FJPageCollectionViewCell.h; sourceTree = "<group>"; };
+		3054BD461F7DD243001243C5 /* FJPageCollectionViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FJPageCollectionViewCell.m; sourceTree = "<group>"; };
+		3054BD481F7DD243001243C5 /* FJTagCollectionViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FJTagCollectionViewCell.h; sourceTree = "<group>"; };
+		3054BD491F7DD243001243C5 /* FJTagCollectionViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FJTagCollectionViewCell.m; sourceTree = "<group>"; };
+		3054BD4A1F7DD243001243C5 /* FJTitleTagSectionView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FJTitleTagSectionView.h; sourceTree = "<group>"; };
+		3054BD4B1F7DD243001243C5 /* FJTitleTagSectionView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FJTitleTagSectionView.m; sourceTree = "<group>"; };
+		308FFF041F7DF922003CE28E /* icon_tongyong_xiaoxi@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_tongyong_xiaoxi@3x.png"; sourceTree = "<group>"; };
+		308FFF051F7DF922003CE28E /* icon_tongyong_xiaoxi@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_tongyong_xiaoxi@2x.png"; sourceTree = "<group>"; };
+		308FFF061F7DF939003CE28E /* icon_wode_leijishouyi@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_wode_leijishouyi@3x.png"; sourceTree = "<group>"; };
+		308FFF071F7DF939003CE28E /* icon_wode_leijishouyi@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_wode_leijishouyi@2x.png"; sourceTree = "<group>"; };
+		308FFF081F7DF949003CE28E /* icon_wode_kuajishouyi@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_wode_kuajishouyi@2x.png"; sourceTree = "<group>"; };
+		308FFF091F7DF949003CE28E /* icon_wode_kuajishouyi@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_wode_kuajishouyi@3x.png"; sourceTree = "<group>"; };
+		308FFF0A1F7DF970003CE28E /* icon_tongyong_zhibidongxiao@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_tongyong_zhibidongxiao@2x.png"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		3054BCFB1F7DD14E001243C5 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3054BD131F7DD14E001243C5 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3054BD1E1F7DD14E001243C5 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		302CD6BF1F7DE2CC007E8926 /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				308FFF071F7DF939003CE28E /* icon_wode_leijishouyi@2x.png */,
+				308FFF061F7DF939003CE28E /* icon_wode_leijishouyi@3x.png */,
+				308FFF081F7DF949003CE28E /* icon_wode_kuajishouyi@2x.png */,
+				308FFF091F7DF949003CE28E /* icon_wode_kuajishouyi@3x.png */,
+				308FFF051F7DF922003CE28E /* icon_tongyong_xiaoxi@2x.png */,
+				308FFF041F7DF922003CE28E /* icon_tongyong_xiaoxi@3x.png */,
+				308FFF0A1F7DF970003CE28E /* icon_tongyong_zhibidongxiao@2x.png */,
+			);
+			path = Resource;
+			sourceTree = "<group>";
+		};
+		303A687B1F8CCCC000D04C16 /* FJCategory */ = {
+			isa = PBXGroup;
+			children = (
+				303A687C1F8CCCC000D04C16 /* UIViewController+FJCurrentViewController.h */,
+				303A687D1F8CCCC000D04C16 /* UIViewController+FJCurrentViewController.m */,
+			);
+			path = FJCategory;
+			sourceTree = "<group>";
+		};
+		3054BCF51F7DD14D001243C5 = {
+			isa = PBXGroup;
+			children = (
+				3054BD331F7DD243001243C5 /* FJSegmentedPager */,
+				3054BD001F7DD14E001243C5 /* FJSegmentedPagerDemo */,
+				3054BD191F7DD14E001243C5 /* FJSegmentedPagerDemoTests */,
+				3054BD241F7DD14E001243C5 /* FJSegmentedPagerDemoUITests */,
+				3054BCFF1F7DD14E001243C5 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		3054BCFF1F7DD14E001243C5 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				3054BCFE1F7DD14E001243C5 /* FJSegmentedPagerDemo.app */,
+				3054BD161F7DD14E001243C5 /* FJSegmentedPagerDemoTests.xctest */,
+				3054BD211F7DD14E001243C5 /* FJSegmentedPagerDemoUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		3054BD001F7DD14E001243C5 /* FJSegmentedPagerDemo */ = {
+			isa = PBXGroup;
+			children = (
+				302CD6BF1F7DE2CC007E8926 /* Resource */,
+				3054BD011F7DD14E001243C5 /* AppDelegate.h */,
+				3054BD021F7DD14E001243C5 /* AppDelegate.m */,
+				3054BD041F7DD14E001243C5 /* ViewController.h */,
+				3054BD051F7DD14E001243C5 /* ViewController.m */,
+				303A68721F8CBF7700D04C16 /* FJFirstShopViewController.h */,
+				303A68731F8CBF7700D04C16 /* FJFirstShopViewController.m */,
+				302CD6BB1F7DE227007E8926 /* QNPersonalHeaderView.h */,
+				302CD6B91F7DE227007E8926 /* QNPersonalHeaderView.m */,
+				302CD6BA1F7DE227007E8926 /* QNPersonalHeaderView.xib */,
+				302CD6B61F7DE064007E8926 /* FJSecondShopViewController.h */,
+				302CD6B71F7DE064007E8926 /* FJSecondShopViewController.m */,
+				3054BD071F7DD14E001243C5 /* Main.storyboard */,
+				3054BD0A1F7DD14E001243C5 /* Assets.xcassets */,
+				3054BD0C1F7DD14E001243C5 /* LaunchScreen.storyboard */,
+				3054BD0F1F7DD14E001243C5 /* Info.plist */,
+				3054BD101F7DD14E001243C5 /* main.m */,
+			);
+			path = FJSegmentedPagerDemo;
+			sourceTree = "<group>";
+		};
+		3054BD191F7DD14E001243C5 /* FJSegmentedPagerDemoTests */ = {
+			isa = PBXGroup;
+			children = (
+				3054BD1A1F7DD14E001243C5 /* FJSegmentedPagerDemoTests.m */,
+				3054BD1C1F7DD14E001243C5 /* Info.plist */,
+			);
+			path = FJSegmentedPagerDemoTests;
+			sourceTree = "<group>";
+		};
+		3054BD241F7DD14E001243C5 /* FJSegmentedPagerDemoUITests */ = {
+			isa = PBXGroup;
+			children = (
+				3054BD251F7DD14E001243C5 /* FJSegmentedPagerDemoUITests.m */,
+				3054BD271F7DD14E001243C5 /* Info.plist */,
+			);
+			path = FJSegmentedPagerDemoUITests;
+			sourceTree = "<group>";
+		};
+		3054BD331F7DD243001243C5 /* FJSegmentedPager */ = {
+			isa = PBXGroup;
+			children = (
+				303A687B1F8CCCC000D04C16 /* FJCategory */,
+				3054BD341F7DD243001243C5 /* FJSegmentedBase */,
+				3054BD421F7DD243001243C5 /* FJSegmentedPageView */,
+				3054BD471F7DD243001243C5 /* FJSegmentedTitleView */,
+			);
+			path = FJSegmentedPager;
+			sourceTree = SOURCE_ROOT;
+		};
+		3054BD341F7DD243001243C5 /* FJSegmentedBase */ = {
+			isa = PBXGroup;
+			children = (
+				3054BD351F7DD243001243C5 /* FJBaseTableView.h */,
+				3054BD361F7DD243001243C5 /* FJBaseTableView.m */,
+				3054BD371F7DD243001243C5 /* FJConfigModel.h */,
+				3054BD381F7DD243001243C5 /* FJConfigModel.m */,
+				3054BD3D1F7DD243001243C5 /* FJDoubleDeckRollCell.h */,
+				3054BD3E1F7DD243001243C5 /* FJDoubleDeckRollCell.m */,
+				3054BD3F1F7DD243001243C5 /* FJDoubleDeckRollDefine.h */,
+				3054BD401F7DD243001243C5 /* FJDoubleDeckRollView.h */,
+				3054BD411F7DD243001243C5 /* FJDoubleDeckRollView.m */,
+				3054BD391F7DD243001243C5 /* FJContainerBaseViewController.h */,
+				3054BD3A1F7DD243001243C5 /* FJContainerBaseViewController.m */,
+				3054BD3B1F7DD243001243C5 /* FJDetailContentBaseViewController.h */,
+				3054BD3C1F7DD243001243C5 /* FJDetailContentBaseViewController.m */,
+			);
+			path = FJSegmentedBase;
+			sourceTree = "<group>";
+		};
+		3054BD421F7DD243001243C5 /* FJSegmentedPageView */ = {
+			isa = PBXGroup;
+			children = (
+				3054BD431F7DD243001243C5 /* FJDetailContentView.h */,
+				3054BD441F7DD243001243C5 /* FJDetailContentView.m */,
+				3054BD451F7DD243001243C5 /* FJPageCollectionViewCell.h */,
+				3054BD461F7DD243001243C5 /* FJPageCollectionViewCell.m */,
+			);
+			path = FJSegmentedPageView;
+			sourceTree = "<group>";
+		};
+		3054BD471F7DD243001243C5 /* FJSegmentedTitleView */ = {
+			isa = PBXGroup;
+			children = (
+				3054BD481F7DD243001243C5 /* FJTagCollectionViewCell.h */,
+				3054BD491F7DD243001243C5 /* FJTagCollectionViewCell.m */,
+				3054BD4A1F7DD243001243C5 /* FJTitleTagSectionView.h */,
+				3054BD4B1F7DD243001243C5 /* FJTitleTagSectionView.m */,
+			);
+			path = FJSegmentedTitleView;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		3054BCFD1F7DD14E001243C5 /* FJSegmentedPagerDemo */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3054BD2A1F7DD14E001243C5 /* Build configuration list for PBXNativeTarget "FJSegmentedPagerDemo" */;
+			buildPhases = (
+				3054BCFA1F7DD14E001243C5 /* Sources */,
+				3054BCFB1F7DD14E001243C5 /* Frameworks */,
+				3054BCFC1F7DD14E001243C5 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = FJSegmentedPagerDemo;
+			productName = FJSegmentedPagerDemo;
+			productReference = 3054BCFE1F7DD14E001243C5 /* FJSegmentedPagerDemo.app */;
+			productType = "com.apple.product-type.application";
+		};
+		3054BD151F7DD14E001243C5 /* FJSegmentedPagerDemoTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3054BD2D1F7DD14E001243C5 /* Build configuration list for PBXNativeTarget "FJSegmentedPagerDemoTests" */;
+			buildPhases = (
+				3054BD121F7DD14E001243C5 /* Sources */,
+				3054BD131F7DD14E001243C5 /* Frameworks */,
+				3054BD141F7DD14E001243C5 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				3054BD181F7DD14E001243C5 /* PBXTargetDependency */,
+			);
+			name = FJSegmentedPagerDemoTests;
+			productName = FJSegmentedPagerDemoTests;
+			productReference = 3054BD161F7DD14E001243C5 /* FJSegmentedPagerDemoTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		3054BD201F7DD14E001243C5 /* FJSegmentedPagerDemoUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3054BD301F7DD14E001243C5 /* Build configuration list for PBXNativeTarget "FJSegmentedPagerDemoUITests" */;
+			buildPhases = (
+				3054BD1D1F7DD14E001243C5 /* Sources */,
+				3054BD1E1F7DD14E001243C5 /* Frameworks */,
+				3054BD1F1F7DD14E001243C5 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				3054BD231F7DD14E001243C5 /* PBXTargetDependency */,
+			);
+			name = FJSegmentedPagerDemoUITests;
+			productName = FJSegmentedPagerDemoUITests;
+			productReference = 3054BD211F7DD14E001243C5 /* FJSegmentedPagerDemoUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		3054BCF61F7DD14D001243C5 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0900;
+				ORGANIZATIONNAME = fjf;
+				TargetAttributes = {
+					3054BCFD1F7DD14E001243C5 = {
+						CreatedOnToolsVersion = 9.0;
+						ProvisioningStyle = Automatic;
+					};
+					3054BD151F7DD14E001243C5 = {
+						CreatedOnToolsVersion = 9.0;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 3054BCFD1F7DD14E001243C5;
+					};
+					3054BD201F7DD14E001243C5 = {
+						CreatedOnToolsVersion = 9.0;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 3054BCFD1F7DD14E001243C5;
+					};
+				};
+			};
+			buildConfigurationList = 3054BCF91F7DD14E001243C5 /* Build configuration list for PBXProject "FJSegmentedPagerDemo" */;
+			compatibilityVersion = "Xcode 8.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 3054BCF51F7DD14D001243C5;
+			productRefGroup = 3054BCFF1F7DD14E001243C5 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				3054BCFD1F7DD14E001243C5 /* FJSegmentedPagerDemo */,
+				3054BD151F7DD14E001243C5 /* FJSegmentedPagerDemoTests */,
+				3054BD201F7DD14E001243C5 /* FJSegmentedPagerDemoUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		3054BCFC1F7DD14E001243C5 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				308FFF0B1F7E165E003CE28E /* icon_wode_leijishouyi@2x.png in Resources */,
+				308FFF0C1F7E165E003CE28E /* icon_wode_leijishouyi@3x.png in Resources */,
+				308FFF0D1F7E165E003CE28E /* icon_wode_kuajishouyi@2x.png in Resources */,
+				308FFF0E1F7E165E003CE28E /* icon_wode_kuajishouyi@3x.png in Resources */,
+				308FFF0F1F7E165E003CE28E /* icon_tongyong_xiaoxi@2x.png in Resources */,
+				308FFF101F7E165E003CE28E /* icon_tongyong_xiaoxi@3x.png in Resources */,
+				308FFF111F7E165E003CE28E /* icon_tongyong_zhibidongxiao@2x.png in Resources */,
+				3054BD0E1F7DD14E001243C5 /* LaunchScreen.storyboard in Resources */,
+				3054BD0B1F7DD14E001243C5 /* Assets.xcassets in Resources */,
+				3054BD091F7DD14E001243C5 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3054BD141F7DD14E001243C5 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3054BD1F1F7DD14E001243C5 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		3054BCFA1F7DD14E001243C5 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				303A687E1F8CCCD100D04C16 /* UIViewController+FJCurrentViewController.h in Sources */,
+				303A687F1F8CCCD100D04C16 /* UIViewController+FJCurrentViewController.m in Sources */,
+				302CD6BD1F7DE244007E8926 /* QNPersonalHeaderView.h in Sources */,
+				302CD6BE1F7DE244007E8926 /* QNPersonalHeaderView.xib in Sources */,
+				3054BD5D1F7DD2B1001243C5 /* FJTagCollectionViewCell.h in Sources */,
+				3054BD5E1F7DD2B1001243C5 /* FJTagCollectionViewCell.m in Sources */,
+				302CD6B81F7DE064007E8926 /* FJSecondShopViewController.m in Sources */,
+				3054BD5F1F7DD2B1001243C5 /* FJTitleTagSectionView.h in Sources */,
+				3054BD601F7DD2B1001243C5 /* FJTitleTagSectionView.m in Sources */,
+				3054BD4C1F7DD2A7001243C5 /* FJBaseTableView.h in Sources */,
+				3054BD4D1F7DD2A7001243C5 /* FJBaseTableView.m in Sources */,
+				3054BD4E1F7DD2A7001243C5 /* FJConfigModel.h in Sources */,
+				3054BD4F1F7DD2A7001243C5 /* FJConfigModel.m in Sources */,
+				3054BD501F7DD2A7001243C5 /* FJContainerBaseViewController.h in Sources */,
+				303A68741F8CBF7700D04C16 /* FJFirstShopViewController.m in Sources */,
+				3054BD511F7DD2A7001243C5 /* FJContainerBaseViewController.m in Sources */,
+				3054BD521F7DD2A7001243C5 /* FJDetailContentBaseViewController.h in Sources */,
+				3054BD531F7DD2A7001243C5 /* FJDetailContentBaseViewController.m in Sources */,
+				3054BD541F7DD2A7001243C5 /* FJDoubleDeckRollCell.h in Sources */,
+				3054BD551F7DD2A7001243C5 /* FJDoubleDeckRollCell.m in Sources */,
+				3054BD561F7DD2A7001243C5 /* FJDoubleDeckRollDefine.h in Sources */,
+				3054BD571F7DD2A7001243C5 /* FJDoubleDeckRollView.h in Sources */,
+				3054BD581F7DD2A7001243C5 /* FJDoubleDeckRollView.m in Sources */,
+				3054BD591F7DD2A7001243C5 /* FJDetailContentView.h in Sources */,
+				3054BD5A1F7DD2A7001243C5 /* FJDetailContentView.m in Sources */,
+				3054BD5B1F7DD2A7001243C5 /* FJPageCollectionViewCell.h in Sources */,
+				3054BD5C1F7DD2A7001243C5 /* FJPageCollectionViewCell.m in Sources */,
+				3054BD061F7DD14E001243C5 /* ViewController.m in Sources */,
+				3054BD111F7DD14E001243C5 /* main.m in Sources */,
+				3054BD031F7DD14E001243C5 /* AppDelegate.m in Sources */,
+				302CD6BC1F7DE228007E8926 /* QNPersonalHeaderView.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3054BD121F7DD14E001243C5 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3054BD1B1F7DD14E001243C5 /* FJSegmentedPagerDemoTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3054BD1D1F7DD14E001243C5 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3054BD261F7DD14E001243C5 /* FJSegmentedPagerDemoUITests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		3054BD181F7DD14E001243C5 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 3054BCFD1F7DD14E001243C5 /* FJSegmentedPagerDemo */;
+			targetProxy = 3054BD171F7DD14E001243C5 /* PBXContainerItemProxy */;
+		};
+		3054BD231F7DD14E001243C5 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 3054BCFD1F7DD14E001243C5 /* FJSegmentedPagerDemo */;
+			targetProxy = 3054BD221F7DD14E001243C5 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		3054BD071F7DD14E001243C5 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				3054BD081F7DD14E001243C5 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		3054BD0C1F7DD14E001243C5 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				3054BD0D1F7DD14E001243C5 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		3054BD281F7DD14E001243C5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		3054BD291F7DD14E001243C5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		3054BD2B1F7DD14E001243C5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = L8R666257B;
+				INFOPLIST_FILE = FJSegmentedPagerDemo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = test.FJSegmentedPagerDemo;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		3054BD2C1F7DD14E001243C5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = L8R666257B;
+				INFOPLIST_FILE = FJSegmentedPagerDemo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = test.FJSegmentedPagerDemo;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		3054BD2E1F7DD14E001243C5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = FJSegmentedPagerDemoTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = test.FJSegmentedPagerDemoTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/FJSegmentedPagerDemo.app/FJSegmentedPagerDemo";
+			};
+			name = Debug;
+		};
+		3054BD2F1F7DD14E001243C5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = FJSegmentedPagerDemoTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = test.FJSegmentedPagerDemoTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/FJSegmentedPagerDemo.app/FJSegmentedPagerDemo";
+			};
+			name = Release;
+		};
+		3054BD311F7DD14E001243C5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = FJSegmentedPagerDemoUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = test.FJSegmentedPagerDemoUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = FJSegmentedPagerDemo;
+			};
+			name = Debug;
+		};
+		3054BD321F7DD14E001243C5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = FJSegmentedPagerDemoUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = test.FJSegmentedPagerDemoUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = FJSegmentedPagerDemo;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		3054BCF91F7DD14E001243C5 /* Build configuration list for PBXProject "FJSegmentedPagerDemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3054BD281F7DD14E001243C5 /* Debug */,
+				3054BD291F7DD14E001243C5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3054BD2A1F7DD14E001243C5 /* Build configuration list for PBXNativeTarget "FJSegmentedPagerDemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3054BD2B1F7DD14E001243C5 /* Debug */,
+				3054BD2C1F7DD14E001243C5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3054BD2D1F7DD14E001243C5 /* Build configuration list for PBXNativeTarget "FJSegmentedPagerDemoTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3054BD2E1F7DD14E001243C5 /* Debug */,
+				3054BD2F1F7DD14E001243C5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3054BD301F7DD14E001243C5 /* Build configuration list for PBXNativeTarget "FJSegmentedPagerDemoUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3054BD311F7DD14E001243C5 /* Debug */,
+				3054BD321F7DD14E001243C5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 3054BCF61F7DD14D001243C5 /* Project object */;
+}
