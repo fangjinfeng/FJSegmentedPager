@@ -11,4 +11,4 @@
 # 效果图
 
 
-![FJPhotoPicker-Album](https://github.com/fangjinfeng/FJPhotoPicker/blob/master/FJPhotoPickerDemo/Snapshots/FJPhotoPicker-Album.gif)
+![FJSegmentedPageView](https://github.com/fangjinfeng/FJSegmentedPager/blob/master/FJSegmentedPagerDemo/Snapshots/FJSegmentedPageView.gif)
