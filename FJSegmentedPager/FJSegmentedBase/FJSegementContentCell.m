@@ -1,30 +1,30 @@
 
 
 //
-//  FJDoubleDeckRollCell.m
+//  FJSegementContentCell.m
 //  FJDoubleDeckRollViewDemo
 //
 //  Created by fjf on 2017/6/16.
 //  Copyright © 2017年 fjf. All rights reserved.
 //
 
-#import "FJDoubleDeckRollView.h"
-#import "FJDoubleDeckRollCell.h"
+#import "FJSegementContentView.h"
+#import "FJSegementContentCell.h"
 
-@interface FJDoubleDeckRollCell()
+@interface FJSegementContentCell()
 // 滚动 栏
-@property (nonatomic, strong) FJDoubleDeckRollView *doubleDeckRollView;
+@property (nonatomic, strong) FJSegementContentView *doubleDeckRollView;
 
 @end
 
-@implementation FJDoubleDeckRollCell
+@implementation FJSegementContentCell
 
 #pragma mark --- init method
 + (instancetype)cellWithTableView:(UITableView *)tableView {
-    static NSString *cellId = @"FJDoubleDeckRollCellId";
-    FJDoubleDeckRollCell *cell = [tableView dequeueReusableCellWithIdentifier:cellId];
+    static NSString *cellId = @"FJSegementContentCellId";
+    FJSegementContentCell *cell = [tableView dequeueReusableCellWithIdentifier:cellId];
     if (cell == nil) {
-        cell = [[FJDoubleDeckRollCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellId];
+        cell = [[FJSegementContentCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellId];
     }
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
     return cell;
@@ -81,9 +81,9 @@
 
 #pragma mark --- getter method
 // 滚动 栏
-- (FJDoubleDeckRollView *)doubleDeckRollView {
+- (FJSegementContentView *)doubleDeckRollView {
     if (!_doubleDeckRollView) {
-        _doubleDeckRollView = [[FJDoubleDeckRollView alloc] initWithFrame:CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, [UIScreen mainScreen].bounds.size.height)];
+        _doubleDeckRollView = [[FJSegementContentView alloc] initWithFrame:CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, [UIScreen mainScreen].bounds.size.height)];
     }
     return _doubleDeckRollView;
 }

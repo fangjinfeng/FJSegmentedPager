@@ -1,5 +1,5 @@
 //
-//  FJDoubleDeckRollView.h
+//  FJSegementContentView
 //  FJDoubleDeckRollViewDemo
 //
 //  Created by fjf on 2017/6/9.
@@ -9,7 +9,8 @@
 #import <UIKit/UIKit.h>
 
 @class FJConfigModel;
-@interface FJDoubleDeckRollView : UIView
+
+@interface FJSegementContentView : UIView
 // 默认 选中 索引(先传入:configModelArray,再设置:selectedIndex)
 @property (nonatomic, assign) NSInteger selectedIndex;
 // 标题 栏 高度

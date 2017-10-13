@@ -9,8 +9,6 @@
 #import "QNPersonalHeaderView.h"
 
 
-// 按键 扩大 范围
-static CGFloat const kQNPersonalHeaderViewButtonTouchExtend = -15.0f;
 
 @interface QNPersonalHeaderView()
 // 消息 按键
@@ -51,7 +49,7 @@ static CGFloat const kQNPersonalHeaderViewButtonTouchExtend = -15.0f;
 
 // 创建 headerView
 + (QNPersonalHeaderView *)createView {
-    return [[[NSBundle mainBundle] loadNibNamed:@"QNPersonalHeaderView" owner:self options:kNilOptions] lastObject];
+    return [[[NSBundle mainBundle] loadNibNamed:@"QNPersonalHeaderView" owner:self options:nil] lastObject];
 }
 
 

@@ -8,9 +8,9 @@
 
 #import <UIKit/UIKit.h>
 #import "FJConfigModel.h"
-#import "FJDoubleDeckRollCell.h"
+#import "FJSegementContentCell.h"
 
-@interface FJContainerBaseViewController : UIViewController<UITableViewDelegate,UITableViewDataSource>
+@interface FJSegmentedBaseViewController : UIViewController<UITableViewDelegate,UITableViewDataSource>
 // tableView 偏移 位置
 @property (nonatomic, assign) CGFloat tableViewOffsetY;
 // tableView

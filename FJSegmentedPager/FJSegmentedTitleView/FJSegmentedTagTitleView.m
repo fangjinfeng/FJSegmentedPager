@@ -8,14 +8,14 @@
 //  Copyright © 2017年 fjf. All rights reserved.
 //
 
-#import "FJTitleTagSectionView.h"
+#import "FJSegmentedTagTitleView.h"
 #import "FJDoubleDeckRollDefine.h"
-#import "FJTagCollectionViewCell.h"
+#import "FJSegmentedTagTitleCell.h"
 
 
 
 
-@interface FJTitleTagSectionView()<UICollectionViewDelegate, UICollectionViewDataSource>
+@interface FJSegmentedTagTitleView()<UICollectionViewDelegate, UICollectionViewDataSource>
 // 指示器 indicator
 @property (nonatomic, strong) UIView *indicatorView;
 // 分割 view
@@ -27,7 +27,7 @@
 
 @end
 
-@implementation FJTitleTagSectionView
+@implementation FJSegmentedTagTitleView
 
 #pragma mark --- init method
 - (instancetype)initWithFrame:(CGRect)frame {
@@ -104,7 +104,7 @@
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
-    FJTagCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:kFJTagCollectionViewCellId forIndexPath:indexPath];
+    FJSegmentedTagTitleCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:kFJTagCollectionViewCellId forIndexPath:indexPath];
     cell.titleStr = self.tagTitleArray[indexPath.item];
     [cell setSelected:(self.selectedIndex == indexPath.item)?YES:NO];
     return cell;
@@ -199,7 +199,7 @@
 - (UICollectionView *)tagCollectionView {
     if (!_tagCollectionView) {
         _tagCollectionView = [[UICollectionView alloc]initWithFrame:CGRectMake(0, 0, self.frame.size.width, self.frame.size.height) collectionViewLayout:self.tagFlowLayout];
-        [_tagCollectionView registerClass:[FJTagCollectionViewCell class] forCellWithReuseIdentifier:kFJTagCollectionViewCellId];
+        [_tagCollectionView registerClass:[FJSegmentedTagTitleCell class] forCellWithReuseIdentifier:kFJTagCollectionViewCellId];
         _tagCollectionView.dataSource = self;
         _tagCollectionView.delegate = self;
         _tagCollectionView.pagingEnabled = YES;

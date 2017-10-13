@@ -8,17 +8,18 @@
 
 #import <UIKit/UIKit.h>
 
-@class FJDetailContentView;
-@class FJDetailContentBaseViewController;
+@class FJSegmentedPageContentView;
+@class FJSegmentdPageViewController;
+
 @protocol FJDetailContentViewDelegate <NSObject>
 // 滚动 代理
-- (void)detailContentView:(FJDetailContentView *)detailContentView scrollView:(UIScrollView *)scrollView;
+- (void)detailContentView:(FJSegmentedPageContentView *)detailContentView scrollView:(UIScrollView *)scrollView;
 // 滚动 和 点击 代理
-- (void)detailContentView:(FJDetailContentView *)detailContentView selectedIndex:(NSInteger)selectedIndex;
+- (void)detailContentView:(FJSegmentedPageContentView *)detailContentView selectedIndex:(NSInteger)selectedIndex;
 
 @end
 
-@interface FJDetailContentView : UIView
+@interface FJSegmentedPageContentView : UIView
 // 选中 索引
 @property (nonatomic, assign) NSInteger selectedIndex;
 
@@ -30,7 +31,7 @@
 @property (nonatomic, strong) NSArray *detailContentViewArray;
 
 // viewController Array
-@property (nonatomic, strong) NSMutableArray <FJDetailContentBaseViewController *>*viewControllerArray;
+@property (nonatomic, strong) NSMutableArray <FJSegmentdPageViewController *>*viewControllerArray;
 // 代理
 @property (nonatomic, weak)  id <FJDetailContentViewDelegate> delegate;
 @end

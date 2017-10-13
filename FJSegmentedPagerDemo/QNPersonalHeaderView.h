@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+
 @interface QNPersonalHeaderView : UIView
 // 创建 headerView
 + (QNPersonalHeaderView *)createView;

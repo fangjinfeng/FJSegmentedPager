@@ -26,23 +26,23 @@
 		3054BD4D1F7DD2A7001243C5 /* FJBaseTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3054BD361F7DD243001243C5 /* FJBaseTableView.m */; };
 		3054BD4E1F7DD2A7001243C5 /* FJConfigModel.h in Sources */ = {isa = PBXBuildFile; fileRef = 3054BD371F7DD243001243C5 /* FJConfigModel.h */; };
 		3054BD4F1F7DD2A7001243C5 /* FJConfigModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 3054BD381F7DD243001243C5 /* FJConfigModel.m */; };
-		3054BD501F7DD2A7001243C5 /* FJContainerBaseViewController.h in Sources */ = {isa = PBXBuildFile; fileRef = 3054BD391F7DD243001243C5 /* FJContainerBaseViewController.h */; };
-		3054BD511F7DD2A7001243C5 /* FJContainerBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3054BD3A1F7DD243001243C5 /* FJContainerBaseViewController.m */; };
-		3054BD521F7DD2A7001243C5 /* FJDetailContentBaseViewController.h in Sources */ = {isa = PBXBuildFile; fileRef = 3054BD3B1F7DD243001243C5 /* FJDetailContentBaseViewController.h */; };
-		3054BD531F7DD2A7001243C5 /* FJDetailContentBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3054BD3C1F7DD243001243C5 /* FJDetailContentBaseViewController.m */; };
-		3054BD541F7DD2A7001243C5 /* FJDoubleDeckRollCell.h in Sources */ = {isa = PBXBuildFile; fileRef = 3054BD3D1F7DD243001243C5 /* FJDoubleDeckRollCell.h */; };
-		3054BD551F7DD2A7001243C5 /* FJDoubleDeckRollCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3054BD3E1F7DD243001243C5 /* FJDoubleDeckRollCell.m */; };
+		3054BD501F7DD2A7001243C5 /* FJSegmentedBaseViewController.h in Sources */ = {isa = PBXBuildFile; fileRef = 3054BD391F7DD243001243C5 /* FJSegmentedBaseViewController.h */; };
+		3054BD511F7DD2A7001243C5 /* FJSegmentedBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3054BD3A1F7DD243001243C5 /* FJSegmentedBaseViewController.m */; };
+		3054BD521F7DD2A7001243C5 /* FJSegmentdPageViewController.h in Sources */ = {isa = PBXBuildFile; fileRef = 3054BD3B1F7DD243001243C5 /* FJSegmentdPageViewController.h */; };
+		3054BD531F7DD2A7001243C5 /* FJSegmentdPageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3054BD3C1F7DD243001243C5 /* FJSegmentdPageViewController.m */; };
+		3054BD541F7DD2A7001243C5 /* FJSegementContentCell.h in Sources */ = {isa = PBXBuildFile; fileRef = 3054BD3D1F7DD243001243C5 /* FJSegementContentCell.h */; };
+		3054BD551F7DD2A7001243C5 /* FJSegementContentCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3054BD3E1F7DD243001243C5 /* FJSegementContentCell.m */; };
 		3054BD561F7DD2A7001243C5 /* FJDoubleDeckRollDefine.h in Sources */ = {isa = PBXBuildFile; fileRef = 3054BD3F1F7DD243001243C5 /* FJDoubleDeckRollDefine.h */; };
-		3054BD571F7DD2A7001243C5 /* FJDoubleDeckRollView.h in Sources */ = {isa = PBXBuildFile; fileRef = 3054BD401F7DD243001243C5 /* FJDoubleDeckRollView.h */; };
-		3054BD581F7DD2A7001243C5 /* FJDoubleDeckRollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3054BD411F7DD243001243C5 /* FJDoubleDeckRollView.m */; };
-		3054BD591F7DD2A7001243C5 /* FJDetailContentView.h in Sources */ = {isa = PBXBuildFile; fileRef = 3054BD431F7DD243001243C5 /* FJDetailContentView.h */; };
-		3054BD5A1F7DD2A7001243C5 /* FJDetailContentView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3054BD441F7DD243001243C5 /* FJDetailContentView.m */; };
+		3054BD571F7DD2A7001243C5 /* FJSegementContentView.h in Sources */ = {isa = PBXBuildFile; fileRef = 3054BD401F7DD243001243C5 /* FJSegementContentView.h */; };
+		3054BD581F7DD2A7001243C5 /* FJSegementContentView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3054BD411F7DD243001243C5 /* FJSegementContentView.m */; };
+		3054BD591F7DD2A7001243C5 /* FJSegmentedPageContentView.h in Sources */ = {isa = PBXBuildFile; fileRef = 3054BD431F7DD243001243C5 /* FJSegmentedPageContentView.h */; };
+		3054BD5A1F7DD2A7001243C5 /* FJSegmentedPageContentView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3054BD441F7DD243001243C5 /* FJSegmentedPageContentView.m */; };
 		3054BD5B1F7DD2A7001243C5 /* FJPageCollectionViewCell.h in Sources */ = {isa = PBXBuildFile; fileRef = 3054BD451F7DD243001243C5 /* FJPageCollectionViewCell.h */; };
 		3054BD5C1F7DD2A7001243C5 /* FJPageCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3054BD461F7DD243001243C5 /* FJPageCollectionViewCell.m */; };
-		3054BD5D1F7DD2B1001243C5 /* FJTagCollectionViewCell.h in Sources */ = {isa = PBXBuildFile; fileRef = 3054BD481F7DD243001243C5 /* FJTagCollectionViewCell.h */; };
-		3054BD5E1F7DD2B1001243C5 /* FJTagCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3054BD491F7DD243001243C5 /* FJTagCollectionViewCell.m */; };
-		3054BD5F1F7DD2B1001243C5 /* FJTitleTagSectionView.h in Sources */ = {isa = PBXBuildFile; fileRef = 3054BD4A1F7DD243001243C5 /* FJTitleTagSectionView.h */; };
-		3054BD601F7DD2B1001243C5 /* FJTitleTagSectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3054BD4B1F7DD243001243C5 /* FJTitleTagSectionView.m */; };
+		3054BD5D1F7DD2B1001243C5 /* FJSegmentedTagTitleCell.h in Sources */ = {isa = PBXBuildFile; fileRef = 3054BD481F7DD243001243C5 /* FJSegmentedTagTitleCell.h */; };
+		3054BD5E1F7DD2B1001243C5 /* FJSegmentedTagTitleCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3054BD491F7DD243001243C5 /* FJSegmentedTagTitleCell.m */; };
+		3054BD5F1F7DD2B1001243C5 /* FJSegmentedTagTitleView.h in Sources */ = {isa = PBXBuildFile; fileRef = 3054BD4A1F7DD243001243C5 /* FJSegmentedTagTitleView.h */; };
+		3054BD601F7DD2B1001243C5 /* FJSegmentedTagTitleView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3054BD4B1F7DD243001243C5 /* FJSegmentedTagTitleView.m */; };
 		308FFF0B1F7E165E003CE28E /* icon_wode_leijishouyi@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 308FFF071F7DF939003CE28E /* icon_wode_leijishouyi@2x.png */; };
 		308FFF0C1F7E165E003CE28E /* icon_wode_leijishouyi@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 308FFF061F7DF939003CE28E /* icon_wode_leijishouyi@3x.png */; };
 		308FFF0D1F7E165E003CE28E /* icon_wode_kuajishouyi@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 308FFF081F7DF949003CE28E /* icon_wode_kuajishouyi@2x.png */; };
@@ -99,23 +99,23 @@
 		3054BD361F7DD243001243C5 /* FJBaseTableView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FJBaseTableView.m; sourceTree = "<group>"; };
 		3054BD371F7DD243001243C5 /* FJConfigModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FJConfigModel.h; sourceTree = "<group>"; };
 		3054BD381F7DD243001243C5 /* FJConfigModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FJConfigModel.m; sourceTree = "<group>"; };
-		3054BD391F7DD243001243C5 /* FJContainerBaseViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FJContainerBaseViewController.h; sourceTree = "<group>"; };
-		3054BD3A1F7DD243001243C5 /* FJContainerBaseViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FJContainerBaseViewController.m; sourceTree = "<group>"; };
-		3054BD3B1F7DD243001243C5 /* FJDetailContentBaseViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FJDetailContentBaseViewController.h; sourceTree = "<group>"; };
-		3054BD3C1F7DD243001243C5 /* FJDetailContentBaseViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FJDetailContentBaseViewController.m; sourceTree = "<group>"; };
-		3054BD3D1F7DD243001243C5 /* FJDoubleDeckRollCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FJDoubleDeckRollCell.h; sourceTree = "<group>"; };
-		3054BD3E1F7DD243001243C5 /* FJDoubleDeckRollCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FJDoubleDeckRollCell.m; sourceTree = "<group>"; };
+		3054BD391F7DD243001243C5 /* FJSegmentedBaseViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FJSegmentedBaseViewController.h; sourceTree = "<group>"; };
+		3054BD3A1F7DD243001243C5 /* FJSegmentedBaseViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FJSegmentedBaseViewController.m; sourceTree = "<group>"; };
+		3054BD3B1F7DD243001243C5 /* FJSegmentdPageViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FJSegmentdPageViewController.h; sourceTree = "<group>"; };
+		3054BD3C1F7DD243001243C5 /* FJSegmentdPageViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FJSegmentdPageViewController.m; sourceTree = "<group>"; };
+		3054BD3D1F7DD243001243C5 /* FJSegementContentCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FJSegementContentCell.h; sourceTree = "<group>"; };
+		3054BD3E1F7DD243001243C5 /* FJSegementContentCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FJSegementContentCell.m; sourceTree = "<group>"; };
 		3054BD3F1F7DD243001243C5 /* FJDoubleDeckRollDefine.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FJDoubleDeckRollDefine.h; sourceTree = "<group>"; };
-		3054BD401F7DD243001243C5 /* FJDoubleDeckRollView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FJDoubleDeckRollView.h; sourceTree = "<group>"; };
-		3054BD411F7DD243001243C5 /* FJDoubleDeckRollView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FJDoubleDeckRollView.m; sourceTree = "<group>"; };
-		3054BD431F7DD243001243C5 /* FJDetailContentView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FJDetailContentView.h; sourceTree = "<group>"; };
-		3054BD441F7DD243001243C5 /* FJDetailContentView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FJDetailContentView.m; sourceTree = "<group>"; };
+		3054BD401F7DD243001243C5 /* FJSegementContentView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FJSegementContentView.h; sourceTree = "<group>"; };
+		3054BD411F7DD243001243C5 /* FJSegementContentView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FJSegementContentView.m; sourceTree = "<group>"; };
+		3054BD431F7DD243001243C5 /* FJSegmentedPageContentView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FJSegmentedPageContentView.h; sourceTree = "<group>"; };
+		3054BD441F7DD243001243C5 /* FJSegmentedPageContentView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FJSegmentedPageContentView.m; sourceTree = "<group>"; };
 		3054BD451F7DD243001243C5 /* FJPageCollectionViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FJPageCollectionViewCell.h; sourceTree = "<group>"; };
 		3054BD461F7DD243001243C5 /* FJPageCollectionViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FJPageCollectionViewCell.m; sourceTree = "<group>"; };
-		3054BD481F7DD243001243C5 /* FJTagCollectionViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FJTagCollectionViewCell.h; sourceTree = "<group>"; };
-		3054BD491F7DD243001243C5 /* FJTagCollectionViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FJTagCollectionViewCell.m; sourceTree = "<group>"; };
-		3054BD4A1F7DD243001243C5 /* FJTitleTagSectionView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FJTitleTagSectionView.h; sourceTree = "<group>"; };
-		3054BD4B1F7DD243001243C5 /* FJTitleTagSectionView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FJTitleTagSectionView.m; sourceTree = "<group>"; };
+		3054BD481F7DD243001243C5 /* FJSegmentedTagTitleCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FJSegmentedTagTitleCell.h; sourceTree = "<group>"; };
+		3054BD491F7DD243001243C5 /* FJSegmentedTagTitleCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FJSegmentedTagTitleCell.m; sourceTree = "<group>"; };
+		3054BD4A1F7DD243001243C5 /* FJSegmentedTagTitleView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FJSegmentedTagTitleView.h; sourceTree = "<group>"; };
+		3054BD4B1F7DD243001243C5 /* FJSegmentedTagTitleView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FJSegmentedTagTitleView.m; sourceTree = "<group>"; };
 		308FFF041F7DF922003CE28E /* icon_tongyong_xiaoxi@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_tongyong_xiaoxi@3x.png"; sourceTree = "<group>"; };
 		308FFF051F7DF922003CE28E /* icon_tongyong_xiaoxi@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_tongyong_xiaoxi@2x.png"; sourceTree = "<group>"; };
 		308FFF061F7DF939003CE28E /* icon_wode_leijishouyi@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_wode_leijishouyi@3x.png"; sourceTree = "<group>"; };
@@ -254,15 +254,15 @@
 				3054BD361F7DD243001243C5 /* FJBaseTableView.m */,
 				3054BD371F7DD243001243C5 /* FJConfigModel.h */,
 				3054BD381F7DD243001243C5 /* FJConfigModel.m */,
-				3054BD3D1F7DD243001243C5 /* FJDoubleDeckRollCell.h */,
-				3054BD3E1F7DD243001243C5 /* FJDoubleDeckRollCell.m */,
+				3054BD3D1F7DD243001243C5 /* FJSegementContentCell.h */,
+				3054BD3E1F7DD243001243C5 /* FJSegementContentCell.m */,
 				3054BD3F1F7DD243001243C5 /* FJDoubleDeckRollDefine.h */,
-				3054BD401F7DD243001243C5 /* FJDoubleDeckRollView.h */,
-				3054BD411F7DD243001243C5 /* FJDoubleDeckRollView.m */,
-				3054BD391F7DD243001243C5 /* FJContainerBaseViewController.h */,
-				3054BD3A1F7DD243001243C5 /* FJContainerBaseViewController.m */,
-				3054BD3B1F7DD243001243C5 /* FJDetailContentBaseViewController.h */,
-				3054BD3C1F7DD243001243C5 /* FJDetailContentBaseViewController.m */,
+				3054BD401F7DD243001243C5 /* FJSegementContentView.h */,
+				3054BD411F7DD243001243C5 /* FJSegementContentView.m */,
+				3054BD391F7DD243001243C5 /* FJSegmentedBaseViewController.h */,
+				3054BD3A1F7DD243001243C5 /* FJSegmentedBaseViewController.m */,
+				3054BD3B1F7DD243001243C5 /* FJSegmentdPageViewController.h */,
+				3054BD3C1F7DD243001243C5 /* FJSegmentdPageViewController.m */,
 			);
 			path = FJSegmentedBase;
 			sourceTree = "<group>";
@@ -270,8 +270,8 @@
 		3054BD421F7DD243001243C5 /* FJSegmentedPageView */ = {
 			isa = PBXGroup;
 			children = (
-				3054BD431F7DD243001243C5 /* FJDetailContentView.h */,
-				3054BD441F7DD243001243C5 /* FJDetailContentView.m */,
+				3054BD431F7DD243001243C5 /* FJSegmentedPageContentView.h */,
+				3054BD441F7DD243001243C5 /* FJSegmentedPageContentView.m */,
 				3054BD451F7DD243001243C5 /* FJPageCollectionViewCell.h */,
 				3054BD461F7DD243001243C5 /* FJPageCollectionViewCell.m */,
 			);
@@ -281,10 +281,10 @@
 		3054BD471F7DD243001243C5 /* FJSegmentedTitleView */ = {
 			isa = PBXGroup;
 			children = (
-				3054BD481F7DD243001243C5 /* FJTagCollectionViewCell.h */,
-				3054BD491F7DD243001243C5 /* FJTagCollectionViewCell.m */,
-				3054BD4A1F7DD243001243C5 /* FJTitleTagSectionView.h */,
-				3054BD4B1F7DD243001243C5 /* FJTitleTagSectionView.m */,
+				3054BD481F7DD243001243C5 /* FJSegmentedTagTitleCell.h */,
+				3054BD491F7DD243001243C5 /* FJSegmentedTagTitleCell.m */,
+				3054BD4A1F7DD243001243C5 /* FJSegmentedTagTitleView.h */,
+				3054BD4B1F7DD243001243C5 /* FJSegmentedTagTitleView.m */,
 			);
 			path = FJSegmentedTitleView;
 			sourceTree = "<group>";
@@ -433,27 +433,27 @@
 				303A687F1F8CCCD100D04C16 /* UIViewController+FJCurrentViewController.m in Sources */,
 				302CD6BD1F7DE244007E8926 /* QNPersonalHeaderView.h in Sources */,
 				302CD6BE1F7DE244007E8926 /* QNPersonalHeaderView.xib in Sources */,
-				3054BD5D1F7DD2B1001243C5 /* FJTagCollectionViewCell.h in Sources */,
-				3054BD5E1F7DD2B1001243C5 /* FJTagCollectionViewCell.m in Sources */,
+				3054BD5D1F7DD2B1001243C5 /* FJSegmentedTagTitleCell.h in Sources */,
+				3054BD5E1F7DD2B1001243C5 /* FJSegmentedTagTitleCell.m in Sources */,
 				302CD6B81F7DE064007E8926 /* FJSecondShopViewController.m in Sources */,
-				3054BD5F1F7DD2B1001243C5 /* FJTitleTagSectionView.h in Sources */,
-				3054BD601F7DD2B1001243C5 /* FJTitleTagSectionView.m in Sources */,
+				3054BD5F1F7DD2B1001243C5 /* FJSegmentedTagTitleView.h in Sources */,
+				3054BD601F7DD2B1001243C5 /* FJSegmentedTagTitleView.m in Sources */,
 				3054BD4C1F7DD2A7001243C5 /* FJBaseTableView.h in Sources */,
 				3054BD4D1F7DD2A7001243C5 /* FJBaseTableView.m in Sources */,
 				3054BD4E1F7DD2A7001243C5 /* FJConfigModel.h in Sources */,
 				3054BD4F1F7DD2A7001243C5 /* FJConfigModel.m in Sources */,
-				3054BD501F7DD2A7001243C5 /* FJContainerBaseViewController.h in Sources */,
+				3054BD501F7DD2A7001243C5 /* FJSegmentedBaseViewController.h in Sources */,
 				303A68741F8CBF7700D04C16 /* FJFirstShopViewController.m in Sources */,
-				3054BD511F7DD2A7001243C5 /* FJContainerBaseViewController.m in Sources */,
-				3054BD521F7DD2A7001243C5 /* FJDetailContentBaseViewController.h in Sources */,
-				3054BD531F7DD2A7001243C5 /* FJDetailContentBaseViewController.m in Sources */,
-				3054BD541F7DD2A7001243C5 /* FJDoubleDeckRollCell.h in Sources */,
-				3054BD551F7DD2A7001243C5 /* FJDoubleDeckRollCell.m in Sources */,
+				3054BD511F7DD2A7001243C5 /* FJSegmentedBaseViewController.m in Sources */,
+				3054BD521F7DD2A7001243C5 /* FJSegmentdPageViewController.h in Sources */,
+				3054BD531F7DD2A7001243C5 /* FJSegmentdPageViewController.m in Sources */,
+				3054BD541F7DD2A7001243C5 /* FJSegementContentCell.h in Sources */,
+				3054BD551F7DD2A7001243C5 /* FJSegementContentCell.m in Sources */,
 				3054BD561F7DD2A7001243C5 /* FJDoubleDeckRollDefine.h in Sources */,
-				3054BD571F7DD2A7001243C5 /* FJDoubleDeckRollView.h in Sources */,
-				3054BD581F7DD2A7001243C5 /* FJDoubleDeckRollView.m in Sources */,
-				3054BD591F7DD2A7001243C5 /* FJDetailContentView.h in Sources */,
-				3054BD5A1F7DD2A7001243C5 /* FJDetailContentView.m in Sources */,
+				3054BD571F7DD2A7001243C5 /* FJSegementContentView.h in Sources */,
+				3054BD581F7DD2A7001243C5 /* FJSegementContentView.m in Sources */,
+				3054BD591F7DD2A7001243C5 /* FJSegmentedPageContentView.h in Sources */,
+				3054BD5A1F7DD2A7001243C5 /* FJSegmentedPageContentView.m in Sources */,
 				3054BD5B1F7DD2A7001243C5 /* FJPageCollectionViewCell.h in Sources */,
 				3054BD5C1F7DD2A7001243C5 /* FJPageCollectionViewCell.m in Sources */,
 				3054BD061F7DD14E001243C5 /* ViewController.m in Sources */,

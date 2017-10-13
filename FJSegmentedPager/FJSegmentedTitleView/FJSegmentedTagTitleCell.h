@@ -11,7 +11,7 @@
 // cell id
 UIKIT_EXTERN NSString * const kFJTagCollectionViewCellId;
 
-@interface FJTagCollectionViewCell : UICollectionViewCell
+@interface FJSegmentedTagTitleCell : UICollectionViewCell
 // 标题 内容
 @property (nonatomic, copy)   NSString *titleStr;
 // 标题 正常 字体

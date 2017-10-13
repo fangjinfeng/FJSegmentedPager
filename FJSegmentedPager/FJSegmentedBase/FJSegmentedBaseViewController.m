@@ -6,14 +6,14 @@
 //  Copyright © 2017年 Qingning Science & Technology Development Co.,Ltd. All rights reserved.
 //
 
-#import "FJDoubleDeckRollView.h"
+#import "FJSegementContentView.h"
 #import "FJDoubleDeckRollDefine.h"
-#import "FJContainerBaseViewController.h"
+#import "FJSegmentedBaseViewController.h"
 
 
 static void * const kFJScrollViewKVOContext = (void*)&kFJScrollViewKVOContext;
 
-@interface FJContainerBaseViewController ()
+@interface FJSegmentedBaseViewController ()
 
 // 关注
 @property (nonatomic, assign, getter=isObserving)   BOOL observing;
@@ -21,7 +21,7 @@ static void * const kFJScrollViewKVOContext = (void*)&kFJScrollViewKVOContext;
 @property (nonatomic, assign, getter=isEnableScroll) BOOL enableScroll;
 @end
 
-@implementation FJContainerBaseViewController
+@implementation FJSegmentedBaseViewController
 
 
 #pragma mark --- life circle

@@ -63,7 +63,7 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
-    FJDoubleDeckRollCell *doubleDeckCell = [FJDoubleDeckRollCell cellWithTableView:tableView];
+    FJSegementContentCell *doubleDeckCell = [FJSegementContentCell cellWithTableView:tableView];
     doubleDeckCell.configModelArray = self.configModelArray;
     doubleDeckCell.tagSectionViewHeight = 50.0f;
     doubleDeckCell.selectedIndex = 1;

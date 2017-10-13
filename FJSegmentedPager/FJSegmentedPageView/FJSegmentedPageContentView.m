@@ -7,19 +7,19 @@
 //
 
 #import "FJDoubleDeckRollDefine.h"
-#import "FJDetailContentView.h"
+#import "FJSegmentedPageContentView.h"
 #import "FJPageCollectionViewCell.h"
-#import "FJDetailContentBaseViewController.h"
+#import "FJSegmentdPageViewController.h"
 
 
-@interface FJDetailContentView()<UICollectionViewDataSource, UICollectionViewDelegate>
+@interface FJSegmentedPageContentView()<UICollectionViewDataSource, UICollectionViewDelegate>
 // page collection
 @property (nonatomic, strong) UICollectionView *pageCollectionView;
 // page flowLayout
 @property (nonatomic, strong) UICollectionViewFlowLayout *pageFlowLayout;
 @end
 
-@implementation FJDetailContentView
+@implementation FJSegmentedPageContentView
 
 #pragma mark --- init method
 
@@ -38,7 +38,7 @@
     if (self.viewControllerArray.count == 0) {
         [viewArray enumerateObjectsUsingBlock:^(FJConfigModel *obj, NSUInteger idx, BOOL * _Nonnull stop) {
             Class clazz = NSClassFromString(obj.viewControllerStr);
-            FJDetailContentBaseViewController *baseViewController = [[clazz alloc] init];
+            FJSegmentdPageViewController *baseViewController = [[clazz alloc] init];
             baseViewController.currentIndex = idx;
             baseViewController.pageViewControllerParam = obj.pageViewControllerParam;
             [self.viewControllerArray addObject:baseViewController];
@@ -61,7 +61,7 @@
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
     //页面
     FJPageCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:kFJPageCollectionViewCellId forIndexPath:indexPath];
-    FJDetailContentBaseViewController *baseViewController = self.viewControllerArray[indexPath.row];
+    FJSegmentdPageViewController *baseViewController = self.viewControllerArray[indexPath.row];
     [cell configCellWithViewController:baseViewController];
     return cell;
 }
@@ -109,7 +109,7 @@
 // 设置 tagSectionViewHeight
 - (void)setTagSectionViewHeight:(CGFloat)tagSectionViewHeight {
     _tagSectionViewHeight = tagSectionViewHeight;
-    [self.viewControllerArray enumerateObjectsUsingBlock:^(FJDetailContentBaseViewController *obj, NSUInteger idx, BOOL * _Nonnull stop) {
+    [self.viewControllerArray enumerateObjectsUsingBlock:^(FJSegmentdPageViewController *obj, NSUInteger idx, BOOL * _Nonnull stop) {
         obj.tagSectionViewHeight = _tagSectionViewHeight;
     }];
 }
@@ -117,7 +117,7 @@
 // 设置 viewController 参数
 - (void)setBaseViewControllerParam:(id)baseViewControllerParam {
     _baseViewControllerParam = baseViewControllerParam;
-    [self.viewControllerArray enumerateObjectsUsingBlock:^(FJDetailContentBaseViewController *obj, NSUInteger idx, BOOL * _Nonnull stop) {
+    [self.viewControllerArray enumerateObjectsUsingBlock:^(FJSegmentdPageViewController *obj, NSUInteger idx, BOOL * _Nonnull stop) {
         obj.baseViewControllerParam = baseViewControllerParam;
     }];
 }
@@ -125,7 +125,7 @@
 #pragma mark --- getter method
 
 // viewControll array
-- (NSMutableArray <FJDetailContentBaseViewController *>*)viewControllerArray {
+- (NSMutableArray <FJSegmentdPageViewController *>*)viewControllerArray {
     if (!_viewControllerArray) {
         _viewControllerArray = [NSMutableArray array];
     }

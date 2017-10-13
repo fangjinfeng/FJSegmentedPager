@@ -8,15 +8,15 @@
 
 #import <UIKit/UIKit.h>
 
-@class FJTitleTagSectionView;
+@class FJSegmentedTagTitleView;
 // 代理
 @protocol FJTitleTagSectionViewDelegate <NSObject>
 // 当前 点击 index
-- (void)titleSectionView:(FJTitleTagSectionView *)titleSectionView clickIndex:(NSInteger)index;
+- (void)titleSectionView:(FJSegmentedTagTitleView *)titleSectionView clickIndex:(NSInteger)index;
 
 @end
 
-@interface FJTitleTagSectionView : UIView
+@interface FJSegmentedTagTitleView : UIView
 // item size
 @property (nonatomic, assign) CGSize tagItemSize;
 // 指示器 高度

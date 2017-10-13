@@ -8,7 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
-@interface FJDoubleDeckRollCell : UITableViewCell
+@interface FJSegementContentCell : UITableViewCell
+
 + (instancetype)cellWithTableView:(UITableView *)tableView;
 // 滚动 view frame
 @property (nonatomic, assign) CGRect rollViewFrame;

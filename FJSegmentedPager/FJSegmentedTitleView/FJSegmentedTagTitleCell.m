@@ -8,17 +8,17 @@
 //
 
 #import "FJDoubleDeckRollDefine.h"
-#import "FJTagCollectionViewCell.h"
+#import "FJSegmentedTagTitleCell.h"
 
 // id 标识符
 NSString * const kFJTagCollectionViewCellId = @"kFJTagCollectionViewCellId";
 
-@interface FJTagCollectionViewCell()
+@interface FJSegmentedTagTitleCell()
 // 标题
 @property (nonatomic, strong) UILabel *titleLabel;
 @end
 
-@implementation FJTagCollectionViewCell
+@implementation FJSegmentedTagTitleCell
 
 #pragma mark --- init method
 - (id)initWithFrame:(CGRect)frame {

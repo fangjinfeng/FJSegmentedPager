@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "FJBaseTableView.h"
 
-@interface FJDetailContentBaseViewController : UIViewController<UITableViewDelegate,UITableViewDataSource>
+@interface FJSegmentdPageViewController : UIViewController<UITableViewDelegate,UITableViewDataSource>
 
 // 当前 索引
 @property (nonatomic, assign) NSInteger   currentIndex;

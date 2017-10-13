@@ -1,27 +1,30 @@
 
 //
-//  FJDoubleDeckRollView.m
-//  FJDoubleDeckRollViewDemo
+//  FJSegementContentView.m
+//  FJSegementContentViewDemo
 //
 //  Created by fjf on 2017/6/9.
 //  Copyright © 2017年 fjf. All rights reserved.
 //
 
 #import "FJConfigModel.h"
-#import "FJDetailContentView.h"
-#import "FJDoubleDeckRollView.h"
-#import "FJTitleTagSectionView.h"
+#import "FJSegmentedPageContentView.h"
+#import "FJSegementContentView.h"
+#import "FJSegmentedTagTitleView.h"
 
 // tagSection height
 static CGFloat kFJTitleTagSectionViewHeight = 50.0f;
 
-@interface FJDoubleDeckRollView()<FJTitleTagSectionViewDelegate,FJDetailContentViewDelegate>
+@interface FJSegementContentView()<FJTitleTagSectionViewDelegate,FJDetailContentViewDelegate>
+
 // tag sectionView
-@property (nonatomic, strong) FJTitleTagSectionView *tagSecionView;
+@property (nonatomic, strong) FJSegmentedTagTitleView *tagSecionView;
+
 // detail contentView
-@property (nonatomic, strong) FJDetailContentView *detailContentView;
+@property (nonatomic, strong) FJSegmentedPageContentView *detailContentView;
+
 @end
-@implementation FJDoubleDeckRollView
+@implementation FJSegementContentView
 
 #pragma mark --- custom delegate
 
@@ -64,18 +67,18 @@ static CGFloat kFJTitleTagSectionViewHeight = 50.0f;
 
 /******************************* FJTitleTagSectionViewDelegate ******************************/
 // 当前 点击 index
-- (void)titleSectionView:(FJTitleTagSectionView *)titleSectionView clickIndex:(NSInteger)index {
+- (void)titleSectionView:(FJSegmentedTagTitleView *)titleSectionView clickIndex:(NSInteger)index {
     
     self.detailContentView.selectedIndex = index;
 }
 
 /******************************* FJDetailContentViewDelegate ******************************/
-- (void)detailContentView:(FJDetailContentView *)detailContentView scrollView:(UIScrollView *)scrollView {
+- (void)detailContentView:(FJSegmentedPageContentView *)detailContentView scrollView:(UIScrollView *)scrollView {
     
     [self.tagSecionView updateIndicatorView:scrollView.contentOffset.x];
 }
 
-- (void)detailContentView:(FJDetailContentView *)detailContentView selectedIndex:(NSInteger)selectedIndex {
+- (void)detailContentView:(FJSegmentedPageContentView *)detailContentView selectedIndex:(NSInteger)selectedIndex {
     
     self.tagSecionView.selectedIndex = selectedIndex;
 }
@@ -118,18 +121,18 @@ static CGFloat kFJTitleTagSectionViewHeight = 50.0f;
 #pragma mark --- getter method
 
 // tag sectionView
-- (FJTitleTagSectionView *)tagSecionView {
+- (FJSegmentedTagTitleView *)tagSecionView {
     if (!_tagSecionView) {
-        _tagSecionView = [[FJTitleTagSectionView alloc] initWithFrame:CGRectMake(0, 0, self.frame.size.width, self.tagSectionViewHeight)];
+        _tagSecionView = [[FJSegmentedTagTitleView alloc] initWithFrame:CGRectMake(0, 0, self.frame.size.width, self.tagSectionViewHeight)];
         _tagSecionView.delegate = self;
     }
     return _tagSecionView;
 }
 
 // detail contentView
-- (FJDetailContentView *)detailContentView {
+- (FJSegmentedPageContentView *)detailContentView {
     if (!_detailContentView) {
-        _detailContentView = [[FJDetailContentView alloc] initWithFrame:CGRectMake(0, CGRectGetMaxY(self.tagSecionView.frame), self.frame.size.width, self.frame.size.height - self.tagSectionViewHeight)];
+        _detailContentView = [[FJSegmentedPageContentView alloc] initWithFrame:CGRectMake(0, CGRectGetMaxY(self.tagSecionView.frame), self.frame.size.width, self.frame.size.height - self.tagSectionViewHeight)];
         _detailContentView.delegate = self;
         _detailContentView.tagSectionViewHeight = self.tagSectionViewHeight;
     }

@@ -6,8 +6,8 @@
 //  Copyright © 2017年 fjf. All rights reserved.
 //
 
-#import "FJDetailContentBaseViewController.h"
+#import "FJSegmentdPageViewController.h"
 
-@interface FJFirstShopViewController : FJDetailContentBaseViewController
+@interface FJFirstShopViewController : FJSegmentdPageViewController
 
 @end

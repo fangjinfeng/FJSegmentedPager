@@ -11,7 +11,7 @@
 
 #import "FJConfigModel.h"
 #import "FJBaseTableView.h"
-#import "FJDoubleDeckRollView.h"
+#import "FJSegementContentView.h"
 
 //进入置顶命令
 static NSString *const kGoTopNotificationName = @"goTop";

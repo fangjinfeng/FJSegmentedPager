@@ -1,5 +1,5 @@
 //
-//  FJDetailContentBaseViewController.m
+//  FJSegmentdPageViewController.m
 //  FJDoubleDeckRollViewDemo
 //
 //  Created by fjf on 2017/6/9.
@@ -7,14 +7,14 @@
 //
 
 #import "FJDoubleDeckRollDefine.h"
-#import "FJDetailContentBaseViewController.h"
+#import "FJSegmentdPageViewController.h"
 #import "UIViewController+FJCurrentViewController.h"
 
 
-@interface FJDetailContentBaseViewController ()
+@interface FJSegmentdPageViewController ()
 @end
 
-@implementation FJDetailContentBaseViewController
+@implementation FJSegmentdPageViewController
 
 #pragma mark --- life circle
 - (void)viewDidLoad {
