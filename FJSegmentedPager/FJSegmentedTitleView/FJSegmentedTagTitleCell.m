@@ -7,7 +7,7 @@
 //  Copyright © 2017年 fjf. All rights reserved.
 //
 
-#import "FJDoubleDeckRollDefine.h"
+#import "FJSegmentedPageDefine.h"
 #import "FJSegmentedTagTitleCell.h"
 
 // id 标识符

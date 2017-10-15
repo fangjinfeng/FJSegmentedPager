@@ -42,7 +42,7 @@
 // 配置 课程 列表  数组
 - (void)configViewControllerModelArray {
     self.configModelArray = [NSMutableArray array];
-    [self.configModelArray addObject:[[FJConfigModel alloc] initWithTitleStr:@"系列介绍" viewControllerStr:@"FJFirstShopViewController"]];
+    [self.configModelArray addObject:[[FJConfigModel alloc] initWithTitleStr:@"系列简介" viewControllerStr:@"FJFirstShopViewController"]];
     [self.configModelArray addObject:[[FJConfigModel alloc] initWithTitleStr:@"系列课程" viewControllerStr:@"FJSecondShopViewController"]];
 }
 

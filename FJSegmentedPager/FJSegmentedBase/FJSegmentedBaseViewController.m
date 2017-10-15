@@ -7,7 +7,7 @@
 //
 
 #import "FJSegementContentView.h"
-#import "FJDoubleDeckRollDefine.h"
+#import "FJSegmentedPageDefine.h"
 #import "FJSegmentedBaseViewController.h"
 
 
@@ -15,10 +15,13 @@ static void * const kFJScrollViewKVOContext = (void*)&kFJScrollViewKVOContext;
 
 @interface FJSegmentedBaseViewController ()
 
-// 关注
-@property (nonatomic, assign, getter=isObserving)   BOOL observing;
+// 点击 返回 到 顶部view
+@property (nonatomic, strong) UIView *scrollToTopTapView;
+// current selected index
+@property (nonatomic, assign) NSUInteger currentSelectedIndex;
 // 能否 滚动
 @property (nonatomic, assign, getter=isEnableScroll) BOOL enableScroll;
+
 @end
 
 @implementation FJSegmentedBaseViewController
@@ -34,11 +37,21 @@ static void * const kFJScrollViewKVOContext = (void*)&kFJScrollViewKVOContext;
     [self registerContainerBaseNotiInfo];
 }
 
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    [[self statusBar] addSubview:self.scrollToTopTapView];
+    [self.navigationController setNavigationBarHidden:YES animated:animated];
+}
+
+- (void)viewWillDisappear:(BOOL)animated {
+    [super viewWillDisappear:animated];
+    [self.scrollToTopTapView removeFromSuperview];
+}
+
 #pragma mark --- private method
 
 - (void)setupContainerBaseControls {
     //适配ios7
-    self.observing = YES;
     self.enableScroll = YES;
     if ([self respondsToSelector:@selector(setEdgesForExtendedLayout:)]){
         self.edgesForExtendedLayout = UIRectEdgeNone;
@@ -56,6 +69,7 @@ static void * const kFJScrollViewKVOContext = (void*)&kFJScrollViewKVOContext;
 // 注册 通知 监听
 - (void)registerContainerBaseNotiInfo {
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(acceptMsg:) name:kLeaveTopNotificationName object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(scrollToSegmentedPage:) name:kFJScrollToSegmentedPageNoti object:nil];
 }
 
 #pragma mark --- system delegate
@@ -113,6 +127,20 @@ static void * const kFJScrollViewKVOContext = (void*)&kFJScrollViewKVOContext;
     }
 }
 
+- (void)scrollToSegmentedPage:(NSNotification *)noti {
+    if ([noti.name isEqualToString:kFJScrollToSegmentedPageNoti]) {
+        NSNumber *tmpNum = noti.object;
+        self.currentSelectedIndex = tmpNum.unsignedIntegerValue;
+    }
+}
+
+#pragma mark --- response event
+// 滚动 到顶部
+- (void)postScrollToTopViewNoti {
+    NSString *tmpSelectedIndex = [NSString stringWithFormat:@"%ld", self.currentSelectedIndex];
+    [[NSNotificationCenter defaultCenter] postNotificationName:kFJSubScrollViewScrollToTopNoti object:tmpSelectedIndex];
+}
+
 #pragma mark --- getter method
 // 配置 模型 数组
 - (NSMutableArray  <FJConfigModel *>*)configModelArray {
@@ -135,6 +163,28 @@ static void * const kFJScrollViewKVOContext = (void*)&kFJScrollViewKVOContext;
         _tableView.showsVerticalScrollIndicator = NO;
     }
     return _tableView;
+}
+
+
+// 点击 返回 到 顶部view
+- (UIView *)scrollToTopTapView {
+    if (!_scrollToTopTapView) {
+        _scrollToTopTapView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, 30.0f)];
+        _scrollToTopTapView.userInteractionEnabled = YES;
+        [_scrollToTopTapView addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(postScrollToTopViewNoti)]];
+        _scrollToTopTapView.backgroundColor = [UIColor clearColor];
+    }
+    return _scrollToTopTapView;
+}
+
+/**
+ 用KVC取statusBar
+ 
+ @return statusBar
+ */
+- (UIView *)statusBar {
+    
+    return [[UIApplication sharedApplication] valueForKey:@"statusBar"];
 }
 
 #pragma mark --- dealloc method

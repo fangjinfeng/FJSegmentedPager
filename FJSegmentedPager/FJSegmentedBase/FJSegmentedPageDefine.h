@@ -1,22 +1,29 @@
 //
-//  FJDoubleDeckRollDefine.h
+//  FJSegmentedPageDefine.h
 //  FJDoubleDeckRollViewDemo
 //
 //  Created by fjf on 2017/6/9.
 //  Copyright © 2017年 fjf. All rights reserved.
 //
 
-#ifndef FJDoubleDeckRollDefine_h
-#define FJDoubleDeckRollDefine_h
+#ifndef FJSegmentedPageDefine_h
+#define FJSegmentedPageDefine_h
 
 #import "FJConfigModel.h"
 #import "FJBaseTableView.h"
 #import "FJSegementContentView.h"
 
-//进入置顶命令
-static NSString *const kGoTopNotificationName = @"goTop";
-//离开置顶命令
-static NSString *const kLeaveTopNotificationName = @"leaveTop";
+// go top tip
+static NSString *const kGoTopNotificationName = @"kGoTopNotificationName";
+// leave top noti
+static NSString *const kLeaveTopNotificationName = @"kLeaveTopNotificationName";
+
+// current scroll to segmented page noti
+static NSString *const kFJScrollToSegmentedPageNoti = @"kFJScrollToSegmentedPageNoti";
+// scroll to top noti
+static NSString *const kFJSubScrollViewScrollToTopNoti = @"kFJSubScrollViewScrollToTopNoti";
+
+
 
 
 // 颜色
@@ -68,12 +75,13 @@ static NSString *const kLeaveTopNotificationName = @"leaveTop";
 // 标题 默认 宽度
 #define kFJSegmentedTitleViewTitleWidth     80.0f
 
-static const CGFloat kFJIndicatorViewHeight = 2.0f;
-static const CGFloat kFJIndicatorViewWidth = 56.0f;
-static const CGFloat kFJTitleTagSectionTitleWidth = 80.0f;
+// 标题栏 cell  间距
+#define kFJSegmentedTagSectionCellSpacing 32.0f
 
+// 标题栏 cell  间距
+#define kFJSegmentedTagSectionHorizontalEdgeSpacing 12.0f
 
-#endif /* FJDoubleDeckRollDefine_h */
+#endif /* FJSegmentedPageDefine_h */
 
 
 

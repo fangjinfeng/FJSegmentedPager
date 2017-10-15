@@ -75,7 +75,7 @@ static CGFloat kFJTitleTagSectionViewHeight = 50.0f;
 /******************************* FJDetailContentViewDelegate ******************************/
 - (void)detailContentView:(FJSegmentedPageContentView *)detailContentView scrollView:(UIScrollView *)scrollView {
     
-    [self.tagSecionView updateIndicatorView:scrollView.contentOffset.x];
+
 }
 
 - (void)detailContentView:(FJSegmentedPageContentView *)detailContentView selectedIndex:(NSInteger)selectedIndex {

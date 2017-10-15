@@ -6,7 +6,7 @@
 //  Copyright © 2017年 fjf. All rights reserved.
 //
 
-#import "FJDoubleDeckRollDefine.h"
+#import "FJSegmentedPageDefine.h"
 #import "FJSegmentedPageContentView.h"
 #import "FJPageCollectionViewCell.h"
 #import "FJSegmentdPageViewController.h"
@@ -78,8 +78,9 @@
 
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView {
     
-    if(self.delegate && [self.delegate respondsToSelector:@selector(detailContentView:scrollView:)]){
-        [self.delegate detailContentView:self scrollView:scrollView];
+    NSInteger index = (NSInteger)roundf(scrollView.contentOffset.x / self.pageCollectionView.frame.size.width);
+    if (self.delegate && [self.delegate respondsToSelector:@selector(detailContentView:selectedIndex:)]) {
+        [self.delegate detailContentView:self selectedIndex:index];
     }
 }
 
@@ -95,7 +96,6 @@
     else {
         [self.pageCollectionView selectItemAtIndexPath:[NSIndexPath indexPathForItem:_selectedIndex inSection:0] animated:YES scrollPosition:UICollectionViewScrollPositionCenteredHorizontally];
     }
-   
 }
 
 // 内容 viewArray

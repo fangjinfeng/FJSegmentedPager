@@ -31,7 +31,4 @@
 @property (nonatomic, assign) CGFloat tagSectionViewHeight;
 // 代理
 @property (nonatomic, weak)   id <FJTitleTagSectionViewDelegate> delegate;
-
-// 更新 指示器 值
-- (void)updateIndicatorView:(CGFloat)contentOffsetX;
 @end

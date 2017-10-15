@@ -32,7 +32,7 @@
 		3054BD531F7DD2A7001243C5 /* FJSegmentdPageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3054BD3C1F7DD243001243C5 /* FJSegmentdPageViewController.m */; };
 		3054BD541F7DD2A7001243C5 /* FJSegementContentCell.h in Sources */ = {isa = PBXBuildFile; fileRef = 3054BD3D1F7DD243001243C5 /* FJSegementContentCell.h */; };
 		3054BD551F7DD2A7001243C5 /* FJSegementContentCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3054BD3E1F7DD243001243C5 /* FJSegementContentCell.m */; };
-		3054BD561F7DD2A7001243C5 /* FJDoubleDeckRollDefine.h in Sources */ = {isa = PBXBuildFile; fileRef = 3054BD3F1F7DD243001243C5 /* FJDoubleDeckRollDefine.h */; };
+		3054BD561F7DD2A7001243C5 /* FJSegmentedPageDefine.h in Sources */ = {isa = PBXBuildFile; fileRef = 3054BD3F1F7DD243001243C5 /* FJSegmentedPageDefine.h */; };
 		3054BD571F7DD2A7001243C5 /* FJSegementContentView.h in Sources */ = {isa = PBXBuildFile; fileRef = 3054BD401F7DD243001243C5 /* FJSegementContentView.h */; };
 		3054BD581F7DD2A7001243C5 /* FJSegementContentView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3054BD411F7DD243001243C5 /* FJSegementContentView.m */; };
 		3054BD591F7DD2A7001243C5 /* FJSegmentedPageContentView.h in Sources */ = {isa = PBXBuildFile; fileRef = 3054BD431F7DD243001243C5 /* FJSegmentedPageContentView.h */; };
@@ -105,7 +105,7 @@
 		3054BD3C1F7DD243001243C5 /* FJSegmentdPageViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FJSegmentdPageViewController.m; sourceTree = "<group>"; };
 		3054BD3D1F7DD243001243C5 /* FJSegementContentCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FJSegementContentCell.h; sourceTree = "<group>"; };
 		3054BD3E1F7DD243001243C5 /* FJSegementContentCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FJSegementContentCell.m; sourceTree = "<group>"; };
-		3054BD3F1F7DD243001243C5 /* FJDoubleDeckRollDefine.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FJDoubleDeckRollDefine.h; sourceTree = "<group>"; };
+		3054BD3F1F7DD243001243C5 /* FJSegmentedPageDefine.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FJSegmentedPageDefine.h; sourceTree = "<group>"; };
 		3054BD401F7DD243001243C5 /* FJSegementContentView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FJSegementContentView.h; sourceTree = "<group>"; };
 		3054BD411F7DD243001243C5 /* FJSegementContentView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FJSegementContentView.m; sourceTree = "<group>"; };
 		3054BD431F7DD243001243C5 /* FJSegmentedPageContentView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FJSegmentedPageContentView.h; sourceTree = "<group>"; };
@@ -256,7 +256,7 @@
 				3054BD381F7DD243001243C5 /* FJConfigModel.m */,
 				3054BD3D1F7DD243001243C5 /* FJSegementContentCell.h */,
 				3054BD3E1F7DD243001243C5 /* FJSegementContentCell.m */,
-				3054BD3F1F7DD243001243C5 /* FJDoubleDeckRollDefine.h */,
+				3054BD3F1F7DD243001243C5 /* FJSegmentedPageDefine.h */,
 				3054BD401F7DD243001243C5 /* FJSegementContentView.h */,
 				3054BD411F7DD243001243C5 /* FJSegementContentView.m */,
 				3054BD391F7DD243001243C5 /* FJSegmentedBaseViewController.h */,
@@ -449,7 +449,7 @@
 				3054BD531F7DD2A7001243C5 /* FJSegmentdPageViewController.m in Sources */,
 				3054BD541F7DD2A7001243C5 /* FJSegementContentCell.h in Sources */,
 				3054BD551F7DD2A7001243C5 /* FJSegementContentCell.m in Sources */,
-				3054BD561F7DD2A7001243C5 /* FJDoubleDeckRollDefine.h in Sources */,
+				3054BD561F7DD2A7001243C5 /* FJSegmentedPageDefine.h in Sources */,
 				3054BD571F7DD2A7001243C5 /* FJSegementContentView.h in Sources */,
 				3054BD581F7DD2A7001243C5 /* FJSegementContentView.m in Sources */,
 				3054BD591F7DD2A7001243C5 /* FJSegmentedPageContentView.h in Sources */,

@@ -6,7 +6,7 @@
 //  Copyright © 2017年 fjf. All rights reserved.
 //
 
-#import "FJDoubleDeckRollDefine.h"
+#import "FJSegmentedPageDefine.h"
 #import "FJSegmentdPageViewController.h"
 #import "UIViewController+FJCurrentViewController.h"
 
@@ -41,10 +41,22 @@
     [self.view addSubview:self.tableView];
 }
 
+// 滚动 到 顶部
+- (void)scrollToTopAnimated:(BOOL)animated {
+    CGPoint off = self.tableView.contentOffset;
+    off.y = 0 - self.tableView.contentInset.top;
+    [self.tableView setContentOffset:off animated:animated];
+}
+
+
+
 // 注册 监听
 - (void)registerDetailContentViewNotiInfo {
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(acceptMsg:) name:kGoTopNotificationName object:nil];
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(acceptMsg:) name:kLeaveTopNotificationName object:nil];//其中一个TAB离开顶部的时候，如果其他几个偏移量不为0的时候，要把他们都置为0
+    //其中一个TAB离开顶部的时候，如果其他几个偏移量不为0的时候，要把他们都置为0
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(acceptMsg:) name:kLeaveTopNotificationName object:nil];
+    // 滚动 到 顶部
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(tableViewScrollToTop:) name:kFJSubScrollViewScrollToTopNoti object:nil];
     
 }
 
@@ -93,7 +105,17 @@
     }
 }
 
-
+// 滚动 到 顶部
+- (void)tableViewScrollToTop:(NSNotification *)noti {
+    if ([noti.name isEqualToString:kFJSubScrollViewScrollToTopNoti]) {
+        NSString *selectedIndex = (NSString *)noti.object;
+        if ([selectedIndex isKindOfClass:[NSString class]]) {
+            if ([selectedIndex integerValue] == self.currentIndex) {
+                [self scrollToTopAnimated:YES];
+            }
+        }
+    }
+}
 #pragma mark --- setter method
 
 // 设置 tagSectionViewHeight
