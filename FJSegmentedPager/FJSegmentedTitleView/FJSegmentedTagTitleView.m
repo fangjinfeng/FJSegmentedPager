@@ -107,7 +107,7 @@
     
     CGFloat titleWidth = [self titleWidthWithTitle:tagTitle];
     
-    self.indicatorWidth = titleWidth + 5;
+    self.indicatorWidth = titleWidth + kFJSegmentedIndicatorViewExtendWidth;
     CGRect tmpFrame = self.indicatorView.frame;
     tmpFrame.size.width = self.indicatorWidth;
     self.indicatorView.frame = tmpFrame;
@@ -122,9 +122,9 @@
         //获取cell在当前屏幕的位置
         CGRect cellInSuperview = [self.tagCollectionView convertRect:cellInCollection toView:self];
         
-        CGFloat indicatorViewX = cellInSuperview.origin.x - 2.5;
+        CGFloat indicatorViewX = cellInSuperview.origin.x - kFJSegmentedIndicatorViewExtendWidth/2.0f;
         if (indicatorViewX < 0) {
-            indicatorViewX = 12.0 - 2.5;
+            indicatorViewX = kFJSegmentedTagSectionHorizontalEdgeSpacing - kFJSegmentedIndicatorViewExtendWidth/2.0;
         }
         [self updateIndicatorViewWithOriginX:indicatorViewX];
         
@@ -191,14 +191,13 @@
 /***************************** UICollectionViewDelegate *************************/
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
-    self.selectedIndex = indexPath.item;
+    _selectedIndex = indexPath.item;
     [self setDidSelectItemDelegateWay];
 }
 
 - (void)setDidSelectItemDelegateWay {
     if (self.delegate && [self.delegate respondsToSelector:@selector(titleSectionView:clickIndex:)]) {
         [self.delegate titleSectionView:self clickIndex:_selectedIndex];
-        
     }
 }
 
@@ -255,13 +254,13 @@
 - (CGFloat)indicatorX {
     CGFloat indicatorViewX = 0;
     if (self.selectedIndex == 0) {
-        indicatorViewX = 12.0f - 2.5f;
+        indicatorViewX = kFJSegmentedTagSectionHorizontalEdgeSpacing - kFJSegmentedIndicatorViewExtendWidth/2.0;
     }
     else if(self.selectedIndex < (self.tagTitleArray.count - 1)){
         indicatorViewX = 0;
     }
     else if(self.selectedIndex == (self.tagTitleArray.count - 1)){
-        indicatorViewX = 10;
+        indicatorViewX = kFJSegmentedTagSectionHorizontalEdgeSpacing - kFJSegmentedIndicatorViewExtendWidth/2.0;
     }
     return indicatorViewX;
 }

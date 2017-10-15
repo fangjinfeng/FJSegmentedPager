@@ -69,15 +69,14 @@ static NSString *const kFJSubScrollViewScrollToTopNoti = @"kFJSubScrollViewScrol
 #define kFJSegmentedBottomLineViewHeight    0.5
 // 指示条 默认 高度
 #define kFJSegmentedIndicatorViewHeight     2.0
-
 // 指示条 默认 宽度
 #define kFJSegmentedIndicatorViewWidth      56.0f
+// 指示条 默认 扩展宽度
+#define kFJSegmentedIndicatorViewExtendWidth  6.0f
 // 标题 默认 宽度
 #define kFJSegmentedTitleViewTitleWidth     80.0f
-
 // 标题栏 cell  间距
-#define kFJSegmentedTagSectionCellSpacing 32.0f
-
+#define kFJSegmentedTagSectionCellSpacing   32.0f
 // 标题栏 cell  间距
 #define kFJSegmentedTagSectionHorizontalEdgeSpacing 12.0f
 
