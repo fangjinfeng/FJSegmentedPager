@@ -137,7 +137,8 @@ static void * const kFJScrollViewKVOContext = (void*)&kFJScrollViewKVOContext;
 #pragma mark --- response event
 // 滚动 到顶部
 - (void)postScrollToTopViewNoti {
-    NSString *tmpSelectedIndex = [NSString stringWithFormat:@"%ld", self.currentSelectedIndex];
+    
+    NSString *tmpSelectedIndex = [NSString stringWithFormat:@"%ld", (unsigned long)self.currentSelectedIndex];
     [[NSNotificationCenter defaultCenter] postNotificationName:kFJSubScrollViewScrollToTopNoti object:tmpSelectedIndex];
 }
 

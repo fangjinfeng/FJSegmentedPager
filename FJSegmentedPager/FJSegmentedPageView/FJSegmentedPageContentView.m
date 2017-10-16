@@ -69,13 +69,6 @@
 
 /***************************** UIScrollViewDelegate *************************/
 
-- (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView {
-    NSInteger index = scrollView.contentOffset.x / self.pageCollectionView.frame.size.width;
-    if (self.delegate && [self.delegate respondsToSelector:@selector(detailContentView:selectedIndex:)]) {
-        [self.delegate detailContentView:self selectedIndex:index];
-    }
-}
-
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView {
     
     NSInteger index = (NSInteger)roundf(scrollView.contentOffset.x / self.pageCollectionView.frame.size.width);

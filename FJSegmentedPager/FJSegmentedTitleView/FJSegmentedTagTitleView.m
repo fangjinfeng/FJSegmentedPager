@@ -76,7 +76,7 @@
 
 
 
-// 是否 超过 限制
+// 是否 超过 屏幕 宽度 限制
 - (void)beyondWidthLimitWithTitleArray:(NSArray *)titleArray {
     self.isBeyondLimitWidth = NO;
     CGFloat tmpWidth = kFJSegmentedTagSectionCellSpacing;
@@ -162,8 +162,7 @@
     return cell;
 }
 
-- (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath
-{
+- (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath {
     CGSize tmpSize = CGSizeZero;
     if (self.isBeyondLimitWidth == NO) {
         tmpSize = CGSizeMake(self.frame.size.width / self.tagTitleArray.count, self.frame.size.height);
@@ -177,8 +176,7 @@
 }
 
 
-- (UIEdgeInsets)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout insetForSectionAtIndex:(NSInteger)section
-{
+- (UIEdgeInsets)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout insetForSectionAtIndex:(NSInteger)section {
     CGFloat edgeSpacing = 0;
     if (self.isBeyondLimitWidth) {
         edgeSpacing = kFJSegmentedTagSectionHorizontalEdgeSpacing;
