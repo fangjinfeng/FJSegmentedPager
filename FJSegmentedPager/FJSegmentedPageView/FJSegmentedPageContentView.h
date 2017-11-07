@@ -13,9 +13,7 @@
 
 @protocol FJDetailContentViewDelegate <NSObject>
 // 滚动 代理
-- (void)detailContentView:(FJSegmentedPageContentView *)detailContentView scrollView:(UIScrollView *)scrollView;
-// 滚动 和 点击 代理
-- (void)detailContentView:(FJSegmentedPageContentView *)detailContentView selectedIndex:(NSInteger)selectedIndex;
+- (void)detailContentView:(FJSegmentedPageContentView *)detailContentView currentIndex:(NSInteger)currentIndex;
 
 @end
 

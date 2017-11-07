@@ -71,9 +71,20 @@
 
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView {
     
-    NSInteger index = (NSInteger)roundf(scrollView.contentOffset.x / self.pageCollectionView.frame.size.width);
-    if (self.delegate && [self.delegate respondsToSelector:@selector(detailContentView:selectedIndex:)]) {
-        [self.delegate detailContentView:self selectedIndex:index];
+    NSInteger currentIndex = (NSInteger)roundf(scrollView.contentOffset.x / self.pageCollectionView.frame.size.width);
+    
+    if (self.delegate && [self.delegate respondsToSelector:@selector(detailContentView:currentIndex:)]) {
+        [self.delegate detailContentView:self currentIndex:currentIndex];
+    }
+}
+
+
+/** 滚动减速完成时再更新title的位置 */
+- (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView {
+    
+    NSInteger currentIndex = (NSInteger)roundf(scrollView.contentOffset.x / self.pageCollectionView.frame.size.width);
+    if (self.delegate && [self.delegate respondsToSelector:@selector(detailContentView:currentIndex:)]) {
+        [self.delegate detailContentView:self currentIndex:currentIndex];
     }
 }
 

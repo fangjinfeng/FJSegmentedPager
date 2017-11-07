@@ -79,11 +79,10 @@
 // 是否 超过 屏幕 宽度 限制
 - (void)beyondWidthLimitWithTitleArray:(NSArray *)titleArray {
     self.isBeyondLimitWidth = NO;
-    CGFloat tmpWidth = kFJSegmentedTagSectionCellSpacing;
-    for (NSString *tmpTitle in titleArray) {
-         tmpWidth += [self titleWidthWithTitle:tmpTitle];
-        tmpWidth += kFJSegmentedTagSectionCellSpacing;
-    }
+    __block CGFloat tmpWidth = kFJSegmentedTagSectionCellSpacing;
+    [titleArray enumerateObjectsUsingBlock:^(NSString *tmpTitle, NSUInteger idx, BOOL * _Nonnull stop) {
+        tmpWidth += [self titleWidthWithIndex:idx];
+    }];
     
     if (tmpWidth > self.frame.size.width) {
         self.isBeyondLimitWidth = YES;
@@ -91,57 +90,41 @@
 }
 
 
-- (CGFloat)titleWidthWithTitle:(NSString *)title {
-    
-   return  [title boundingRectWithSize:CGSizeMake(MAXFLOAT, MAXFLOAT) options:NSStringDrawingUsesLineFragmentOrigin attributes:@{NSFontAttributeName:kFJSegmentedTitleFontSize} context:nil].size.width;
-}
-
-
 #pragma mark --- public method
 
 
-// 更新 指示view  宽度
-- (void)updateIndicatorWidthWithSelectedIndex:(NSInteger)selectedIndex {
+- (void)updateIndicatorWidthWithIndex:(NSInteger)currentIndex {
     
-    NSString *tagTitle = [self.tagTitleArray objectAtIndex:selectedIndex];
+    [self.tagCollectionView selectItemAtIndexPath:[NSIndexPath indexPathForItem:currentIndex inSection:0] animated:NO scrollPosition:UICollectionViewScrollPositionCenteredHorizontally];
     
-    CGFloat titleWidth = [self titleWidthWithTitle:tagTitle];
+    FJSegmentedTagTitleCell *cell = (FJSegmentedTagTitleCell *)[self.tagCollectionView cellForItemAtIndexPath:[NSIndexPath indexPathForRow:currentIndex inSection:0]];
+    CGRect convertRect = [self.tagCollectionView convertRect:cell.frame toView:self];
     
-    self.indicatorWidth = titleWidth + kFJSegmentedIndicatorViewExtendWidth;
-    CGRect tmpFrame = self.indicatorView.frame;
-    tmpFrame.size.width = self.indicatorWidth;
-    self.indicatorView.frame = tmpFrame;
     
-    if (self.isBeyondLimitWidth) {
-        
-        //获取cell
-        UICollectionViewCell *cell = [self.tagCollectionView cellForItemAtIndexPath:[NSIndexPath indexPathForRow:self.selectedIndex inSection:0]];
-        //获取cell在当前collection的位置
-        CGRect cellInCollection = [self.tagCollectionView convertRect:cell.frame toView:self.tagCollectionView];
-        
-        //获取cell在当前屏幕的位置
-        CGRect cellInSuperview = [self.tagCollectionView convertRect:cellInCollection toView:self];
-        
-        CGFloat indicatorViewX = cellInSuperview.origin.x - kFJSegmentedIndicatorViewExtendWidth/2.0f;
-        if (indicatorViewX < 0) {
-            indicatorViewX = kFJSegmentedTagSectionHorizontalEdgeSpacing - kFJSegmentedIndicatorViewExtendWidth/2.0;
-        }
-        [self updateIndicatorViewWithOriginX:indicatorViewX];
-        
-    }
-    else {
+    CGFloat indicatorViewX = CGRectGetMinX(convertRect);
+    if (self.isBeyondLimitWidth == NO) {
         CGFloat cellWidth = self.frame.size.width / self.tagTitleArray.count;
-        CGFloat indicatorViewX = cellWidth * selectedIndex + cellWidth/2.0 - self.indicatorView.frame.size.width/2.0;
-        [self updateIndicatorViewWithOriginX:indicatorViewX];
+        indicatorViewX = cellWidth * currentIndex + cellWidth/2.0 - self.indicatorView.frame.size.width/2.0;
     }
+    
+    [UIView animateWithDuration:0.2 animations:^{
+        self.indicatorView.frame = CGRectMake(indicatorViewX, self.indicatorView.frame.origin.y, [self titleWidthWithIndex:currentIndex], self.indicatorView.frame.size.height);
+    }];
 }
 
-// 更新 显示器 x
-- (void)updateIndicatorViewWithOriginX:(CGFloat)originX {
-    CGRect tmpIndicatorViewFrame = self.indicatorView.frame;
-    tmpIndicatorViewFrame.origin.x = originX;
-    self.indicatorView.frame = tmpIndicatorViewFrame;
+
+
+// 标题 宽度
+- (CGFloat)titleWidthWithIndex:(NSUInteger)index {
+    
+    NSString *tagTitle = [self.tagTitleArray objectAtIndex:index];
+    
+    CGFloat titleWidth = [tagTitle boundingRectWithSize:CGSizeMake(MAXFLOAT, MAXFLOAT) options:NSStringDrawingUsesLineFragmentOrigin attributes:@{NSFontAttributeName:kFJSegmentedTitleFontSize} context:nil].size.width;
+    return titleWidth + kFJSegmentedIndicatorViewExtendWidth;
 }
+
+
+
 
 #pragma mark --- system delegate
 
@@ -168,9 +151,7 @@
         tmpSize = CGSizeMake(self.frame.size.width / self.tagTitleArray.count, self.frame.size.height);
     }
     else {
-        NSString *titleStr = self.tagTitleArray[indexPath.row];
-        CGFloat titleWidth = [titleStr boundingRectWithSize:CGSizeMake(MAXFLOAT, MAXFLOAT) options:NSStringDrawingUsesLineFragmentOrigin attributes:@{NSFontAttributeName:kFJSegmentedTitleFontSize} context:nil].size.width;
-        tmpSize = CGSizeMake(titleWidth, self.frame.size.height);
+         tmpSize = CGSizeMake([self titleWidthWithIndex:indexPath.row], self.frame.size.height);
     }
     return tmpSize;
 }
@@ -193,6 +174,19 @@
     [self setDidSelectItemDelegateWay];
 }
 
+
+- (void)collectionView:(UICollectionView *)collectionView willDisplayCell:(UICollectionViewCell *)cell forItemAtIndexPath:(NSIndexPath *)indexPath {
+    
+    [cell setSelected:(self.selectedIndex == indexPath.item) ? YES:NO];
+}
+
+- (void)collectionView:(UICollectionView *)collectionView didEndDisplayingCell:(UICollectionViewCell *)cell forItemAtIndexPath:(NSIndexPath *)indexPath {
+    
+    [cell setSelected:(self.selectedIndex == indexPath.item) ? YES:NO];
+}
+
+
+
 - (void)setDidSelectItemDelegateWay {
     if (self.delegate && [self.delegate respondsToSelector:@selector(titleSectionView:clickIndex:)]) {
         [self.delegate titleSectionView:self clickIndex:_selectedIndex];
@@ -208,14 +202,12 @@
 
     if (CGSizeEqualToSize(self.tagCollectionView.contentSize, CGSizeZero)) {
         dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.01 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-            [self.tagCollectionView selectItemAtIndexPath:[NSIndexPath indexPathForItem:_selectedIndex inSection:0] animated:NO scrollPosition:UICollectionViewScrollPositionCenteredHorizontally];
-            [self updateIndicatorWidthWithSelectedIndex:selectedIndex];
+            [self updateIndicatorWidthWithIndex:selectedIndex];
         });
     }
     else {
         if (self.tagCollectionView.contentSize.width > self.tagItemSize.width && _selectedIndex < self.tagTitleArray.count) {
-            [self.tagCollectionView selectItemAtIndexPath:[NSIndexPath indexPathForItem:_selectedIndex inSection:0] animated:NO scrollPosition:UICollectionViewScrollPositionCenteredHorizontally];
-            [self updateIndicatorWidthWithSelectedIndex:selectedIndex];
+            [self updateIndicatorWidthWithIndex:selectedIndex];
         }
     }
      [[NSNotificationCenter defaultCenter] postNotificationName:kFJScrollToSegmentedPageNoti object:[NSNumber numberWithUnsignedInteger:selectedIndex]];

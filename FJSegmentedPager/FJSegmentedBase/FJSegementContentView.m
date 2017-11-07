@@ -73,15 +73,11 @@ static CGFloat kFJTitleTagSectionViewHeight = 50.0f;
 }
 
 /******************************* FJDetailContentViewDelegate ******************************/
-- (void)detailContentView:(FJSegmentedPageContentView *)detailContentView scrollView:(UIScrollView *)scrollView {
+- (void)detailContentView:(FJSegmentedPageContentView *)detailContentView currentIndex:(NSInteger)currentIndex {
     
-
+    self.tagSecionView.selectedIndex = currentIndex;
 }
 
-- (void)detailContentView:(FJSegmentedPageContentView *)detailContentView selectedIndex:(NSInteger)selectedIndex {
-    
-    self.tagSecionView.selectedIndex = selectedIndex;
-}
 
 #pragma mark --- setter method
 // 设置 模型 值

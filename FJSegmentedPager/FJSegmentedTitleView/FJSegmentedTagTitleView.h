@@ -31,4 +31,5 @@
 @property (nonatomic, assign) CGFloat tagSectionViewHeight;
 // 代理
 @property (nonatomic, weak)   id <FJTitleTagSectionViewDelegate> delegate;
+
 @end
