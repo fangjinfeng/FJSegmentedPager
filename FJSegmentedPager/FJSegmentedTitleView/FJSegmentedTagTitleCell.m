@@ -40,10 +40,10 @@ NSString * const kFJTagCollectionViewCellId = @"kFJTagCollectionViewCellId";
 }
 
 #pragma mark --- Override method
-// 设置 选中 
-- (void)setSelected:(BOOL)selected {
-    [super setSelected:selected];
-    if (selected) {
+
+// 设置 选中
+- (void)setSelectedStatus:(BOOL)selectedStatus {
+    if (selectedStatus) {
         self.titleLabel.textColor = self.titleSelectedColor;
     }
     else{

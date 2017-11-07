@@ -20,6 +20,8 @@
 @property (nonatomic, strong) UIView *indicatorView;
 // 分割 view
 @property (nonatomic, strong) UIView *bottomLineView;
+// 先前 选中 索引
+@property (nonatomic, assign) NSUInteger previousIndex;
 // 是否 超过 宽度 限制
 @property (nonatomic, assign) BOOL isBeyondLimitWidth;
 // 标签 collectionView
@@ -97,9 +99,13 @@
     
     [self.tagCollectionView selectItemAtIndexPath:[NSIndexPath indexPathForItem:currentIndex inSection:0] animated:NO scrollPosition:UICollectionViewScrollPositionCenteredHorizontally];
     
-    FJSegmentedTagTitleCell *cell = (FJSegmentedTagTitleCell *)[self.tagCollectionView cellForItemAtIndexPath:[NSIndexPath indexPathForRow:currentIndex inSection:0]];
-    CGRect convertRect = [self.tagCollectionView convertRect:cell.frame toView:self];
+    FJSegmentedTagTitleCell *previousCell = (FJSegmentedTagTitleCell *)[self.tagCollectionView cellForItemAtIndexPath:[NSIndexPath indexPathForRow:self.previousIndex inSection:0]];
+    [previousCell setSelectedStatus:NO];
     
+    FJSegmentedTagTitleCell *cell = (FJSegmentedTagTitleCell *)[self.tagCollectionView cellForItemAtIndexPath:[NSIndexPath indexPathForRow:currentIndex inSection:0]];
+    [cell setSelectedStatus:YES];
+    
+    CGRect convertRect = [self.tagCollectionView convertRect:cell.frame toView:self];
     
     CGFloat indicatorViewX = CGRectGetMinX(convertRect);
     if (self.isBeyondLimitWidth == NO) {
@@ -141,7 +147,7 @@
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
     FJSegmentedTagTitleCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:kFJTagCollectionViewCellId forIndexPath:indexPath];
     cell.titleStr = self.tagTitleArray[indexPath.item];
-    [cell setSelected:(self.selectedIndex == indexPath.item)?YES:NO];
+    [cell setSelectedStatus:(self.selectedIndex == indexPath.item)?YES:NO];
     return cell;
 }
 
@@ -178,12 +184,12 @@
 
 - (void)collectionView:(UICollectionView *)collectionView willDisplayCell:(UICollectionViewCell *)cell forItemAtIndexPath:(NSIndexPath *)indexPath {
     
-    [cell setSelected:(self.selectedIndex == indexPath.item) ? YES:NO];
+    [(FJSegmentedTagTitleCell *)cell setSelectedStatus:(self.selectedIndex == indexPath.item) ? YES:NO];
 }
 
 - (void)collectionView:(UICollectionView *)collectionView didEndDisplayingCell:(UICollectionViewCell *)cell forItemAtIndexPath:(NSIndexPath *)indexPath {
     
-    [cell setSelected:(self.selectedIndex == indexPath.item) ? YES:NO];
+    [(FJSegmentedTagTitleCell *)cell setSelectedStatus:(self.selectedIndex == indexPath.item) ? YES:NO];
 }
 
 
@@ -199,6 +205,7 @@
 #pragma mark --- setter method
 // 设置 选中 索引
 - (void)setSelectedIndex:(NSUInteger)selectedIndex {
+    _previousIndex = _selectedIndex;
     _selectedIndex = selectedIndex;
 
     if (CGSizeEqualToSize(self.tagCollectionView.contentSize, CGSizeZero)) {

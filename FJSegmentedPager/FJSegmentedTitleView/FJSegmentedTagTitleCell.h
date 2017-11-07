@@ -22,5 +22,6 @@ UIKIT_EXTERN NSString * const kFJTagCollectionViewCellId;
 @property (nonatomic, strong) UIColor *titleSelectedColor;
 // 标题 高亮 颜色
 @property (nonatomic, strong) UIColor *titleHighlightColor;
-
+// 设置 选中
+- (void)setSelectedStatus:(BOOL)selectedStatus;
 @end
