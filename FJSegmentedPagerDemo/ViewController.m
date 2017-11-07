@@ -7,51 +7,30 @@
 //
 
 #import "ViewController.h"
+#import "FJShopViewController.h"
 #import "QNPersonalHeaderView.h"
 
-@interface ViewController ()
-
+@interface ViewController ()<UITableViewDelegate, UITableViewDataSource>
+// tableView
+@property (nonatomic, strong) UITableView *tableView;
 @end
 
 @implementation ViewController
 
+#pragma mark --- life circle
 - (void)viewDidLoad {
     [super viewDidLoad];
     
     [self setupControls];
-    
-    [self configViewControllerModelArray];
 }
 
 
-// 设置 子控件
+#pragma mark --- private method
+
 - (void)setupControls {
-    
-    self.navigationItem.title = @"系列详情";
-    
-    self.tableView.tableHeaderView = [QNPersonalHeaderView createView];
-    
-    self.tableView.frame = CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height);
-    self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
-    
-    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.3 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-          self.tableViewOffsetY = [self.tableView rectForSection:0].origin.y + 10;
-    });
+    [self.view addSubview:self.tableView];
+    self.navigationItem.title = @"分类栏";
 }
-
-// 配置 课程 列表  数组
-- (void)configViewControllerModelArray {
-    self.configModelArray = [NSMutableArray array];
-    [self.configModelArray addObject:[[FJConfigModel alloc] initWithTitleStr:@"系列简介" viewControllerStr:@"FJFirstShopViewController"]];
-    [self.configModelArray addObject:[[FJConfigModel alloc] initWithTitleStr:@"系列课程" viewControllerStr:@"FJSecondShopViewController"]];
-    [self.configModelArray addObject:[[FJConfigModel alloc] initWithTitleStr:@"系列简介" viewControllerStr:@"FJFirstShopViewController"]];
-    [self.configModelArray addObject:[[FJConfigModel alloc] initWithTitleStr:@"系列课程" viewControllerStr:@"FJSecondShopViewController"]];
-    [self.configModelArray addObject:[[FJConfigModel alloc] initWithTitleStr:@"系列简介" viewControllerStr:@"FJFirstShopViewController"]];
-    [self.configModelArray addObject:[[FJConfigModel alloc] initWithTitleStr:@"系列课程" viewControllerStr:@"FJSecondShopViewController"]];
-    [self.configModelArray addObject:[[FJConfigModel alloc] initWithTitleStr:@"系列简介" viewControllerStr:@"FJFirstShopViewController"]];
-    [self.configModelArray addObject:[[FJConfigModel alloc] initWithTitleStr:@"系列课程" viewControllerStr:@"FJSecondShopViewController"]];
-}
-
 
 #pragma mark --- system delegate
 
@@ -63,23 +42,30 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     
-    return 1;
+    return 2;
 }
 
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    
-    FJSegementContentCell *doubleDeckCell = [FJSegementContentCell cellWithTableView:tableView];
-    doubleDeckCell.configModelArray = self.configModelArray;
-    doubleDeckCell.tagSectionViewHeight = 50.0f;
-    doubleDeckCell.selectedIndex = 1;
-    
-    return doubleDeckCell;
+    static NSString *cellId = @"cellId";
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellId];
+    if (!cell) {
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellId];
+        cell.selectionStyle = UITableViewCellSelectionStyleNone;
+    }
+
+    if (indexPath.row == 0) {
+        cell.textLabel.text = @"一屏内";
+    }
+    else {
+        cell.textLabel.text = @"超过一屏";
+    }
+    return cell;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
 
-    return [UIScreen mainScreen].bounds.size.height;
+    return 100;
 }
 
 
@@ -98,5 +84,29 @@
 - (UIView *)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section {
     return [[UIView alloc] init];
 }
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    [tableView deselectRowAtIndexPath:indexPath animated:NO];
+    FJShopViewController *shopViewController = [[FJShopViewController alloc] init];
+    shopViewController.hidesBottomBarWhenPushed = YES;
+    shopViewController.beyondScreenWidth = indexPath.row;
+    [self.navigationController pushViewController:shopViewController animated:YES];
+}
+
+#pragma mark --- getter method
+// tableView
+- (UITableView *)tableView {
+    if (!_tableView) {
+        _tableView = [[UITableView alloc] initWithFrame:self.view.bounds style:UITableViewStyleGrouped];
+        _tableView.delegate = self;
+        _tableView.dataSource = self;
+        _tableView.estimatedRowHeight = 0;
+        _tableView.estimatedSectionFooterHeight = 0;
+        _tableView.estimatedSectionHeaderHeight = 0;
+        _tableView.showsVerticalScrollIndicator = NO;
+    }
+    return _tableView;
+}
+
 
 @end

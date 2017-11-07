@@ -170,6 +170,7 @@
 /***************************** UICollectionViewDelegate *************************/
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
+    [collectionView deselectItemAtIndexPath:indexPath animated:NO];
     _selectedIndex = indexPath.item;
     [self setDidSelectItemDelegateWay];
 }

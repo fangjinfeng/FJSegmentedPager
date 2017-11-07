@@ -40,7 +40,6 @@ static void * const kFJScrollViewKVOContext = (void*)&kFJScrollViewKVOContext;
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     [[self statusBar] addSubview:self.scrollToTopTapView];
-    [self.navigationController setNavigationBarHidden:YES animated:animated];
 }
 
 - (void)viewWillDisappear:(BOOL)animated {

@@ -43,6 +43,7 @@
 		3054BD5E1F7DD2B1001243C5 /* FJSegmentedTagTitleCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3054BD491F7DD243001243C5 /* FJSegmentedTagTitleCell.m */; };
 		3054BD5F1F7DD2B1001243C5 /* FJSegmentedTagTitleView.h in Sources */ = {isa = PBXBuildFile; fileRef = 3054BD4A1F7DD243001243C5 /* FJSegmentedTagTitleView.h */; };
 		3054BD601F7DD2B1001243C5 /* FJSegmentedTagTitleView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3054BD4B1F7DD243001243C5 /* FJSegmentedTagTitleView.m */; };
+		306F3A5E1FB19FA100401AB8 /* FJShopViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 306F3A5D1FB19FA100401AB8 /* FJShopViewController.m */; };
 		308FFF0B1F7E165E003CE28E /* icon_wode_leijishouyi@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 308FFF071F7DF939003CE28E /* icon_wode_leijishouyi@2x.png */; };
 		308FFF0C1F7E165E003CE28E /* icon_wode_leijishouyi@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 308FFF061F7DF939003CE28E /* icon_wode_leijishouyi@3x.png */; };
 		308FFF0D1F7E165E003CE28E /* icon_wode_kuajishouyi@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 308FFF081F7DF949003CE28E /* icon_wode_kuajishouyi@2x.png */; };
@@ -116,6 +117,8 @@
 		3054BD491F7DD243001243C5 /* FJSegmentedTagTitleCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FJSegmentedTagTitleCell.m; sourceTree = "<group>"; };
 		3054BD4A1F7DD243001243C5 /* FJSegmentedTagTitleView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FJSegmentedTagTitleView.h; sourceTree = "<group>"; };
 		3054BD4B1F7DD243001243C5 /* FJSegmentedTagTitleView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FJSegmentedTagTitleView.m; sourceTree = "<group>"; };
+		306F3A5C1FB19FA100401AB8 /* FJShopViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FJShopViewController.h; sourceTree = "<group>"; };
+		306F3A5D1FB19FA100401AB8 /* FJShopViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FJShopViewController.m; sourceTree = "<group>"; };
 		308FFF041F7DF922003CE28E /* icon_tongyong_xiaoxi@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_tongyong_xiaoxi@3x.png"; sourceTree = "<group>"; };
 		308FFF051F7DF922003CE28E /* icon_tongyong_xiaoxi@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_tongyong_xiaoxi@2x.png"; sourceTree = "<group>"; };
 		308FFF061F7DF939003CE28E /* icon_wode_leijishouyi@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_wode_leijishouyi@3x.png"; sourceTree = "<group>"; };
@@ -202,6 +205,8 @@
 				3054BD021F7DD14E001243C5 /* AppDelegate.m */,
 				3054BD041F7DD14E001243C5 /* ViewController.h */,
 				3054BD051F7DD14E001243C5 /* ViewController.m */,
+				306F3A5C1FB19FA100401AB8 /* FJShopViewController.h */,
+				306F3A5D1FB19FA100401AB8 /* FJShopViewController.m */,
 				303A68721F8CBF7700D04C16 /* FJFirstShopViewController.h */,
 				303A68731F8CBF7700D04C16 /* FJFirstShopViewController.m */,
 				302CD6BB1F7DE227007E8926 /* QNPersonalHeaderView.h */,
@@ -455,6 +460,7 @@
 				3054BD591F7DD2A7001243C5 /* FJSegmentedPageContentView.h in Sources */,
 				3054BD5A1F7DD2A7001243C5 /* FJSegmentedPageContentView.m in Sources */,
 				3054BD5B1F7DD2A7001243C5 /* FJPageCollectionViewCell.h in Sources */,
+				306F3A5E1FB19FA100401AB8 /* FJShopViewController.m in Sources */,
 				3054BD5C1F7DD2A7001243C5 /* FJPageCollectionViewCell.m in Sources */,
 				3054BD061F7DD14E001243C5 /* ViewController.m in Sources */,
 				3054BD111F7DD14E001243C5 /* main.m in Sources */,

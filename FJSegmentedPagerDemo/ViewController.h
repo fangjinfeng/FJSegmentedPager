@@ -7,9 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "FJSegmentedBaseViewController.h"
 
-@interface ViewController : FJSegmentedBaseViewController
+@interface ViewController : UIViewController
 
 
 @end
