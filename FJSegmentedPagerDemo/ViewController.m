@@ -8,7 +8,7 @@
 
 #import "ViewController.h"
 #import "FJShopViewController.h"
-#import "QNPersonalHeaderView.h"
+
 
 @interface ViewController ()<UITableViewDelegate, UITableViewDataSource>
 // tableView

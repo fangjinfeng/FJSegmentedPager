@@ -9,12 +9,13 @@
 #import "FJShopViewController.h"
 #import "QNPersonalHeaderView.h"
 
-@interface FJShopViewController ()
+@interface FJShopViewController ()<UIGestureRecognizerDelegate>
 
 @end
 
 @implementation FJShopViewController
 
+#pragma mark --- life circle
 - (void)viewDidLoad {
     [super viewDidLoad];
     
@@ -23,6 +24,9 @@
     [self configViewControllerModelArray];
 }
 
+
+
+#pragma mark --- private method
 
 // 设置 子控件
 - (void)setupControls {
@@ -48,8 +52,10 @@
     if (self.isBeyondScreenWidth) {
         [self.configModelArray addObject:[[FJConfigModel alloc] initWithTitleStr:@"店铺推荐" viewControllerStr:@"FJSecondShopViewController"]];
         [self.configModelArray addObject:[[FJConfigModel alloc] initWithTitleStr:@"店铺专栏" viewControllerStr:@"FJFirstShopViewController"]];
+        [self.configModelArray addObject:[[FJConfigModel alloc] initWithTitleStr:@"VIP" viewControllerStr:@"FJSecondShopViewController"]];
+        [self.configModelArray addObject:[[FJConfigModel alloc] initWithTitleStr:@"大礼包" viewControllerStr:@"FJFirstShopViewController"]];
         [self.configModelArray addObject:[[FJConfigModel alloc] initWithTitleStr:@"店铺特色" viewControllerStr:@"FJSecondShopViewController"]];
-        [self.configModelArray addObject:[[FJConfigModel alloc] initWithTitleStr:@"店铺免费" viewControllerStr:@"FJFirstShopViewController"]];
+        [self.configModelArray addObject:[[FJConfigModel alloc] initWithTitleStr:@"免费" viewControllerStr:@"FJFirstShopViewController"]];
         [self.configModelArray addObject:[[FJConfigModel alloc] initWithTitleStr:@"店铺主打" viewControllerStr:@"FJSecondShopViewController"]];
     }
 }
