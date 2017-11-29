@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
+@class FJSegmentViewStyle;
+
 @interface FJSegementContentCell : UITableViewCell
 
 + (instancetype)cellWithTableView:(UITableView *)tableView;
@@ -19,6 +21,8 @@
 @property (nonatomic, strong) NSArray *configModelArray;
 // 选择 第几个 tag
 @property (nonatomic, assign) NSInteger selectedIndex;
+// 属性 配置
+@property (nonatomic, strong) FJSegmentViewStyle *segmentViewStyle;
 // baseViewControllerParam 参数
 @property (nonatomic, strong) id baseViewControllerParam;
 // 获取 view controller array

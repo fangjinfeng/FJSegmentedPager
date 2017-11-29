@@ -6,6 +6,7 @@
 //  Copyright © 2017年 fjf. All rights reserved.
 //
 
+#import "FJSegmentViewStyle.h"
 #import "FJShopViewController.h"
 #import "QNPersonalHeaderView.h"
 
@@ -78,6 +79,7 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
     FJSegementContentCell *doubleDeckCell = [FJSegementContentCell cellWithTableView:tableView];
+    doubleDeckCell.segmentViewStyle = [[FJSegmentViewStyle alloc] init];
     doubleDeckCell.configModelArray = self.configModelArray;
     doubleDeckCell.tagSectionViewHeight = 50.0f;
     doubleDeckCell.selectedIndex = 1;

@@ -8,6 +8,7 @@
 //  Copyright © 2017年 fjf. All rights reserved.
 //
 
+#import "FJSegmentViewStyle.h"
 #import "FJSegementContentView.h"
 #import "FJSegementContentCell.h"
 
@@ -77,6 +78,14 @@
     CGRect doubleDeckRollViewFrame = self.doubleDeckRollView.frame;
     doubleDeckRollViewFrame.size.height = height;
     self.doubleDeckRollView.frame = doubleDeckRollViewFrame;
+}
+
+// 配置 属性
+- (void)setSegmentViewStyle:(FJSegmentViewStyle *)segmentViewStyle {
+    _segmentViewStyle = segmentViewStyle;
+    if (_segmentViewStyle) {
+        _doubleDeckRollView.segmentViewStyle = _segmentViewStyle;
+    }
 }
 
 #pragma mark --- getter method

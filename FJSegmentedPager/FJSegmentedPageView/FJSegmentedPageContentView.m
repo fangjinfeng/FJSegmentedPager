@@ -126,6 +126,13 @@
     }];
 }
 
+// 是否 消除 子view 滚动限制
+- (void)setEliminateSubViewScrollLimit:(BOOL)eliminateSubViewScrollLimit {
+    _eliminateSubViewScrollLimit = eliminateSubViewScrollLimit;
+    [self.viewControllerArray enumerateObjectsUsingBlock:^(FJSegmentdPageViewController *obj, NSUInteger idx, BOOL * _Nonnull stop) {
+        obj.eliminateSubViewScrollLimit = eliminateSubViewScrollLimit;
+    }];
+}
 #pragma mark --- getter method
 
 // viewControll array

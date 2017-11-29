@@ -43,7 +43,7 @@ static NSString *const kFJSubScrollViewScrollToTopNoti = @"kFJSubScrollViewScrol
 // 分段 标题 字体 高亮 颜色
 #define kFJSegmentedTitleHighlightColor FJColorFromRGB(0x51D6AA)
 
-// 分段 标题 字体 高亮 颜色
+// 标题栏 指示器 背景色
 #define kFJSegmentedIndicatorViewColor FJColorFromRGB(0x51D6AA)
 
 // 分割线 背景 颜色
@@ -52,8 +52,11 @@ static NSString *const kFJSubScrollViewScrollToTopNoti = @"kFJSubScrollViewScrol
 // tableView 背景 颜色
 #define kFJTableViewBackgroundColor FJColorFromRGB(0xF7F7FA)
 
-// controllerView 背景 颜色
+// controller view 背景 颜色
 #define kFJControllerViewBackgroundColor FJColorFromRGB(0xF7F7FA)
+
+// 标题 分隔栏 背景色
+#define kFJSegmentToolbackgroundColor FJColorFromRGB(0xFFFFFF)
 
 /** 字体 **/
 
@@ -77,7 +80,7 @@ static NSString *const kFJSubScrollViewScrollToTopNoti = @"kFJSubScrollViewScrol
 #define kFJSegmentedTitleViewTitleWidth     80.0f
 // 标题栏 cell  间距
 #define kFJSegmentedTagSectionCellSpacing   32.0f
-// 标题栏 cell  间距
+// 标题栏 左右  间距
 #define kFJSegmentedTagSectionHorizontalEdgeSpacing 12.0f
 
 #endif /* FJSegmentedPageDefine_h */

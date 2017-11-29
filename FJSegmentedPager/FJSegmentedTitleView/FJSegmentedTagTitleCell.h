@@ -8,20 +8,15 @@
 
 #import <UIKit/UIKit.h>
 
+@class FJSegmentViewStyle;
 // cell id
 UIKIT_EXTERN NSString * const kFJTagCollectionViewCellId;
 
 @interface FJSegmentedTagTitleCell : UICollectionViewCell
 // 标题 内容
 @property (nonatomic, copy)   NSString *titleStr;
-// 标题 正常 字体
-@property (nonatomic, strong) UIFont *titleFont;
-// 标题 正常 颜色
-@property (nonatomic, strong) UIColor *titleNormalColor;
-// 标题 选中 颜色
-@property (nonatomic, strong) UIColor *titleSelectedColor;
-// 标题 高亮 颜色
-@property (nonatomic, strong) UIColor *titleHighlightColor;
+// 属性 配置
+@property (nonatomic, strong) FJSegmentViewStyle *segmentViewStyle;
 // 设置 选中
 - (void)setSelectedStatus:(BOOL)selectedStatus;
 @end

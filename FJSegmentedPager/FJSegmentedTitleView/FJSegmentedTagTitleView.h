@@ -8,7 +8,9 @@
 
 #import <UIKit/UIKit.h>
 
+@class FJSegmentViewStyle;
 @class FJSegmentedTagTitleView;
+
 // 代理
 @protocol FJTitleTagSectionViewDelegate <NSObject>
 // 当前 点击 index
@@ -17,18 +19,15 @@
 @end
 
 @interface FJSegmentedTagTitleView : UIView
-// item size
-@property (nonatomic, assign) CGSize tagItemSize;
-// 指示器 高度
-@property (nonatomic, assign) CGFloat indicatorHeight;
-// 指示器 宽度
-@property (nonatomic, assign) CGFloat indicatorWidth;
+
 // 标题 数据 数组
 @property (nonatomic, strong) NSArray *tagTitleArray;
 // 选中 索引
 @property (nonatomic, assign) NSUInteger selectedIndex;
 // 标题 栏 高度
 @property (nonatomic, assign) CGFloat tagSectionViewHeight;
+// 属性 配置
+@property (nonatomic, strong) FJSegmentViewStyle *segmentViewStyle;
 // 代理
 @property (nonatomic, weak)   id <FJTitleTagSectionViewDelegate> delegate;
 

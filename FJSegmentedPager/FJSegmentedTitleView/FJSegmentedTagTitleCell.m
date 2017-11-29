@@ -7,6 +7,7 @@
 //  Copyright © 2017年 fjf. All rights reserved.
 //
 
+#import "FJSegmentViewStyle.h"
 #import "FJSegmentedPageDefine.h"
 #import "FJSegmentedTagTitleCell.h"
 
@@ -14,6 +15,16 @@
 NSString * const kFJTagCollectionViewCellId = @"kFJTagCollectionViewCellId";
 
 @interface FJSegmentedTagTitleCell()
+// 标题 正常 字体
+@property (nonatomic, strong) UIFont *titleNormalFont;
+// 标题 选中 字体
+@property (nonatomic, strong) UIFont *titleSelectedFont;
+// 标题 正常 颜色
+@property (nonatomic, strong) UIColor *titleNormalColor;
+// 标题 选中 颜色
+@property (nonatomic, strong) UIColor *titleSelectedColor;
+// 标题 高亮 颜色
+@property (nonatomic, strong) UIColor *titleHighlightColor;
 // 标题
 @property (nonatomic, strong) UILabel *titleLabel;
 @end
@@ -33,7 +44,8 @@ NSString * const kFJTagCollectionViewCellId = @"kFJTagCollectionViewCellId";
 #pragma mark --- private method
 // 设置 默认 值
 - (void)setDefaultValues {
-    self.titleFont = kFJSegmentedTitleFontSize;
+    self.titleNormalFont = kFJSegmentedTitleFontSize;
+    self.titleSelectedFont = kFJSegmentedTitleFontSize;
     self.titleNormalColor = kFJSegmentedTitleNormalColor;
     self.titleSelectedColor = kFJSegmentedTitleSelectedColor;
     self.titleHighlightColor = kFJSegmentedTitleHighlightColor;
@@ -45,9 +57,11 @@ NSString * const kFJTagCollectionViewCellId = @"kFJTagCollectionViewCellId";
 - (void)setSelectedStatus:(BOOL)selectedStatus {
     if (selectedStatus) {
         self.titleLabel.textColor = self.titleSelectedColor;
+        self.titleLabel.font = self.titleSelectedFont;
     }
     else{
         self.titleLabel.textColor = self.titleNormalColor;
+        self.titleLabel.font = self.titleNormalFont;
     }
 }
 
@@ -61,18 +75,7 @@ NSString * const kFJTagCollectionViewCellId = @"kFJTagCollectionViewCellId";
     self.titleLabel.center = titleLabelCenter;
 }
 
-#pragma mark --- getter method
 
-// title Label
-- (UILabel *)titleLabel {
-    if (!_titleLabel) {
-        _titleLabel = [[UILabel alloc] init];
-        _titleLabel.font = self.titleFont;
-        _titleLabel.textColor = self.titleNormalColor;
-        _titleLabel.textAlignment = NSTextAlignmentCenter;
-    }
-    return _titleLabel;
-}
 
 
 #pragma mark --- setter method
@@ -83,25 +86,29 @@ NSString * const kFJTagCollectionViewCellId = @"kFJTagCollectionViewCellId";
     self.titleLabel.text = titleStr;
 }
 
-// 标题 字体
-- (void)setTitleFont:(UIFont *)titleFont {
-    
-    self.titleLabel.font = titleFont;
+
+// 配置 属性
+- (void)setSegmentViewStyle:(FJSegmentViewStyle *)segmentViewStyle {
+    _segmentViewStyle = segmentViewStyle;
+    if (_segmentViewStyle) {
+        self.titleNormalFont = _segmentViewStyle.itemTitleFont;
+        self.titleSelectedFont = _segmentViewStyle.itemTitleSelectedFont;
+        self.titleNormalColor = _segmentViewStyle.itemTitleColorStateNormal;
+        self.titleSelectedColor = _segmentViewStyle.itemTitleColorStateSelected;
+        self.titleHighlightColor = _segmentViewStyle.itemTitleColorStateHighlighted;
+    }
 }
 
-// 标题 普通 颜色
-- (void)setTitleNormalColor:(UIColor *)titleNormalColor {
-    _titleNormalColor = titleNormalColor;
-    _titleLabel.textColor = _titleNormalColor;
-}
-// 标题 选中 颜色
-- (void)setTitleSelectedColor:(UIColor *)titleSelectedColor {
-    _titleSelectedColor = titleSelectedColor;
-}
+#pragma mark --- getter method
 
-// 标题 高亮 颜色
-- (void)setTitleHighlightColor:(UIColor *)titleHighlightColor {
-    _titleHighlightColor = titleHighlightColor;
+// title Label
+- (UILabel *)titleLabel {
+    if (!_titleLabel) {
+        _titleLabel = [[UILabel alloc] init];
+        _titleLabel.font = self.titleNormalFont;
+        _titleLabel.textColor = self.titleNormalColor;
+        _titleLabel.textAlignment = NSTextAlignmentCenter;
+    }
+    return _titleLabel;
 }
-
 @end

@@ -80,12 +80,14 @@
 /************************ UIScrollViewDelegate **********************/
 
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView{
-    if (!self.isEnableScroll) {
-        [scrollView setContentOffset:CGPointZero];
-    }
-    CGFloat offsetY = scrollView.contentOffset.y;
-    if (offsetY < 0) {
-        [[NSNotificationCenter defaultCenter] postNotificationName:kLeaveTopNotificationName object:[NSNumber numberWithBool:YES] userInfo:nil];
+    if (self.eliminateSubViewScrollLimit == NO) {
+        if (!self.isEnableScroll) {
+            [scrollView setContentOffset:CGPointZero];
+        }
+        CGFloat offsetY = scrollView.contentOffset.y;
+        if (offsetY < 0) {
+            [[NSNotificationCenter defaultCenter] postNotificationName:kLeaveTopNotificationName object:[NSNumber numberWithBool:YES] userInfo:nil];
+        }
     }
 }
 

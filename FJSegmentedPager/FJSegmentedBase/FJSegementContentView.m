@@ -7,10 +7,15 @@
 //  Copyright © 2017年 fjf. All rights reserved.
 //
 
+// model
 #import "FJConfigModel.h"
-#import "FJSegmentedPageContentView.h"
+// tool
+#import "FJSegmentViewStyle.h"
+// view
 #import "FJSegementContentView.h"
 #import "FJSegmentedTagTitleView.h"
+#import "FJSegmentedPageContentView.h"
+
 
 // tagSection height
 static CGFloat kFJTitleTagSectionViewHeight = 50.0f;
@@ -104,6 +109,10 @@ static CGFloat kFJTitleTagSectionViewHeight = 50.0f;
     self.detailContentView.baseViewControllerParam = baseViewControllerParam;
 }
 
+// 消除 滚动 限制
+- (void)setEliminateSubViewScrollLimit:(BOOL)eliminateSubViewScrollLimit {
+    self.detailContentView.eliminateSubViewScrollLimit = eliminateSubViewScrollLimit;
+}
 
 // 设置 选中 索引
 - (void)setSelectedIndex:(NSInteger)selectedIndex {
@@ -111,6 +120,16 @@ static CGFloat kFJTitleTagSectionViewHeight = 50.0f;
     if (self.configModelArray.count) {
         self.tagSecionView.selectedIndex = selectedIndex;
         self.detailContentView.selectedIndex = selectedIndex;
+    }
+}
+
+
+// 配置 属性
+- (void)setSegmentViewStyle:(FJSegmentViewStyle *)segmentViewStyle {
+    _segmentViewStyle = segmentViewStyle;
+    if (_segmentViewStyle) {
+        _tagSecionView.segmentViewStyle = segmentViewStyle;
+        NSAssert(_segmentViewStyle, @"segmentViewStyle  must be passed in before configModelArray");
     }
 }
 

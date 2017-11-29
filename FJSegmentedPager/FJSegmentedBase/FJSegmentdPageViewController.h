@@ -23,6 +23,8 @@
 @property (nonatomic, copy) id baseViewControllerParam;
 // 参数
 @property (nonatomic, copy) id pageViewControllerParam;
+// 消除 子类 滚动 限制
+@property (nonatomic, assign) BOOL eliminateSubViewScrollLimit;
 // 是否 可滚动
 @property (nonatomic, assign, getter=isEnableScroll) BOOL enableScroll;
 

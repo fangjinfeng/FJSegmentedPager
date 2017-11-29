@@ -8,6 +8,7 @@
 
 #import "ViewController.h"
 #import "FJShopViewController.h"
+#import "FJShopSegmentedViewController.h"
 
 
 @interface ViewController ()<UITableViewDelegate, UITableViewDataSource>
@@ -42,7 +43,7 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     
-    return 2;
+    return 3;
 }
 
 
@@ -57,8 +58,11 @@
     if (indexPath.row == 0) {
         cell.textLabel.text = @"一屏内";
     }
-    else {
+    else if(indexPath.row == 1){
         cell.textLabel.text = @"超过一屏";
+    }
+    else {
+        cell.textLabel.text = @"去掉头部";
     }
     return cell;
 }
@@ -87,10 +91,18 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     [tableView deselectRowAtIndexPath:indexPath animated:NO];
-    FJShopViewController *shopViewController = [[FJShopViewController alloc] init];
-    shopViewController.hidesBottomBarWhenPushed = YES;
-    shopViewController.beyondScreenWidth = indexPath.row;
-    [self.navigationController pushViewController:shopViewController animated:YES];
+    if (indexPath.row < 2) {
+        FJShopViewController *shopViewController = [[FJShopViewController alloc] init];
+        shopViewController.hidesBottomBarWhenPushed = YES;
+        shopViewController.beyondScreenWidth = indexPath.row;
+        [self.navigationController pushViewController:shopViewController animated:YES];
+    }
+    else {
+        FJShopSegmentedViewController *segmentViewController = [[FJShopSegmentedViewController alloc] init];
+        segmentViewController.hidesBottomBarWhenPushed = YES;
+         [self.navigationController pushViewController:segmentViewController animated:YES];
+    }
+   
 }
 
 #pragma mark --- getter method

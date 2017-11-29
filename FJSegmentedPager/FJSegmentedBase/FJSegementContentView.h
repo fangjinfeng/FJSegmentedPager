@@ -9,14 +9,25 @@
 #import <UIKit/UIKit.h>
 
 @class FJConfigModel;
+@class FJSegmentViewStyle;
 
 @interface FJSegementContentView : UIView
+
 // 默认 选中 索引(先传入:configModelArray,再设置:selectedIndex)
 @property (nonatomic, assign) NSInteger selectedIndex;
+
 // 标题 栏 高度
 @property (nonatomic, assign) CGFloat tagSectionViewHeight;
+
 // baseViewControllerParam 参数
 @property (nonatomic, strong) id baseViewControllerParam;
+
+// 消除 子类 滚动 限制
+@property (nonatomic, assign) BOOL eliminateSubViewScrollLimit;
+
+// 属性 配置 (必须为第一个传入参数)
+@property (nonatomic, strong) FJSegmentViewStyle *segmentViewStyle;
+
 // 配置 数据 模型
 @property (nonatomic, strong) NSArray <FJConfigModel *>*configModelArray;
 

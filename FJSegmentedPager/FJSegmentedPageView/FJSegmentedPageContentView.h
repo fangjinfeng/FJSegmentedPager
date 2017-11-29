@@ -23,13 +23,19 @@
 
 // baseViewControllerParam 参数
 @property (nonatomic, strong) id baseViewControllerParam;
+
 // 标题 栏 高度
 @property (nonatomic, assign) CGFloat tagSectionViewHeight;
+
 // 内容 viewArray
 @property (nonatomic, strong) NSArray *detailContentViewArray;
 
-// viewController Array
-@property (nonatomic, strong) NSMutableArray <FJSegmentdPageViewController *>*viewControllerArray;
+// 消除 子类 滚动 限制
+@property (nonatomic, assign) BOOL eliminateSubViewScrollLimit;
+
 // 代理
 @property (nonatomic, weak)  id <FJDetailContentViewDelegate> delegate;
+
+// viewController Array
+@property (nonatomic, strong) NSMutableArray <FJSegmentdPageViewController *>*viewControllerArray;
 @end
