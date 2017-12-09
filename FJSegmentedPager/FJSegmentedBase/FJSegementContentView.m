@@ -22,6 +22,12 @@ static CGFloat kFJTitleTagSectionViewHeight = 50.0f;
 
 @interface FJSegementContentView()<FJTitleTagSectionViewDelegate,FJDetailContentViewDelegate>
 
+// 标题 栏 高度
+@property (nonatomic, assign) CGFloat tagSectionViewHeight;
+
+// 消除 子类 滚动 限制
+@property (nonatomic, assign) BOOL eliminateSubViewScrollLimit;
+
 // tag sectionView
 @property (nonatomic, strong) FJSegmentedTagTitleView *tagSecionView;
 
@@ -95,7 +101,6 @@ static CGFloat kFJTitleTagSectionViewHeight = 50.0f;
 // 设置 tagSectionView 高度
 - (void)setTagSectionViewHeight:(CGFloat)tagSectionViewHeight {
     _tagSectionViewHeight = tagSectionViewHeight;
-    self.tagSecionView.tagSectionViewHeight = _tagSectionViewHeight;
     CGRect detailContentViewFrame = self.detailContentView.frame;
     detailContentViewFrame.origin.y = CGRectGetMaxY(self.tagSecionView.frame);
     detailContentViewFrame.size.height = self.frame.size.height - self.tagSectionViewHeight;
@@ -129,6 +134,9 @@ static CGFloat kFJTitleTagSectionViewHeight = 50.0f;
     _segmentViewStyle = segmentViewStyle;
     if (_segmentViewStyle) {
         _tagSecionView.segmentViewStyle = segmentViewStyle;
+        self.selectedIndex = segmentViewStyle.selectedIndex;
+        self.tagSectionViewHeight = segmentViewStyle.tagSectionViewHeight;
+        self.eliminateSubViewScrollLimit = segmentViewStyle.eliminateSubViewScrollLimit;
         NSAssert(_segmentViewStyle, @"segmentViewStyle  must be passed in before configModelArray");
     }
 }

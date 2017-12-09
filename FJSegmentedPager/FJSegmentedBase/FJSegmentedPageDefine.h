@@ -68,6 +68,8 @@ static NSString *const kFJSubScrollViewScrollToTopNoti = @"kFJSubScrollViewScrol
 
 /** 高度 **/
 
+// 标题 默认 高度
+#define kFJSegmentedTitleViewHeight     50.0f
 // 分割线 默认 高度
 #define kFJSegmentedBottomLineViewHeight    0.5
 // 指示条 默认 高度

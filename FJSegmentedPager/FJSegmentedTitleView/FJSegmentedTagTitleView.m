@@ -13,6 +13,7 @@
 
 
 @interface FJSegmentedTagTitleView()<UICollectionViewDelegate, UICollectionViewDataSource>
+
 // item size
 @property (nonatomic, assign) CGSize tagItemSize;
 // 指示器 高度
@@ -31,6 +32,9 @@
 @property (nonatomic, strong) UICollectionView *tagCollectionView;
 // 标签 flowLayout
 @property (nonatomic, strong) UICollectionViewFlowLayout *tagFlowLayout;
+
+// 标题 栏 高度
+@property (nonatomic, assign) CGFloat tagSectionViewHeight;
 
 @end
 
@@ -258,6 +262,10 @@
 - (void)setSegmentViewStyle:(FJSegmentViewStyle *)segmentViewStyle {
     _segmentViewStyle = segmentViewStyle;
     if (_segmentViewStyle) {
+        
+        self.selectedIndex = segmentViewStyle.selectedIndex;
+        self.tagSectionViewHeight = segmentViewStyle.tagSectionViewHeight;
+        
         _indicatorWidth = _segmentViewStyle.segmentedIndicatorViewWidth;
         _indicatorHeight = _segmentViewStyle.segmentedIndicatorViewHeight;
         _bottomLineView.frame = CGRectMake(0, self.frame.size.height - _segmentViewStyle.separatorLineHeight, self.frame.size.width, _segmentViewStyle.separatorLineHeight);
@@ -265,6 +273,8 @@
         _indicatorView.frame = CGRectMake([self indicatorX], self.frame.size.height - self.indicatorHeight - self.bottomLineView.frame.size.height, self.indicatorWidth, self.indicatorHeight);
         _indicatorView.backgroundColor = _segmentViewStyle.indicatorViewBackgroundColor;
         _tagItemSize = CGSizeMake(_segmentViewStyle.segmentedTitleViewTitleWidth, self.frame.size.height);
+        
+        
         [_tagCollectionView reloadData];
     }
 }

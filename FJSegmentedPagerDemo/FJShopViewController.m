@@ -81,8 +81,6 @@
     FJSegementContentCell *doubleDeckCell = [FJSegementContentCell cellWithTableView:tableView];
     doubleDeckCell.segmentViewStyle = [[FJSegmentViewStyle alloc] init];
     doubleDeckCell.configModelArray = self.configModelArray;
-    doubleDeckCell.tagSectionViewHeight = 50.0f;
-    doubleDeckCell.selectedIndex = 1;
     
     return doubleDeckCell;
 }

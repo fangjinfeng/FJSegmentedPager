@@ -59,19 +59,11 @@
     self.doubleDeckRollView.frame = rollViewFrame;
 }
 
-// 设置 tagSectionView 高度
-- (void)setTagSectionViewHeight:(CGFloat)tagSectionViewHeight {
-    self.doubleDeckRollView.tagSectionViewHeight = tagSectionViewHeight;
-}
 // 设置 viewController 参数
 - (void)setBaseViewControllerParam:(id)baseViewControllerParam {
     self.doubleDeckRollView.baseViewControllerParam = baseViewControllerParam;
 }
 
-// 选择 第几个 tag
-- (void)setSelectedIndex:(NSInteger)selectedIndex {
-    self.doubleDeckRollView.selectedIndex = selectedIndex;
-}
 
 // 改变 doubleDeckRollView 高度
 - (void)changeDoubleDeckRollViewHeight:(CGFloat)height {

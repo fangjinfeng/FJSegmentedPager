@@ -24,8 +24,6 @@
 @property (nonatomic, strong) NSArray *tagTitleArray;
 // 选中 索引
 @property (nonatomic, assign) NSUInteger selectedIndex;
-// 标题 栏 高度
-@property (nonatomic, assign) CGFloat tagSectionViewHeight;
 // 属性 配置
 @property (nonatomic, strong) FJSegmentViewStyle *segmentViewStyle;
 // 代理

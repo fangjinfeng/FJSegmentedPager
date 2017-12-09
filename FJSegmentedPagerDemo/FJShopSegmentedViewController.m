@@ -60,9 +60,8 @@
     if (!_doubleDeckRollView) {
         _doubleDeckRollView = [[FJSegementContentView alloc] initWithFrame:CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, self.view.frame.size.height)];
         _doubleDeckRollView.segmentViewStyle = [[FJSegmentViewStyle alloc] init];
+        _doubleDeckRollView.segmentViewStyle.eliminateSubViewScrollLimit = YES;
         _doubleDeckRollView.configModelArray = [self configViewControllerModelArray];
-        _doubleDeckRollView.tagSectionViewHeight = 50.0f;
-        _doubleDeckRollView.eliminateSubViewScrollLimit = YES;
     }
     return _doubleDeckRollView;
 }

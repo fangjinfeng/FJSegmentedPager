@@ -15,10 +15,11 @@
 
 - (instancetype)init {
     if (self = [super init]) {
-        
+        _selectedIndex = 0;
         _itemTitleFont = kFJSegmentedTitleFontSize;
         _itemTitleSelectedFont = kFJSegmentedTitleFontSize;
-       
+        _eliminateSubViewScrollLimit = NO;
+        _tagSectionViewHeight = kFJSegmentedTitleViewHeight;
         _segmentToolbackgroundColor = kFJSegmentToolbackgroundColor;
         _itemTitleColorStateNormal = kFJSegmentedTitleNormalColor;
         _itemTitleColorStateSelected = kFJSegmentedTitleSelectedColor;

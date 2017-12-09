@@ -15,12 +15,8 @@
 + (instancetype)cellWithTableView:(UITableView *)tableView;
 // 滚动 view frame
 @property (nonatomic, assign) CGRect rollViewFrame;
-// 标题栏 高度
-@property (nonatomic, assign) CGFloat tagSectionViewHeight;
 // 配置 数据 模型
 @property (nonatomic, strong) NSArray *configModelArray;
-// 选择 第几个 tag
-@property (nonatomic, assign) NSInteger selectedIndex;
 // 属性 配置
 @property (nonatomic, strong) FJSegmentViewStyle *segmentViewStyle;
 // baseViewControllerParam 参数
