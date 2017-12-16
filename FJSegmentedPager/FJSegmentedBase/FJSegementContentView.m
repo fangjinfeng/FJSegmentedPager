@@ -105,7 +105,6 @@ static CGFloat kFJTitleTagSectionViewHeight = 50.0f;
     detailContentViewFrame.origin.y = CGRectGetMaxY(self.tagSecionView.frame);
     detailContentViewFrame.size.height = self.frame.size.height - self.tagSectionViewHeight;
     self.detailContentView.frame = detailContentViewFrame;
-    self.detailContentView.tagSectionViewHeight = _tagSectionViewHeight;
 }
 
 // 设置 viewController 参数
@@ -114,10 +113,6 @@ static CGFloat kFJTitleTagSectionViewHeight = 50.0f;
     self.detailContentView.baseViewControllerParam = baseViewControllerParam;
 }
 
-// 消除 滚动 限制
-- (void)setEliminateSubViewScrollLimit:(BOOL)eliminateSubViewScrollLimit {
-    self.detailContentView.eliminateSubViewScrollLimit = eliminateSubViewScrollLimit;
-}
 
 // 设置 选中 索引
 - (void)setSelectedIndex:(NSInteger)selectedIndex {
@@ -134,6 +129,7 @@ static CGFloat kFJTitleTagSectionViewHeight = 50.0f;
     _segmentViewStyle = segmentViewStyle;
     if (_segmentViewStyle) {
         _tagSecionView.segmentViewStyle = segmentViewStyle;
+        _detailContentView.segmentViewStyle = segmentViewStyle;
         self.selectedIndex = segmentViewStyle.selectedIndex;
         self.tagSectionViewHeight = segmentViewStyle.tagSectionViewHeight;
         self.eliminateSubViewScrollLimit = segmentViewStyle.eliminateSubViewScrollLimit;
@@ -157,7 +153,6 @@ static CGFloat kFJTitleTagSectionViewHeight = 50.0f;
     if (!_detailContentView) {
         _detailContentView = [[FJSegmentedPageContentView alloc] initWithFrame:CGRectMake(0, CGRectGetMaxY(self.tagSecionView.frame), self.frame.size.width, self.frame.size.height - self.tagSectionViewHeight)];
         _detailContentView.delegate = self;
-        _detailContentView.tagSectionViewHeight = self.tagSectionViewHeight;
     }
     return _detailContentView;
 }

@@ -81,7 +81,6 @@
     FJSegementContentCell *doubleDeckCell = [FJSegementContentCell cellWithTableView:tableView];
     doubleDeckCell.segmentViewStyle = [[FJSegmentViewStyle alloc] init];
     doubleDeckCell.configModelArray = self.configModelArray;
-    
     return doubleDeckCell;
 }
 

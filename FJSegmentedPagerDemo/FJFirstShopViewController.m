@@ -15,14 +15,14 @@
 
 @implementation FJFirstShopViewController
 
+#pragma mark --------------- Public Methods
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.title = @"店铺列表";
     
 }
 
-#pragma mark --- system delegate
+#pragma mark --------------- System Delegate
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
     return 10;

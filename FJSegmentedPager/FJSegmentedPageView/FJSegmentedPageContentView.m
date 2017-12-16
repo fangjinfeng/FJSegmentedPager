@@ -6,6 +6,7 @@
 //  Copyright © 2017年 fjf. All rights reserved.
 //
 
+#import "FJSegmentViewStyle.h"
 #import "FJSegmentedPageDefine.h"
 #import "FJSegmentedPageContentView.h"
 #import "FJPageCollectionViewCell.h"
@@ -13,6 +14,12 @@
 
 
 @interface FJSegmentedPageContentView()<UICollectionViewDataSource, UICollectionViewDelegate>
+
+
+// 标题 栏 高度
+@property (nonatomic, assign) CGFloat tagSectionViewHeight;
+// 消除 子类 滚动 限制
+@property (nonatomic, assign) BOOL eliminateSubViewScrollLimit;
 // page collection
 @property (nonatomic, strong) UICollectionView *pageCollectionView;
 // page flowLayout
@@ -45,6 +52,16 @@
         }];
     }
 }
+
+// 设置 参数
+- (void)setSegmentPageViewControllerParma {
+    [self.viewControllerArray enumerateObjectsUsingBlock:^(FJSegmentdPageViewController *obj, NSUInteger idx, BOOL * _Nonnull stop) {
+        obj.eliminateSubViewScrollLimit = _eliminateSubViewScrollLimit;
+        obj.baseViewControllerParam = _baseViewControllerParam;
+        obj.tagSectionViewHeight = _tagSectionViewHeight;
+    }];
+}
+
 
 #pragma mark --- system delegate
 
@@ -108,30 +125,25 @@
     if (_detailContentViewArray.count > 0) {
         [self generateViewControllerArrayWithViewArray:_detailContentViewArray];
         [self.pageCollectionView reloadData];
+        [self setSegmentPageViewControllerParma];
     }
-}
-// 设置 tagSectionViewHeight
-- (void)setTagSectionViewHeight:(CGFloat)tagSectionViewHeight {
-    _tagSectionViewHeight = tagSectionViewHeight;
-    [self.viewControllerArray enumerateObjectsUsingBlock:^(FJSegmentdPageViewController *obj, NSUInteger idx, BOOL * _Nonnull stop) {
-        obj.tagSectionViewHeight = _tagSectionViewHeight;
-    }];
 }
 
 // 设置 viewController 参数
 - (void)setBaseViewControllerParam:(id)baseViewControllerParam {
     _baseViewControllerParam = baseViewControllerParam;
-    [self.viewControllerArray enumerateObjectsUsingBlock:^(FJSegmentdPageViewController *obj, NSUInteger idx, BOOL * _Nonnull stop) {
-        obj.baseViewControllerParam = baseViewControllerParam;
-    }];
+     [self setSegmentPageViewControllerParma];
 }
 
-// 是否 消除 子view 滚动限制
-- (void)setEliminateSubViewScrollLimit:(BOOL)eliminateSubViewScrollLimit {
-    _eliminateSubViewScrollLimit = eliminateSubViewScrollLimit;
-    [self.viewControllerArray enumerateObjectsUsingBlock:^(FJSegmentdPageViewController *obj, NSUInteger idx, BOOL * _Nonnull stop) {
-        obj.eliminateSubViewScrollLimit = eliminateSubViewScrollLimit;
-    }];
+
+- (void)setSegmentViewStyle:(FJSegmentViewStyle *)segmentViewStyle {
+    _segmentViewStyle = segmentViewStyle;
+    if (segmentViewStyle) {
+        self.selectedIndex = segmentViewStyle.selectedIndex;
+        self.eliminateSubViewScrollLimit = segmentViewStyle.eliminateSubViewScrollLimit;
+        self.tagSectionViewHeight = segmentViewStyle.tagSectionViewHeight;
+        [self setSegmentPageViewControllerParma];
+    }
 }
 #pragma mark --- getter method
 

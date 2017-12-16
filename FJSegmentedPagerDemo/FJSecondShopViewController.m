@@ -15,13 +15,14 @@
 
 @implementation FJSecondShopViewController
 
+#pragma mark --------------- Life Circle
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
 }
 
  
-#pragma mark --- system delegate
+#pragma mark --------------- System Delegate
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
     return 10;
