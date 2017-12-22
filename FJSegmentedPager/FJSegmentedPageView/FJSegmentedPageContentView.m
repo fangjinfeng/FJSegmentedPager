@@ -15,7 +15,6 @@
 
 @interface FJSegmentedPageContentView()<UICollectionViewDataSource, UICollectionViewDelegate>
 
-
 // 标题 栏 高度
 @property (nonatomic, assign) CGFloat tagSectionViewHeight;
 // 消除 子类 滚动 限制
@@ -77,7 +76,7 @@
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
     //页面
-    FJPageCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:kFJPageCollectionViewCellId forIndexPath:indexPath];
+    FJPageCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:NSStringFromClass([FJPageCollectionViewCell class]) forIndexPath:indexPath];
     FJSegmentdPageViewController *baseViewController = self.viewControllerArray[indexPath.row];
     [cell configCellWithViewController:baseViewController];
     return cell;
@@ -172,7 +171,7 @@
 - (UICollectionView *)pageCollectionView {
     if (!_pageCollectionView) {
        _pageCollectionView = [[UICollectionView alloc]initWithFrame:self.bounds collectionViewLayout:self.pageFlowLayout];
-        [_pageCollectionView registerClass:[FJPageCollectionViewCell class] forCellWithReuseIdentifier:kFJPageCollectionViewCellId];
+        [_pageCollectionView registerClass:[FJPageCollectionViewCell class] forCellWithReuseIdentifier:NSStringFromClass([FJPageCollectionViewCell class])];
         _pageCollectionView.showsHorizontalScrollIndicator = NO;
         _pageCollectionView.dataSource = self;
         _pageCollectionView.delegate = self;

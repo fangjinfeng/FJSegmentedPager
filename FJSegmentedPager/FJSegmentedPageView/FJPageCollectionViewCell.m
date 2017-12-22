@@ -9,8 +9,6 @@
 
 #import "FJPageCollectionViewCell.h"
 
-// id 标识符
-NSString * const kFJPageCollectionViewCellId = @"kFJPageCollectionViewCellId";
 
 @implementation FJPageCollectionViewCell
 // 依据controller 配置 cell

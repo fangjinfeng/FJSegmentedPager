@@ -11,8 +11,6 @@
 #import "FJSegmentedPageDefine.h"
 #import "FJSegmentedTagTitleCell.h"
 
-// id 标识符
-NSString * const kFJTagCollectionViewCellId = @"kFJTagCollectionViewCellId";
 
 @interface FJSegmentedTagTitleCell()
 // 标题 正常 字体

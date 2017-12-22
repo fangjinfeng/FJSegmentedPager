@@ -9,8 +9,6 @@
 #import <UIKit/UIKit.h>
 
 @class FJSegmentViewStyle;
-// cell id
-UIKIT_EXTERN NSString * const kFJTagCollectionViewCellId;
 
 @interface FJSegmentedTagTitleCell : UICollectionViewCell
 // 标题 内容

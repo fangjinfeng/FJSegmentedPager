@@ -32,7 +32,6 @@
 // 属性 配置
 @property (nonatomic, strong) FJSegmentViewStyle *segmentViewStyle;
 
-
 // 代理
 @property (nonatomic, weak)  id <FJDetailContentViewDelegate> delegate;
 

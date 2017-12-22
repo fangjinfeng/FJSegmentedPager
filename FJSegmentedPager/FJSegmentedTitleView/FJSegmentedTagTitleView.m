@@ -154,7 +154,7 @@
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
-    FJSegmentedTagTitleCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:kFJTagCollectionViewCellId forIndexPath:indexPath];
+    FJSegmentedTagTitleCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:NSStringFromClass([FJSegmentedTagTitleCell class]) forIndexPath:indexPath];
     cell.titleStr = self.tagTitleArray[indexPath.item];
     cell.segmentViewStyle = self.segmentViewStyle;
     [cell setSelectedStatus:(self.selectedIndex == indexPath.item)?YES:NO];
@@ -322,7 +322,7 @@
 - (UICollectionView *)tagCollectionView {
     if (!_tagCollectionView) {
         _tagCollectionView = [[UICollectionView alloc]initWithFrame:CGRectMake(0, 0, self.frame.size.width, self.frame.size.height) collectionViewLayout:self.tagFlowLayout];
-        [_tagCollectionView registerClass:[FJSegmentedTagTitleCell class] forCellWithReuseIdentifier:kFJTagCollectionViewCellId];
+        [_tagCollectionView registerClass:[FJSegmentedTagTitleCell class] forCellWithReuseIdentifier:NSStringFromClass([FJSegmentedTagTitleCell class])];
         _tagCollectionView.dataSource = self;
         _tagCollectionView.delegate = self;
         _tagCollectionView.pagingEnabled = YES;

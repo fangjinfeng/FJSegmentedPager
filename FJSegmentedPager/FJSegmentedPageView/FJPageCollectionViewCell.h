@@ -7,8 +7,6 @@
 //
 
 #import <UIKit/UIKit.h>
-// cell Id
-UIKIT_EXTERN NSString * const kFJPageCollectionViewCellId;
 
 @interface FJPageCollectionViewCell : UICollectionViewCell
 // 依据controller 配置 cell
