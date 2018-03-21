@@ -34,7 +34,7 @@
         _segmentedTitleViewTitleWidth = kFJSegmentedTitleViewTitleWidth;
         _segmentedTagSectionCellSpacing = kFJSegmentedTagSectionCellSpacing;
         _segmentedTagSectionHorizontalEdgeSpacing = kFJSegmentedTagSectionHorizontalEdgeSpacing;
-        _segmentIndicatorWidthShowType = FJSegmentIndicatorWidthShowTypeAdaptionFixedWidth;
+        _segmentIndicatorWidthShowType = FJSegmentIndicatorWidthShowTypeAdaption;
     }
     return self;
 }

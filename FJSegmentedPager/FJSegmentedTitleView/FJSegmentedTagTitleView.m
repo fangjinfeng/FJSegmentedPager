@@ -25,12 +25,14 @@
 @property (nonatomic, assign) BOOL isBeyondLimitWidth;
 // 标题 栏 高度
 @property (nonatomic, assign) CGFloat tagSectionViewHeight;
-// 标题 cell 数组
-@property (nonatomic, strong) NSMutableArray *titleCellMarray;
-// 标题 cell frame 数组
-@property (nonatomic, strong) NSMutableArray *titleCellFrameMarray;
 // 标题栏 titleScrollView
 @property (nonatomic, strong) UIScrollView *titleScrollView;
+// 标题 cell 数组
+@property (nonatomic, strong) NSMutableArray <NSNumber *>*titleWidthMarray;
+// 标题 cell frame 数组
+@property (nonatomic, strong) NSMutableArray <NSString *>*titleCellFrameMarray;
+// 标题 cell 数组
+@property (nonatomic, strong) NSMutableArray <FJSegmentedTagTitleCell *>*titleCellMarray;
 @end
 
 @implementation FJSegmentedTagTitleView
@@ -155,8 +157,9 @@
     [self.titleCellFrameMarray removeAllObjects];
     if (tagTitleArray.count) {
         // 如果 超过 屏幕
+        
+        __block  CGFloat tmpOffsetX = _segmentViewStyle.segmentedTagSectionHorizontalEdgeSpacing;
         if (self.isBeyondLimitWidth) {
-            __block  CGFloat tmpOffsetX = _segmentViewStyle.segmentedTagSectionHorizontalEdgeSpacing;
             [tagTitleArray enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
                 CGFloat titleViewWidth = [self titleWidthWithIndex:idx];
                 [self.titleCellFrameMarray addObject:NSStringFromCGRect(CGRectMake(tmpOffsetX, 0, titleViewWidth, self.fj_height))];
@@ -167,14 +170,24 @@
         // 不超过 屏幕
         else {
             [tagTitleArray enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
-                CGFloat titleViewWidth = self.frame.size.width / tagTitleArray.count;
-                CGFloat titleViewX = _segmentViewStyle.segmentedTagSectionHorizontalEdgeSpacing + idx * titleViewWidth;
-                [self.titleCellFrameMarray addObject:NSStringFromCGRect(CGRectMake(titleViewX, 0, titleViewWidth, self.fj_height))];
+                CGFloat titleViewWidth = [self titleWidthWithIndex:idx];
+                CGFloat totalSpacing = self.frame.size.width - [self titleTotalWidth] - 2 * _segmentViewStyle.segmentedTagSectionHorizontalEdgeSpacing;
+                CGFloat titleViewSpacing = totalSpacing / (tagTitleArray.count - 1);
+                [self.titleCellFrameMarray addObject:NSStringFromCGRect(CGRectMake(tmpOffsetX, 0, titleViewWidth, self.fj_height))];
+                tmpOffsetX += titleViewSpacing + titleViewWidth;
             }];
         }
     }
 }
 
+// 标题 总长度
+- (CGFloat)titleTotalWidth {
+    __block CGFloat tmpTitleTotalWidth = 0;
+    [self.titleWidthMarray enumerateObjectsUsingBlock:^(NSNumber * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+        tmpTitleTotalWidth += obj.floatValue;
+    }];
+    return tmpTitleTotalWidth;
+}
 // 生成 scrollView 的 子view
 - (void)generateTitleCellsWithTitleArray:(NSArray *)titleArray {
     if (titleArray.count) {
@@ -219,12 +232,15 @@
 // 是否 超过 屏幕 宽度 限制
 - (void)beyondWidthLimitWithTitleArray:(NSArray *)titleArray {
     self.isBeyondLimitWidth = NO;
-    __block CGFloat tmpWidth = _segmentViewStyle.segmentedTagSectionCellSpacing;
+    [self.titleWidthMarray removeAllObjects];
+    __block CGFloat tmpTotalWidth = _segmentViewStyle.segmentedTagSectionCellSpacing;
     [titleArray enumerateObjectsUsingBlock:^(NSString *tmpTitle, NSUInteger idx, BOOL * _Nonnull stop) {
-        tmpWidth += [self titleWidthWithIndex:idx];
+        CGFloat tmpTitleviewWidth = [self titleWidthWithIndex:idx];
+        [self.titleWidthMarray addObject:[NSNumber numberWithFloat:tmpTitleviewWidth]];
+        tmpTotalWidth += tmpTitleviewWidth;
     }];
     
-    if (tmpWidth > self.frame.size.width) {
+    if (tmpTotalWidth > self.frame.size.width) {
         self.isBeyondLimitWidth = YES;
     }
 }
@@ -304,6 +320,14 @@
 }
 
 #pragma mark --- getter method
+
+// 标题 宽度
+- (NSMutableArray <NSNumber *>*)titleWidthMarray {
+    if(!_titleWidthMarray){
+        _titleWidthMarray = [[NSMutableArray alloc] init];
+    }
+    return  _titleWidthMarray;
+}
 
 // 标题 cell 数组
 - (NSMutableArray *)titleCellMarray {
