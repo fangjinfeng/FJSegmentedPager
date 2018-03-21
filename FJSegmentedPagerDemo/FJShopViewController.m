@@ -47,7 +47,7 @@
 // 配置 课程 列表  数组
 - (void)configViewControllerModelArray {
     self.configModelArray = [NSMutableArray array];
-    [self.configModelArray addObject:[[FJConfigModel alloc] initWithTitleStr:@"店铺简介123213213213" viewControllerStr:@"FJFirstShopViewController"]];
+    [self.configModelArray addObject:[[FJConfigModel alloc] initWithTitleStr:@"店铺简介" viewControllerStr:@"FJFirstShopViewController"]];
     [self.configModelArray addObject:[[FJConfigModel alloc] initWithTitleStr:@"店铺课程" viewControllerStr:@"FJSecondShopViewController"]];
     [self.configModelArray addObject:[[FJConfigModel alloc] initWithTitleStr:@"店铺商品" viewControllerStr:@"FJFirstShopViewController"]];
     if (self.isBeyondScreenWidth) {

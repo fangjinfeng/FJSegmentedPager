@@ -79,17 +79,23 @@
     }
 }
 
+// 更新 控件 选中 状态
+- (void)updateTitleViewSelectedStatus:(NSInteger)selectedIndex {
+    
+    [_titleCellMarray enumerateObjectsUsingBlock:^(FJSegmentedTagTitleCell *titleView, NSUInteger idx, BOOL * _Nonnull stop) {
+        if (idx == selectedIndex) {
+            [titleView setSelectedStatus:YES];
+        }
+        else {
+            [titleView setSelectedStatus:NO];
+        }
+    }];
+}
+
 // 依据 索引 更新 控件 状态
 - (void)updateControlsStatusWithCurrentIndex:(NSInteger)currentIndex {
     // 更新 控件 选中 状态
-    [_titleCellMarray enumerateObjectsUsingBlock:^(FJSegmentedTagTitleCell *titleView, NSUInteger idx, BOOL * _Nonnull stop) {
-        if (idx == currentIndex) {
-             [titleView setSelectedStatus:YES];
-        }
-        else {
-             [titleView setSelectedStatus:NO];
-        }
-    }];
+    [self updateTitleViewSelectedStatus:currentIndex];
     
     // 更新 scrollView 位置
     if (self.titleScrollView.contentSize.width != self.titleScrollView.bounds.size.width + _segmentViewStyle.segmentedTagSectionHorizontalEdgeSpacing && self.isBeyondLimitWidth) {// 需要滚动
@@ -262,7 +268,7 @@
     
     [self setDidSelectItemDelegateWay];
     
-    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.025 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.25 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
         [self updateControlsStatusWithCurrentIndex:_selectedIndex];
     });
     
