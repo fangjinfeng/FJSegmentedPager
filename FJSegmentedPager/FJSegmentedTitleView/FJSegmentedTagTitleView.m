@@ -68,8 +68,19 @@
     
     // 宽度 自适应
     if (_segmentViewStyle.segmentIndicatorWidthShowType == FJSegmentIndicatorWidthShowTypeAdaption) {
-        self.indicatorView.fj_x = oldTitleView.fj_x + xDistance * progress;
-        self.indicatorView.fj_width = oldTitleView.fj_width + wDistance * progress;
+        if (self.isBeyondLimitWidth) {
+            self.indicatorView.fj_x = oldTitleView.fj_x + xDistance * progress;
+            self.indicatorView.fj_width = oldTitleView.fj_width + wDistance * progress;
+        }
+        else {
+            CGFloat currentTitleWidth = [self titleWidthWithIndex:currentIndex];
+            CGFloat oldTitleWidth = [self titleWidthWithIndex:previousIndex];
+            wDistance = currentTitleWidth - oldTitleWidth;
+            CGFloat indicatorViewX = oldTitleView.fj_x + (oldTitleView.fj_width - oldTitleWidth) / 2.0f;
+            self.indicatorView.fj_x = indicatorViewX + xDistance * progress;
+            self.indicatorView.fj_width = oldTitleWidth + wDistance * progress;
+            
+        }
     }
     // 固定 宽度
     else if(_segmentViewStyle.segmentIndicatorWidthShowType == FJSegmentIndicatorWidthShowTypeAdaptionFixedWidth) {
@@ -126,8 +137,16 @@
         
         // 宽度 自适应
         if (_segmentViewStyle.segmentIndicatorWidthShowType == FJSegmentIndicatorWidthShowTypeAdaption) {
-            self.indicatorView.fj_x = currentTitleView.fj_x;
-            self.indicatorView.fj_width = currentTitleView.fj_width;
+            if (self.isBeyondLimitWidth) {
+                self.indicatorView.fj_x = currentTitleView.fj_x;
+                self.indicatorView.fj_width = currentTitleView.fj_width;
+            }
+            else {
+                CGFloat currentTitleWidth = [self titleWidthWithIndex:currentIndex];
+                CGFloat indicatorViewX = currentTitleView.fj_x + (currentTitleView.fj_width - currentTitleWidth) / 2.0f;
+                self.indicatorView.fj_x = indicatorViewX;
+                self.indicatorView.fj_width = currentTitleWidth;
+            }
         }
         // 固定 宽度
         else if(_segmentViewStyle.segmentIndicatorWidthShowType == FJSegmentIndicatorWidthShowTypeAdaptionFixedWidth) {
@@ -163,8 +182,9 @@
     if (tagTitleArray.count) {
         // 如果 超过 屏幕
         
-        __block  CGFloat tmpOffsetX = _segmentViewStyle.segmentedTagSectionHorizontalEdgeSpacing;
+       
         if (self.isBeyondLimitWidth) {
+             __block  CGFloat tmpOffsetX = _segmentViewStyle.segmentedTagSectionHorizontalEdgeSpacing;
             [tagTitleArray enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
                 CGFloat titleViewWidth = [self titleWidthWithIndex:idx];
                 [self.titleCellFrameMarray addObject:NSStringFromCGRect(CGRectMake(tmpOffsetX, 0, titleViewWidth, self.fj_height))];
@@ -175,11 +195,8 @@
         // 不超过 屏幕
         else {
             [tagTitleArray enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
-                CGFloat titleViewWidth = [self titleWidthWithIndex:idx];
-                CGFloat totalSpacing = self.frame.size.width - [self titleTotalWidth] - 2 * _segmentViewStyle.segmentedTagSectionHorizontalEdgeSpacing;
-                CGFloat titleViewSpacing = totalSpacing / (tagTitleArray.count - 1);
-                [self.titleCellFrameMarray addObject:NSStringFromCGRect(CGRectMake(tmpOffsetX, 0, titleViewWidth, self.fj_height))];
-                tmpOffsetX += titleViewSpacing + titleViewWidth;
+                CGFloat titleViewWidth = self.frame.size.width / self.tagTitleArray.count;;
+                [self.titleCellFrameMarray addObject:NSStringFromCGRect(CGRectMake(idx * titleViewWidth, 0, titleViewWidth, self.fj_height))];
             }];
         }
     }
