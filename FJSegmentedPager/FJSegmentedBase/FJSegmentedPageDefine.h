@@ -11,6 +11,7 @@
 
 #import "FJConfigModel.h"
 #import "FJBaseTableView.h"
+#import "UIView+FJFrame.h"
 #import "FJSegementContentView.h"
 
 // go top tip
@@ -75,7 +76,7 @@ static NSString *const kFJSubScrollViewScrollToTopNoti = @"kFJSubScrollViewScrol
 // 指示条 默认 高度
 #define kFJSegmentedIndicatorViewHeight     2.0
 // 指示条 默认 宽度
-#define kFJSegmentedIndicatorViewWidth      56.0f
+#define kFJSegmentedIndicatorViewWidth      20.0f
 // 指示条 默认 扩展宽度
 #define kFJSegmentedIndicatorViewExtendWidth  6.0f
 // 标题 默认 宽度

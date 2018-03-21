@@ -9,79 +9,209 @@
 #import "FJSegmentViewStyle.h"
 #import "FJSegmentedTagTitleView.h"
 #import "FJSegmentedPageDefine.h"
+// UIView
 #import "FJSegmentedTagTitleCell.h"
+#import "TMMuiLazyScrollView.h"
 
 
-@interface FJSegmentedTagTitleView()<UICollectionViewDelegate, UICollectionViewDataSource>
-
-// item size
-@property (nonatomic, assign) CGSize tagItemSize;
-// 指示器 高度
-@property (nonatomic, assign) CGFloat indicatorHeight;
-// 指示器 宽度
-@property (nonatomic, assign) CGFloat indicatorWidth;
+@interface FJSegmentedTagTitleView() <UIScrollViewDelegate>
 // 指示器 indicator
 @property (nonatomic, strong) UIView *indicatorView;
 // 分割 view
 @property (nonatomic, strong) UIView *bottomLineView;
-// 先前 选中 索引
-@property (nonatomic, assign) NSUInteger previousIndex;
+// 先前 索引
+@property (nonatomic, assign) NSUInteger previousIndex;;
 // 是否 超过 宽度 限制
 @property (nonatomic, assign) BOOL isBeyondLimitWidth;
-// 标签 collectionView
-@property (nonatomic, strong) UICollectionView *tagCollectionView;
-// 标签 flowLayout
-@property (nonatomic, strong) UICollectionViewFlowLayout *tagFlowLayout;
-
 // 标题 栏 高度
 @property (nonatomic, assign) CGFloat tagSectionViewHeight;
-
+// 标题 cell 数组
+@property (nonatomic, strong) NSMutableArray *titleCellMarray;
+// 标题 cell frame 数组
+@property (nonatomic, strong) NSMutableArray *titleCellFrameMarray;
+// 标题栏 titleScrollView
+@property (nonatomic, strong) UIScrollView *titleScrollView;
 @end
 
 @implementation FJSegmentedTagTitleView
 
-#pragma mark --- init method
+#pragma mark --------------- Life Circle
 - (instancetype)initWithFrame:(CGRect)frame {
     if (self = [super initWithFrame:frame]) {
-        [self setupDefaultValuse];
         [self setupControls];
     }
     return self;
 }
 
-#pragma mark --- private method
+
+
+#pragma mark --------------- Public Methods
+
+// 依据 参数 更新 控件
+- (void)updateControlsWithPreviousIndex:(NSInteger)previousIndex currentIndex:(NSInteger)currentIndex progress:(CGFloat)progress {
+    if (previousIndex < 0 ||
+        previousIndex >= self.tagTitleArray.count ||
+        currentIndex < 0 ||
+        currentIndex >= self.tagTitleArray.count
+        ) {
+        return;
+    }
+    _previousIndex = currentIndex;
+    
+    FJSegmentedTagTitleCell *oldTitleView = (FJSegmentedTagTitleCell *)self.titleCellMarray[previousIndex];
+    FJSegmentedTagTitleCell *currentTitleView = (FJSegmentedTagTitleCell *)self.titleCellMarray[currentIndex];
+
+
+    CGFloat xDistance = currentTitleView.fj_x - oldTitleView.fj_x;
+    CGFloat wDistance = currentTitleView.fj_width - oldTitleView.fj_width;
+    
+    // 宽度 自适应
+    if (_segmentViewStyle.segmentIndicatorWidthShowType == FJSegmentIndicatorWidthShowTypeAdaption) {
+        self.indicatorView.fj_x = oldTitleView.fj_x + xDistance * progress;
+        self.indicatorView.fj_width = oldTitleView.fj_width + wDistance * progress;
+    }
+    // 固定 宽度
+    else if(_segmentViewStyle.segmentIndicatorWidthShowType == FJSegmentIndicatorWidthShowTypeAdaptionFixedWidth) {
+        CGFloat oldTitleViewX = oldTitleView.fj_x + (oldTitleView.fj_width - _segmentViewStyle.segmentedIndicatorViewWidth)/2.0;
+        self.indicatorView.fj_x = oldTitleViewX + xDistance * progress;
+        self.indicatorView.fj_width = _segmentViewStyle.segmentedIndicatorViewWidth;
+    }
+}
+
+// 依据 索引 更新 控件 状态
+- (void)updateControlsStatusWithCurrentIndex:(NSInteger)currentIndex {
+    // 更新 控件 选中 状态
+    [_titleCellMarray enumerateObjectsUsingBlock:^(FJSegmentedTagTitleCell *titleView, NSUInteger idx, BOOL * _Nonnull stop) {
+        if (idx == currentIndex) {
+             [titleView setSelectedStatus:YES];
+        }
+        else {
+             [titleView setSelectedStatus:NO];
+        }
+    }];
+    
+    // 更新 scrollView 位置
+    if (self.titleScrollView.contentSize.width != self.titleScrollView.bounds.size.width + _segmentViewStyle.segmentedTagSectionHorizontalEdgeSpacing && self.isBeyondLimitWidth) {// 需要滚动
+
+        FJSegmentedTagTitleCell *currentTitleView = (FJSegmentedTagTitleCell *)_titleCellMarray[currentIndex];
+        
+        CGFloat offSetx = currentTitleView.center.x - self.fj_width * 0.5;
+        if (offSetx < 0) {
+            offSetx = 0;
+            
+        }
+        CGFloat maxOffSetX = self.titleScrollView.contentSize.width - self.fj_width;
+        
+        if (maxOffSetX < 0) {
+            maxOffSetX = 0;
+        }
+        
+        if (offSetx > maxOffSetX) {
+            offSetx = maxOffSetX;
+        }
+        
+        [self.titleScrollView setContentOffset:CGPointMake(offSetx, 0.0) animated:YES];
+    }
+    
+    // 更新 indicatorView 位置
+    if (self.titleCellMarray.count) {
+        FJSegmentedTagTitleCell *currentTitleView = (FJSegmentedTagTitleCell *)self.titleCellMarray[currentIndex];
+        
+        // 宽度 自适应
+        if (_segmentViewStyle.segmentIndicatorWidthShowType == FJSegmentIndicatorWidthShowTypeAdaption) {
+            self.indicatorView.fj_x = currentTitleView.fj_x;
+            self.indicatorView.fj_width = currentTitleView.fj_width;
+        }
+        // 固定 宽度
+        else if(_segmentViewStyle.segmentIndicatorWidthShowType == FJSegmentIndicatorWidthShowTypeAdaptionFixedWidth) {
+            self.indicatorView.fj_x = (currentTitleView.fj_width - _segmentViewStyle.segmentedIndicatorViewWidth)/2.0f + currentTitleView.fj_x;
+            self.indicatorView.fj_width = _segmentViewStyle.segmentedIndicatorViewWidth;
+        }
+    }
+}
+
+
+// 标题 宽度
+- (CGFloat)titleWidthWithIndex:(NSUInteger)index {
+    NSString *tagTitle = [self.tagTitleArray objectAtIndex:index];
+    CGFloat titleWidth = [tagTitle boundingRectWithSize:CGSizeMake(MAXFLOAT, MAXFLOAT) options:NSStringDrawingUsesLineFragmentOrigin attributes:@{NSFontAttributeName:_segmentViewStyle.itemTitleFont} context:nil].size.width;
+    return titleWidth + _segmentViewStyle.segmentedIndicatorViewExtendWidth;
+}
+
+
+#pragma mark --------------- Private Methods
 // 设置 子控件
 - (void)setupControls {
-    [self addSubview:self.indicatorView];
-    [self addSubview:self.tagCollectionView];
+    
+    [self addSubview:self.titleScrollView];
     [self addSubview:self.bottomLineView];
+    [self.titleScrollView addSubview:self.indicatorView];
 }
 
-// 设置 默认值
-- (void)setupDefaultValuse {
-    
-    self.indicatorWidth = _segmentViewStyle.segmentedIndicatorViewWidth;
-    self.indicatorHeight = _segmentViewStyle.segmentedIndicatorViewHeight;
-    self.tagItemSize = CGSizeMake(_segmentViewStyle.segmentedTitleViewTitleWidth, self.frame.size.height);
+
+
+// 生成 titleCellFrameMarry
+- (void)generateTitleCellFrameMarray:(NSArray *)tagTitleArray {
+    [self.titleCellFrameMarray removeAllObjects];
+    if (tagTitleArray.count) {
+        // 如果 超过 屏幕
+        if (self.isBeyondLimitWidth) {
+            __block  CGFloat tmpOffsetX = _segmentViewStyle.segmentedTagSectionHorizontalEdgeSpacing;
+            [tagTitleArray enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+                CGFloat titleViewWidth = [self titleWidthWithIndex:idx];
+                [self.titleCellFrameMarray addObject:NSStringFromCGRect(CGRectMake(tmpOffsetX, 0, titleViewWidth, self.fj_height))];
+                tmpOffsetX += _segmentViewStyle.segmentedTagSectionCellSpacing + titleViewWidth;
+            }];
+            
+        }
+        // 不超过 屏幕
+        else {
+            [tagTitleArray enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+                CGFloat titleViewWidth = self.frame.size.width / tagTitleArray.count;
+                CGFloat titleViewX = _segmentViewStyle.segmentedTagSectionHorizontalEdgeSpacing + idx * titleViewWidth;
+                [self.titleCellFrameMarray addObject:NSStringFromCGRect(CGRectMake(titleViewX, 0, titleViewWidth, self.fj_height))];
+            }];
+        }
+    }
 }
 
-// 更新 tagItemSize
-- (void)updateItemSizeWithTitleArray:(NSArray *)titleArray {
+// 生成 scrollView 的 子view
+- (void)generateTitleCellsWithTitleArray:(NSArray *)titleArray {
+    if (titleArray.count) {
+        [self.titleScrollView.subviews enumerateObjectsUsingBlock:^(__kindof UIView * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+            if ([obj isKindOfClass:[FJSegmentedTagTitleCell class]]) {
+                [obj removeFromSuperview];
+            }
+        }];
+        
+        [self.titleCellMarray removeAllObjects];
+        
+        [titleArray enumerateObjectsUsingBlock:^(NSString *titleString, NSUInteger idx, BOOL * _Nonnull stop) {
+            CGRect tmpFrame = CGRectFromString(self.titleCellFrameMarray[idx]);
+            FJSegmentedTagTitleCell *cell = [[FJSegmentedTagTitleCell alloc] init];
+            cell.frame = tmpFrame;
+            cell.segmentViewStyle = self.segmentViewStyle;
+            cell.titleStr = titleString;
+            cell.tag = idx;
+            UITapGestureRecognizer *tapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(titleViewClicked:)];
+            [cell addGestureRecognizer:tapGesture];
+            
+            [self.titleCellMarray addObject:cell];
+            [self.titleScrollView addSubview:cell];
+            
+            if (idx == (self.titleCellFrameMarray.count - 1)) {
+                self.titleScrollView.contentSize = CGSizeMake(CGRectGetMaxX(tmpFrame) + _segmentViewStyle.segmentedTagSectionHorizontalEdgeSpacing, 0.0);
+            }
+        }];
+
+    }
+}
+
+// 更新 控件
+- (void)updateControlsLayout {
     
-    if (self.isBeyondLimitWidth == NO) {
-        self.tagItemSize = CGSizeMake(self.frame.size.width / titleArray.count, self.frame.size.height);
-    }
-    else {
-        self.tagFlowLayout.minimumLineSpacing = _segmentViewStyle.segmentedTagSectionCellSpacing; //最小线间距
-        self.tagFlowLayout.minimumInteritemSpacing = _segmentViewStyle.segmentedTagSectionCellSpacing;
-    }
-    self.tagFlowLayout.itemSize = self.tagItemSize;
-    CGRect indicatorViewFrame = self.indicatorView.frame;
-    indicatorViewFrame.origin.x = [self indicatorX];
-    self.indicatorView.frame = indicatorViewFrame;
-    self.selectedIndex  = _selectedIndex;
     self.indicatorView.hidden = NO;
-    [self.tagCollectionView reloadData];
+    [self updateControlsStatusWithCurrentIndex:_selectedIndex];
 }
 
 
@@ -100,136 +230,37 @@
 }
 
 
-#pragma mark --- public method
-
-
-- (void)updateIndicatorWidthWithIndex:(NSInteger)currentIndex {
-    
-    FJSegmentedTagTitleCell *previousCell = (FJSegmentedTagTitleCell *)[self.tagCollectionView cellForItemAtIndexPath:[NSIndexPath indexPathForRow:self.previousIndex inSection:0]];
-    [previousCell setSelectedStatus:NO];
-    
-    FJSegmentedTagTitleCell *cell = (FJSegmentedTagTitleCell *)[self.tagCollectionView cellForItemAtIndexPath:[NSIndexPath indexPathForRow:currentIndex inSection:0]];
-    [cell setSelectedStatus:YES];
-    
-    CGRect convertRect = [self.tagCollectionView convertRect:cell.frame toView:self];
-    
-    CGFloat indicatorViewX = CGRectGetMinX(convertRect);
-    if (self.isBeyondLimitWidth == NO) {
-        CGFloat cellWidth = self.frame.size.width / self.tagTitleArray.count;
-        indicatorViewX = cellWidth * currentIndex + cellWidth/2.0 - self.indicatorView.frame.size.width/2.0;
-    }
-    
-    [UIView animateWithDuration:0.2 animations:^{
-         [self.tagCollectionView selectItemAtIndexPath:[NSIndexPath indexPathForItem:currentIndex inSection:0] animated:NO scrollPosition:UICollectionViewScrollPositionCenteredHorizontally];
-        
-        self.indicatorView.frame = CGRectMake(indicatorViewX, self.indicatorView.frame.origin.y, [self titleWidthWithIndex:currentIndex], self.indicatorView.frame.size.height);
-        
-    }];
-}
-
-
-
-// 标题 宽度
-- (CGFloat)titleWidthWithIndex:(NSUInteger)index {
-    
-    NSString *tagTitle = [self.tagTitleArray objectAtIndex:index];
-    
-    CGFloat titleWidth = [tagTitle boundingRectWithSize:CGSizeMake(MAXFLOAT, MAXFLOAT) options:NSStringDrawingUsesLineFragmentOrigin attributes:@{NSFontAttributeName:_segmentViewStyle.itemTitleFont} context:nil].size.width;
-    return titleWidth + _segmentViewStyle.segmentedIndicatorViewExtendWidth;
-}
-
-
-
-
-#pragma mark --- system delegate
-
-/***************************** UICollectionViewDataSource *************************/
-
-- (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView {
-    return 1;
-}
-
-- (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
-    return self.tagTitleArray.count;
-}
-
-- (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
-    FJSegmentedTagTitleCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:NSStringFromClass([FJSegmentedTagTitleCell class]) forIndexPath:indexPath];
-    cell.titleStr = self.tagTitleArray[indexPath.item];
-    cell.segmentViewStyle = self.segmentViewStyle;
-    [cell setSelectedStatus:(self.selectedIndex == indexPath.item)?YES:NO];
-    return cell;
-}
-
-- (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath {
-    CGSize tmpSize = CGSizeZero;
-    if (self.isBeyondLimitWidth == NO) {
-        tmpSize = CGSizeMake(self.frame.size.width / self.tagTitleArray.count, self.frame.size.height);
-    }
-    else {
-         tmpSize = CGSizeMake([self titleWidthWithIndex:indexPath.row], self.frame.size.height);
-    }
-    return tmpSize;
-}
-
-
-- (UIEdgeInsets)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout insetForSectionAtIndex:(NSInteger)section {
-    CGFloat edgeSpacing = 0;
-    if (self.isBeyondLimitWidth) {
-        edgeSpacing = _segmentViewStyle.segmentedTagSectionHorizontalEdgeSpacing;
-    }
-    return UIEdgeInsetsMake(0, edgeSpacing, 0, edgeSpacing);
-}
-
-
-
-/***************************** UICollectionViewDelegate *************************/
-
-- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
-    [collectionView deselectItemAtIndexPath:indexPath animated:NO];
-    _selectedIndex = indexPath.item;
-    [self setDidSelectItemDelegateWay];
-}
-
-
-- (void)collectionView:(UICollectionView *)collectionView willDisplayCell:(UICollectionViewCell *)cell forItemAtIndexPath:(NSIndexPath *)indexPath {
-    
-    [(FJSegmentedTagTitleCell *)cell setSelectedStatus:(self.selectedIndex == indexPath.item) ? YES:NO];
-}
-
-- (void)collectionView:(UICollectionView *)collectionView didEndDisplayingCell:(UICollectionViewCell *)cell forItemAtIndexPath:(NSIndexPath *)indexPath {
-    
-    [(FJSegmentedTagTitleCell *)cell setSelectedStatus:(self.selectedIndex == indexPath.item) ? YES:NO];
-}
-
-
-
 - (void)setDidSelectItemDelegateWay {
     if (self.delegate && [self.delegate respondsToSelector:@selector(titleSectionView:clickIndex:)]) {
         [self.delegate titleSectionView:self clickIndex:_selectedIndex];
     }
 }
 
-
-
-#pragma mark --- setter method
+#pragma mark --------------- Response Event
+// 点击 titleView
+- (void)titleViewClicked:(UITapGestureRecognizer *)tapGesture {
+    FJSegmentedTagTitleCell *currentLabel = (FJSegmentedTagTitleCell *)tapGesture.view;
+    if (!currentLabel) {
+        return;
+    }
+    _selectedIndex = currentLabel.tag;
+    
+    [self setDidSelectItemDelegateWay];
+    
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.025 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        [self updateControlsStatusWithCurrentIndex:_selectedIndex];
+    });
+    
+}
+#pragma mark --------------- Getter / Setter
 // 设置 选中 索引
 - (void)setSelectedIndex:(NSUInteger)selectedIndex {
     _previousIndex = _selectedIndex;
     _selectedIndex = selectedIndex;
 
-    if (CGSizeEqualToSize(self.tagCollectionView.contentSize, CGSizeZero)) {
-        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.01 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-            [self updateIndicatorWidthWithIndex:selectedIndex];
-        });
-    }
-    else {
-        if (self.tagCollectionView.contentSize.width > self.tagItemSize.width && _selectedIndex < self.tagTitleArray.count) {
-            [self updateIndicatorWidthWithIndex:selectedIndex];
-        }
-    }
-     [[NSNotificationCenter defaultCenter] postNotificationName:kFJScrollToSegmentedPageNoti object:[NSNumber numberWithUnsignedInteger:selectedIndex]];
+    [[NSNotificationCenter defaultCenter] postNotificationName:kFJScrollToSegmentedPageNoti object:[NSNumber numberWithUnsignedInteger:selectedIndex]];
 }
+
 
 
 // 设置 标题 数组
@@ -237,7 +268,9 @@
     _tagTitleArray = tagTitleArray;
     if (_tagTitleArray.count) {
         [self beyondWidthLimitWithTitleArray:tagTitleArray];
-        [self updateItemSizeWithTitleArray:_tagTitleArray];
+        [self generateTitleCellFrameMarray:tagTitleArray];
+        [self generateTitleCellsWithTitleArray:tagTitleArray];
+        [self updateControlsLayout];
     }
 }
 
@@ -245,17 +278,11 @@
 - (void)setTagSectionViewHeight:(CGFloat)tagSectionViewHeight {
     _tagSectionViewHeight = tagSectionViewHeight;
     
-    CGRect segmentedTitleRect = self.frame;
-    segmentedTitleRect.size.height = tagSectionViewHeight;
-    self.frame = segmentedTitleRect;
+    self.fj_height = tagSectionViewHeight;
     
-    CGRect indicatorViewFrame = self.indicatorView.frame;
-    indicatorViewFrame.origin.y = self.frame.size.height - self.indicatorHeight - self.bottomLineView.frame.size.height;
-    self.indicatorView.frame = indicatorViewFrame;
+    self.indicatorView.fj_y = self.frame.size.height - _segmentViewStyle.segmentedIndicatorViewHeight - self.bottomLineView.frame.size.height;
     
-    CGRect bottomLineViewFrame = self.bottomLineView.frame;
-    bottomLineViewFrame.origin.y = self.frame.size.height - _segmentViewStyle.separatorLineHeight;
-    self.bottomLineView.frame = bottomLineViewFrame;
+    self.bottomLineView.fj_y = self.frame.size.height - _segmentViewStyle.separatorLineHeight;;
 }
 
 // 配置 属性
@@ -266,71 +293,61 @@
         self.selectedIndex = segmentViewStyle.selectedIndex;
         self.tagSectionViewHeight = segmentViewStyle.tagSectionViewHeight;
         
-        _indicatorWidth = _segmentViewStyle.segmentedIndicatorViewWidth;
-        _indicatorHeight = _segmentViewStyle.segmentedIndicatorViewHeight;
+        CGFloat indicatorWidth = _segmentViewStyle.segmentedIndicatorViewWidth;
+        CGFloat indicatorHeight = _segmentViewStyle.segmentedIndicatorViewHeight;
         _bottomLineView.frame = CGRectMake(0, self.frame.size.height - _segmentViewStyle.separatorLineHeight, self.frame.size.width, _segmentViewStyle.separatorLineHeight);
+        
         _bottomLineView.backgroundColor = _segmentViewStyle.separatorBackgroundColor;
-        _indicatorView.frame = CGRectMake([self indicatorX], self.frame.size.height - self.indicatorHeight - self.bottomLineView.frame.size.height, self.indicatorWidth, self.indicatorHeight);
+        _indicatorView.frame = CGRectMake(_segmentViewStyle.segmentedTagSectionHorizontalEdgeSpacing, self.frame.size.height - indicatorHeight - self.bottomLineView.frame.size.height, indicatorWidth, indicatorWidth);
         _indicatorView.backgroundColor = _segmentViewStyle.indicatorViewBackgroundColor;
-        _tagItemSize = CGSizeMake(_segmentViewStyle.segmentedTitleViewTitleWidth, self.frame.size.height);
-        
-        
-        [_tagCollectionView reloadData];
     }
 }
 
 #pragma mark --- getter method
 
-- (CGFloat)indicatorX {
-    CGFloat indicatorViewX = 0;
-    if (self.selectedIndex == 0) {
-        
-        indicatorViewX = _segmentViewStyle.segmentedTagSectionHorizontalEdgeSpacing - _segmentViewStyle.segmentedIndicatorViewExtendWidth/2.0;
+// 标题 cell 数组
+- (NSMutableArray *)titleCellMarray {
+    if (!_titleCellMarray) {
+        _titleCellMarray = [NSMutableArray array];
     }
-    else if(self.selectedIndex < (self.tagTitleArray.count - 1)){
-        indicatorViewX = 0;
-    }
-    else if(self.selectedIndex == (self.tagTitleArray.count - 1)){
-        indicatorViewX = _segmentViewStyle.segmentedTagSectionHorizontalEdgeSpacing - _segmentViewStyle.segmentedIndicatorViewExtendWidth/2.0;
-    }
-    return indicatorViewX;
+    return _titleCellMarray;
 }
+
+// 标题 cell frame 数组
+- (NSMutableArray *)titleCellFrameMarray {
+    if(!_titleCellFrameMarray){
+        _titleCellFrameMarray = [[NSMutableArray alloc] init];
+    }
+    return  _titleCellFrameMarray;
+}
+
+
+// 标题栏 titleScrollView
+- (UIScrollView *)titleScrollView {
+    if (!_titleScrollView) {
+        _titleScrollView = [[UIScrollView alloc] initWithFrame:CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width , self.frame.size.height)];
+        _titleScrollView.pagingEnabled = NO;
+        _titleScrollView.showsVerticalScrollIndicator = NO;
+        _titleScrollView.showsHorizontalScrollIndicator = NO;
+        _titleScrollView.delegate = self;
+    }
+    return _titleScrollView;
+}
+
 
 // 指示器
 - (UIView *)indicatorView {
     if (!_indicatorView) {
-        _indicatorView = [[UIView alloc] initWithFrame:CGRectMake([self indicatorX], self.frame.size.height - self.indicatorHeight - self.bottomLineView.frame.size.height, self.indicatorWidth, self.indicatorHeight)];
+        CGFloat indicatorWidth = _segmentViewStyle.segmentedIndicatorViewWidth;
+        CGFloat indicatorHeight = _segmentViewStyle.segmentedIndicatorViewHeight;
+        _indicatorView = [[UIView alloc] initWithFrame:CGRectMake(_segmentViewStyle.segmentedTagSectionHorizontalEdgeSpacing, self.frame.size.height - indicatorHeight - self.bottomLineView.frame.size.height, indicatorWidth, indicatorHeight)];
         _indicatorView.backgroundColor = _segmentViewStyle.indicatorViewBackgroundColor;
         _indicatorView.hidden = YES;
     }
     return _indicatorView;
 }
 
-// 标签 flowLayout
-- (UICollectionViewLayout *)tagFlowLayout {
-    if (!_tagFlowLayout) {
-        _tagFlowLayout = [[UICollectionViewFlowLayout alloc]init];
-        _tagFlowLayout.scrollDirection = UICollectionViewScrollDirectionHorizontal;//滚动方向  水平方向
-        _tagFlowLayout.itemSize = self.tagItemSize;
-        _tagFlowLayout.minimumLineSpacing = 0; //最小线间距
-        _tagFlowLayout.minimumInteritemSpacing = 0;
-    }
-    return _tagFlowLayout;
-}
 
-// 标签 collectionView
-- (UICollectionView *)tagCollectionView {
-    if (!_tagCollectionView) {
-        _tagCollectionView = [[UICollectionView alloc]initWithFrame:CGRectMake(0, 0, self.frame.size.width, self.frame.size.height) collectionViewLayout:self.tagFlowLayout];
-        [_tagCollectionView registerClass:[FJSegmentedTagTitleCell class] forCellWithReuseIdentifier:NSStringFromClass([FJSegmentedTagTitleCell class])];
-        _tagCollectionView.dataSource = self;
-        _tagCollectionView.delegate = self;
-        _tagCollectionView.pagingEnabled = YES;
-        _tagCollectionView.backgroundColor = [UIColor clearColor];
-        _tagCollectionView.showsHorizontalScrollIndicator = NO;//显示水平滚动指标
-    }
-    return _tagCollectionView;
-}
 
 // 底部 分割线
 - (UIView *)bottomLineView {

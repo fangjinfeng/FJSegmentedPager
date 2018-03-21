@@ -13,6 +13,13 @@
 @class FJSegmentdPageViewController;
 
 @protocol FJDetailContentViewDelegate <NSObject>
+
+// 滚动 过程
+- (void)detailContentView:(FJSegmentedPageContentView *)detailContentView
+            previousIndex:(NSInteger)previousIndex
+             currentIndex:(NSInteger)currentIndex
+                 progress:(CGFloat)progress;
+
 // 滚动 代理
 - (void)detailContentView:(FJSegmentedPageContentView *)detailContentView currentIndex:(NSInteger)currentIndex;
 

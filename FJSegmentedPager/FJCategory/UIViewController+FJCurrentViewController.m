@@ -1,4 +1,3 @@
-
 //
 //  UIViewController+FJCurrentViewController.m
 //  FJPhotoBrowserDemo

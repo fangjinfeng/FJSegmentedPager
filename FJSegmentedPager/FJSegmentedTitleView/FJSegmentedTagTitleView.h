@@ -29,4 +29,8 @@
 // 代理
 @property (nonatomic, weak)   id <FJTitleTagSectionViewDelegate> delegate;
 
+// 依据 参数 更新 控件
+- (void)updateControlsWithPreviousIndex:(NSInteger)previousIndex currentIndex:(NSInteger)currentIndex progress:(CGFloat)progress;
+// 依据 索引 更新 控件 状态
+- (void)updateControlsStatusWithCurrentIndex:(NSInteger)currentIndex;
 @end

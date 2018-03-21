@@ -34,7 +34,7 @@
     self = [super initWithFrame:frame];
     if (self) {
         [self setDefaultValues];
-        [self.contentView addSubview:self.titleLabel];
+        [self addSubview:self.titleLabel];
     }
     return self;
 }

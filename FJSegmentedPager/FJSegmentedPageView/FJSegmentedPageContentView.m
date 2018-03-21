@@ -13,7 +13,12 @@
 #import "FJSegmentdPageViewController.h"
 
 
-@interface FJSegmentedPageContentView()<UICollectionViewDataSource, UICollectionViewDelegate>
+@interface FJSegmentedPageContentView()<UICollectionViewDataSource, UICollectionViewDelegate> {
+    
+    CGFloat _oldIndex;
+    CGFloat _oldOffSetX;
+    CGFloat _currentIndex;
+}
 
 // 标题 栏 高度
 @property (nonatomic, assign) CGFloat tagSectionViewHeight;
@@ -32,12 +37,26 @@
 - (instancetype)initWithFrame:(CGRect)frame {
     if (self = [super initWithFrame:frame]) {
         
-        [self addSubview:self.pageCollectionView];
+        
+        [self setupViewControls];
+        [self setupDefaultValues];
     }
     return self;
 }
 
 #pragma makr --- private method
+
+// 设置 子控件
+- (void)setupViewControls {
+    [self addSubview:self.pageCollectionView];
+}
+
+// 设置 默认 值
+- (void)setupDefaultValues {
+    _oldIndex = -1;
+    _currentIndex = 0;
+    _oldOffSetX = 0.0f;
+}
 
 - (void)generateViewControllerArrayWithViewArray:(NSArray *)viewArray {
 
@@ -53,7 +72,7 @@
 }
 
 // 设置 参数
-- (void)setSegmentPageViewControllerParma {
+- (void)setSegmentPageViewControllerParam {
     [self.viewControllerArray enumerateObjectsUsingBlock:^(FJSegmentdPageViewController *obj, NSUInteger idx, BOOL * _Nonnull stop) {
         obj.eliminateSubViewScrollLimit = _eliminateSubViewScrollLimit;
         obj.baseViewControllerParam = _baseViewControllerParam;
@@ -85,12 +104,37 @@
 
 /***************************** UIScrollViewDelegate *************************/
 
+- (void)scrollViewWillBeginDragging:(UIScrollView *)scrollView {
+    _oldOffSetX = scrollView.contentOffset.x;
+}
+
+
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView {
     
-    NSInteger currentIndex = (NSInteger)roundf(scrollView.contentOffset.x / self.pageCollectionView.frame.size.width);
+    CGFloat tempProgress = scrollView.contentOffset.x / self.bounds.size.width;
+    NSInteger tempIndex = tempProgress;
     
-    if (self.delegate && [self.delegate respondsToSelector:@selector(detailContentView:currentIndex:)]) {
-        [self.delegate detailContentView:self currentIndex:currentIndex];
+    CGFloat progress = tempProgress - floor(tempProgress);
+    CGFloat deltaX = scrollView.contentOffset.x - _oldOffSetX;
+    
+    if (deltaX > 0) {// 向左
+        if (progress == 0.0) {
+            return;
+        }
+        _currentIndex = tempIndex+1;
+        _oldIndex = tempIndex;
+    }
+    // 向右
+    else if (deltaX < 0) {
+        progress = 1.0 - progress;
+        _oldIndex = tempIndex+1;
+        _currentIndex = tempIndex;
+    }
+    else {
+        return;
+    }
+    if (self.delegate && [self.delegate respondsToSelector:@selector(detailContentView:previousIndex:currentIndex:progress:)]) {
+        [self.delegate detailContentView:self previousIndex:_oldIndex currentIndex:_currentIndex progress:progress];
     }
 }
 
@@ -98,7 +142,11 @@
 /** 滚动减速完成时再更新title的位置 */
 - (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView {
     
-    NSInteger currentIndex = (NSInteger)roundf(scrollView.contentOffset.x / self.pageCollectionView.frame.size.width);
+    NSInteger currentIndex = (scrollView.contentOffset.x / self.bounds.size.width);
+    if (self.delegate && [self.delegate respondsToSelector:@selector(detailContentView:previousIndex:currentIndex:progress:)]) {
+        [self.delegate detailContentView:self previousIndex:currentIndex currentIndex:currentIndex progress:1.0];
+    }
+    
     if (self.delegate && [self.delegate respondsToSelector:@selector(detailContentView:currentIndex:)]) {
         [self.delegate detailContentView:self currentIndex:currentIndex];
     }
@@ -124,14 +172,14 @@
     if (_detailContentViewArray.count > 0) {
         [self generateViewControllerArrayWithViewArray:_detailContentViewArray];
         [self.pageCollectionView reloadData];
-        [self setSegmentPageViewControllerParma];
+        [self setSegmentPageViewControllerParam];
     }
 }
 
 // 设置 viewController 参数
 - (void)setBaseViewControllerParam:(id)baseViewControllerParam {
     _baseViewControllerParam = baseViewControllerParam;
-     [self setSegmentPageViewControllerParma];
+     [self setSegmentPageViewControllerParam];
 }
 
 
@@ -141,7 +189,7 @@
         self.selectedIndex = segmentViewStyle.selectedIndex;
         self.eliminateSubViewScrollLimit = segmentViewStyle.eliminateSubViewScrollLimit;
         self.tagSectionViewHeight = segmentViewStyle.tagSectionViewHeight;
-        [self setSegmentPageViewControllerParma];
+        [self setSegmentPageViewControllerParam];
     }
 }
 #pragma mark --- getter method

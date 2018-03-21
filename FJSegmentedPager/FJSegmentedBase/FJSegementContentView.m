@@ -85,10 +85,12 @@ static CGFloat kFJTitleTagSectionViewHeight = 50.0f;
 
 /******************************* FJDetailContentViewDelegate ******************************/
 - (void)detailContentView:(FJSegmentedPageContentView *)detailContentView currentIndex:(NSInteger)currentIndex {
-    
-    self.tagSecionView.selectedIndex = currentIndex;
+    [self.tagSecionView updateControlsStatusWithCurrentIndex:currentIndex];
 }
 
+- (void)detailContentView:(FJSegmentedPageContentView *)detailContentView previousIndex:(NSInteger)previousIndex currentIndex:(NSInteger)currentIndex progress:(CGFloat)progress {
+    [self.tagSecionView updateControlsWithPreviousIndex:previousIndex currentIndex:currentIndex progress:progress];
+}
 
 #pragma mark --- setter method
 // 设置 模型 值
@@ -98,6 +100,8 @@ static CGFloat kFJTitleTagSectionViewHeight = 50.0f;
         [self setupControlsDataArray:_configModelArray];
     }
 }
+
+
 // 设置 tagSectionView 高度
 - (void)setTagSectionViewHeight:(CGFloat)tagSectionViewHeight {
     _tagSectionViewHeight = tagSectionViewHeight;

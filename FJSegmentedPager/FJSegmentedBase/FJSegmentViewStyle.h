@@ -9,6 +9,14 @@
 #import <UIKit/UIKit.h>
 #import <Foundation/Foundation.h>
 
+// 指示器 宽度 显示 类型
+typedef NS_ENUM(NSInteger, FJSegmentIndicatorWidthShowType) {
+    // 自适应
+    FJSegmentIndicatorWidthShowTypeAdaption = 0,
+    // 固定 宽度
+    FJSegmentIndicatorWidthShowTypeAdaptionFixedWidth,
+};
+
 @interface FJSegmentViewStyle : NSObject
 // 选择 第几个 tag
 @property (nonatomic, assign) NSInteger selectedIndex;
@@ -46,6 +54,8 @@
 @property (nonatomic, strong) UIColor *tableViewBackgroundColor;
 // 指示器 背景色
 @property (nonatomic, strong) UIColor *indicatorViewBackgroundColor;
+// 指示器 宽度 显示 类型
+@property (nonatomic, assign) FJSegmentIndicatorWidthShowType segmentIndicatorWidthShowType;
 // 消除 子类 滚动 限制
 @property (nonatomic, assign, getter=isEliminateSubViewScrollLimit) BOOL eliminateSubViewScrollLimit;
 @end

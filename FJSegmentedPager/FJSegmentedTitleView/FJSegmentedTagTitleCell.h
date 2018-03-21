@@ -10,7 +10,7 @@
 
 @class FJSegmentViewStyle;
 
-@interface FJSegmentedTagTitleCell : UICollectionViewCell
+@interface FJSegmentedTagTitleCell : UIView
 // 标题 内容
 @property (nonatomic, copy)   NSString *titleStr;
 // 属性 配置
