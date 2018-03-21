@@ -313,7 +313,8 @@
         _bottomLineView.frame = CGRectMake(0, self.frame.size.height - _segmentViewStyle.separatorLineHeight, self.frame.size.width, _segmentViewStyle.separatorLineHeight);
         
         _bottomLineView.backgroundColor = _segmentViewStyle.separatorBackgroundColor;
-        _indicatorView.frame = CGRectMake(_segmentViewStyle.segmentedTagSectionHorizontalEdgeSpacing, self.frame.size.height - indicatorHeight - self.bottomLineView.frame.size.height, indicatorWidth, indicatorWidth);
+        CGFloat indicatorViiewY = self.frame.size.height - indicatorHeight - self.bottomLineView.frame.size.height - _segmentViewStyle.segmentedIndicatorViewWidthToBottomSpacing;
+        _indicatorView.frame = CGRectMake(_segmentViewStyle.segmentedTagSectionHorizontalEdgeSpacing, indicatorViiewY, indicatorWidth, indicatorHeight);
         _indicatorView.backgroundColor = _segmentViewStyle.indicatorViewBackgroundColor;
     }
 }
@@ -363,7 +364,8 @@
     if (!_indicatorView) {
         CGFloat indicatorWidth = _segmentViewStyle.segmentedIndicatorViewWidth;
         CGFloat indicatorHeight = _segmentViewStyle.segmentedIndicatorViewHeight;
-        _indicatorView = [[UIView alloc] initWithFrame:CGRectMake(_segmentViewStyle.segmentedTagSectionHorizontalEdgeSpacing, self.frame.size.height - indicatorHeight - self.bottomLineView.frame.size.height, indicatorWidth, indicatorHeight)];
+        CGFloat indicatorY = self.frame.size.height - indicatorHeight - self.bottomLineView.frame.size.height - _segmentViewStyle.segmentedIndicatorViewWidthToBottomSpacing;
+        _indicatorView = [[UIView alloc] initWithFrame:CGRectMake(_segmentViewStyle.segmentedTagSectionHorizontalEdgeSpacing, indicatorY, indicatorWidth, indicatorHeight)];
         _indicatorView.backgroundColor = _segmentViewStyle.indicatorViewBackgroundColor;
         _indicatorView.hidden = YES;
     }

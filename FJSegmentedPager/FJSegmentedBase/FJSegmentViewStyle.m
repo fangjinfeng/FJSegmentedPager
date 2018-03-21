@@ -35,6 +35,7 @@
         _segmentedTagSectionCellSpacing = kFJSegmentedTagSectionCellSpacing;
         _segmentedTagSectionHorizontalEdgeSpacing = kFJSegmentedTagSectionHorizontalEdgeSpacing;
         _segmentIndicatorWidthShowType = FJSegmentIndicatorWidthShowTypeAdaption;
+        _segmentedIndicatorViewWidthToBottomSpacing = 10.0f;
     }
     return self;
 }

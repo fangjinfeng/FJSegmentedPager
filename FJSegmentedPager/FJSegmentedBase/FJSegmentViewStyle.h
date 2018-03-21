@@ -28,6 +28,8 @@ typedef NS_ENUM(NSInteger, FJSegmentIndicatorWidthShowType) {
 @property (nonatomic, assign) CGFloat segmentedIndicatorViewHeight;
 // 指示条 宽度
 @property (nonatomic, assign) CGFloat segmentedIndicatorViewWidth;
+// 指示条 距离 底部 间距
+@property (nonatomic, assign) CGFloat segmentedIndicatorViewWidthToBottomSpacing;
 // 指示条 默认 扩展宽度
 @property (nonatomic, assign) CGFloat segmentedIndicatorViewExtendWidth;
 // 标题 默认 宽度
