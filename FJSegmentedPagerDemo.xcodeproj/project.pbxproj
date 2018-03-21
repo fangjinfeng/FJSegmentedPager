@@ -54,7 +54,6 @@
 		308FFF101F7E165E003CE28E /* icon_tongyong_xiaoxi@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 308FFF041F7DF922003CE28E /* icon_tongyong_xiaoxi@3x.png */; };
 		308FFF111F7E165E003CE28E /* icon_tongyong_zhibidongxiao@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 308FFF0A1F7DF970003CE28E /* icon_tongyong_zhibidongxiao@2x.png */; };
 		30CA3084206102B900EF77C5 /* UIView+FJFrame.m in Sources */ = {isa = PBXBuildFile; fileRef = 30CA3082206102B800EF77C5 /* UIView+FJFrame.m */; };
-		30CA30872061230700EF77C5 /* TMMuiLazyScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 30CA30862061230700EF77C5 /* TMMuiLazyScrollView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -136,8 +135,6 @@
 		308FFF0A1F7DF970003CE28E /* icon_tongyong_zhibidongxiao@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_tongyong_zhibidongxiao@2x.png"; sourceTree = "<group>"; };
 		30CA3082206102B800EF77C5 /* UIView+FJFrame.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+FJFrame.m"; sourceTree = "<group>"; };
 		30CA3083206102B900EF77C5 /* UIView+FJFrame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+FJFrame.h"; sourceTree = "<group>"; };
-		30CA30852061230700EF77C5 /* TMMuiLazyScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TMMuiLazyScrollView.h; sourceTree = "<group>"; };
-		30CA30862061230700EF77C5 /* TMMuiLazyScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TMMuiLazyScrollView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -282,8 +279,6 @@
 				3054BD3F1F7DD243001243C5 /* FJSegmentedPageDefine.h */,
 				3054BD401F7DD243001243C5 /* FJSegementContentView.h */,
 				3054BD411F7DD243001243C5 /* FJSegementContentView.m */,
-				30CA30852061230700EF77C5 /* TMMuiLazyScrollView.h */,
-				30CA30862061230700EF77C5 /* TMMuiLazyScrollView.m */,
 				3054BD391F7DD243001243C5 /* FJSegmentedBaseViewController.h */,
 				3054BD3A1F7DD243001243C5 /* FJSegmentedBaseViewController.m */,
 				3054BD3B1F7DD243001243C5 /* FJSegmentdPageViewController.h */,
@@ -476,7 +471,6 @@
 				3054BD541F7DD2A7001243C5 /* FJSegementContentCell.h in Sources */,
 				30CA3084206102B900EF77C5 /* UIView+FJFrame.m in Sources */,
 				3054BD551F7DD2A7001243C5 /* FJSegementContentCell.m in Sources */,
-				30CA30872061230700EF77C5 /* TMMuiLazyScrollView.m in Sources */,
 				3054BD561F7DD2A7001243C5 /* FJSegmentedPageDefine.h in Sources */,
 				3054BD571F7DD2A7001243C5 /* FJSegementContentView.h in Sources */,
 				3054BD581F7DD2A7001243C5 /* FJSegementContentView.m in Sources */,

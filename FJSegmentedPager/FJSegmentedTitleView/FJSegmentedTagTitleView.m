@@ -11,7 +11,6 @@
 #import "FJSegmentedPageDefine.h"
 // UIView
 #import "FJSegmentedTagTitleCell.h"
-#import "TMMuiLazyScrollView.h"
 
 
 @interface FJSegmentedTagTitleView() <UIScrollViewDelegate>
