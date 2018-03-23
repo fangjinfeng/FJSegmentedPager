@@ -60,7 +60,7 @@
 
 - (void)generateViewControllerArrayWithViewArray:(NSArray *)viewArray {
 
-    if (self.viewControllerArray.count == 0) {
+    if (self.viewControllerArray.count != viewArray.count) {
         [viewArray enumerateObjectsUsingBlock:^(FJConfigModel *obj, NSUInteger idx, BOOL * _Nonnull stop) {
             Class clazz = NSClassFromString(obj.viewControllerStr);
             FJSegmentdPageViewController *baseViewController = [[clazz alloc] init];

@@ -15,13 +15,14 @@
 @property (nonatomic, copy) NSString *viewControllerStr;
 // 参数
 @property (nonatomic, copy) id pageViewControllerParam;
-/**
- 返回 依据 titleStr 和 viewControllerStr 配置的模型
 
- @param titleStr 标题
- @param viewControllerStr viewControllerStr
- @return 配置 模型
- */
+// 依据 参数 初始化
 - (instancetype)initWithTitleStr:(NSString *)titleStr
                viewControllerStr:(NSString *)viewControllerStr;
+
+
+// 依据 参数 初始化
+- (instancetype)initWithTitleStr:(NSString *)titleStr
+               viewControllerStr:(NSString *)viewControllerStr
+         pageViewControllerParam:(id)pageViewControllerParam;
 @end
