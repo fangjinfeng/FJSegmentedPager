@@ -85,6 +85,8 @@
     // 固定 宽度
     else if(_segmentViewStyle.segmentIndicatorWidthShowType == FJSegmentIndicatorWidthShowTypeAdaptionFixedWidth) {
         CGFloat oldTitleViewX = oldTitleView.fj_x + (oldTitleView.fj_width - _segmentViewStyle.segmentedIndicatorViewWidth)/2.0;
+        CGFloat currentTitleViewX = currentTitleView.fj_x + (currentTitleView.fj_width - _segmentViewStyle.segmentedIndicatorViewWidth)/2.0;
+        xDistance = currentTitleViewX - oldTitleViewX;
         self.indicatorView.fj_x = oldTitleViewX + xDistance * progress;
         self.indicatorView.fj_width = _segmentViewStyle.segmentedIndicatorViewWidth;
     }
@@ -228,6 +230,7 @@
             cell.segmentViewStyle = self.segmentViewStyle;
             cell.titleStr = titleString;
             cell.tag = idx;
+            
             UITapGestureRecognizer *tapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(titleViewClicked:)];
             [cell addGestureRecognizer:tapGesture];
             
@@ -285,7 +288,7 @@
     
     [self setDidSelectItemDelegateWay];
     
-    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.25 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.35 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
         [self updateControlsStatusWithCurrentIndex:_selectedIndex];
     });
     
