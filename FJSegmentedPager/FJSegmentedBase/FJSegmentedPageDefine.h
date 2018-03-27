@@ -24,8 +24,16 @@ static NSString *const kFJScrollToSegmentedPageNoti = @"kFJScrollToSegmentedPage
 // scroll to top noti
 static NSString *const kFJSubScrollViewScrollToTopNoti = @"kFJSubScrollViewScrollToTopNoti";
 
-
-
+// 屏幕 宽度
+#define SCREEN_WIDTH [UIScreen mainScreen].bounds.size.width
+// 屏幕 高度
+#define SCREEN_HEIGHT [UIScreen mainScreen].bounds.size.height
+// 适配iPhone X 导航栏高度
+#define  NAVIGATION_BAR_HEIGHT  (ISIPONEX ? 88.f : 64.f)
+// 适配iPhone X Tabbar高度
+#define  TABBAR_HEIGHT         (ISIPONEX ? (49.f+34.f) : 49.f)
+// iPhone X 宏定义
+#define  ISIPONEX (SCREEN_WIDTH == 375.f && SCREEN_HEIGHT == 812.f ? YES : NO)
 
 // 颜色
 

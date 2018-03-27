@@ -65,7 +65,7 @@
 
     CGFloat xDistance = currentTitleView.fj_x - oldTitleView.fj_x;
     CGFloat wDistance = currentTitleView.fj_width - oldTitleView.fj_width;
-    
+
     // 宽度 自适应
     if (_segmentViewStyle.segmentIndicatorWidthShowType == FJSegmentIndicatorWidthShowTypeAdaption) {
         if (self.isBeyondLimitWidth) {

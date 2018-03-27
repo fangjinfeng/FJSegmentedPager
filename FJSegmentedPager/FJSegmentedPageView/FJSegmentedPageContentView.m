@@ -59,16 +59,15 @@
 }
 
 - (void)generateViewControllerArrayWithViewArray:(NSArray *)viewArray {
-
-    if (self.viewControllerArray.count != viewArray.count) {
-        [viewArray enumerateObjectsUsingBlock:^(FJConfigModel *obj, NSUInteger idx, BOOL * _Nonnull stop) {
-            Class clazz = NSClassFromString(obj.viewControllerStr);
-            FJSegmentdPageViewController *baseViewController = [[clazz alloc] init];
-            baseViewController.currentIndex = idx;
-            baseViewController.pageViewControllerParam = obj.pageViewControllerParam;
-            [self.viewControllerArray addObject:baseViewController];
-        }];
-    }
+    [self.viewControllerArray removeAllObjects];
+    [viewArray enumerateObjectsUsingBlock:^(FJConfigModel *obj, NSUInteger idx, BOOL * _Nonnull stop) {
+        Class clazz = NSClassFromString(obj.viewControllerStr);
+        FJSegmentdPageViewController *baseViewController = [[clazz alloc] init];
+        baseViewController.currentIndex = idx;
+        baseViewController.pageViewControllerParam = obj.pageViewControllerParam;
+        baseViewController.view.tag = idx;
+        [self.viewControllerArray addObject:baseViewController];
+    }];
 }
 
 // 设置 参数
@@ -168,7 +167,10 @@
 
 // 内容 viewArray
 - (void)setDetailContentViewArray:(NSArray *)detailContentViewArray {
-    _detailContentViewArray = detailContentViewArray;
+    if ([detailContentViewArray isEqualToArray:_detailContentViewArray]) {
+        return;
+    }
+    _detailContentViewArray = [NSArray arrayWithArray:detailContentViewArray];
     if (_detailContentViewArray.count > 0) {
         [self generateViewControllerArrayWithViewArray:_detailContentViewArray];
         [self.pageCollectionView reloadData];

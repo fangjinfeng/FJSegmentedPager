@@ -147,10 +147,10 @@
 - (CGFloat)tableFooterViewHeight {
     CGFloat footerViewHeight = _tagSectionViewHeight;
     if ([UIViewController fj_currentViewController].navigationController && [UIViewController fj_currentViewController].navigationController.navigationBar.isHidden == NO) {
-        footerViewHeight += 64.0f;
+        footerViewHeight += NAVIGATION_BAR_HEIGHT;
     }
     if ([UIViewController fj_currentViewController].tabBarController && [UIViewController fj_currentViewController].tabBarController.tabBar.isHidden == NO) {
-        footerViewHeight += 49.0f;
+        footerViewHeight += TABBAR_HEIGHT;
     }
     return footerViewHeight;
 }
