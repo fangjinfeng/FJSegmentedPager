@@ -8,8 +8,11 @@
 
 #import <UIKit/UIKit.h>
 #import "FJBaseTableView.h"
+#import "FJSegmentPageChildVcDelegate.h"
 
-@interface FJSegmentdPageViewController : UIViewController<UITableViewDelegate,UITableViewDataSource>
+@interface FJSegmentdPageViewController : UIViewController<UITableViewDelegate,
+                                                           UITableViewDataSource,
+                                                           FJSegmentPageChildVcDelegate>
 
 // 当前 索引
 @property (nonatomic, assign) NSInteger   currentIndex;
@@ -19,12 +22,6 @@
 @property (nonatomic, strong) FJBaseTableView *tableView;
 // 标题 栏 高度
 @property (nonatomic, assign) CGFloat tagSectionViewHeight;
-// 参数 baseViewControllerParam
-@property (nonatomic, copy) id baseViewControllerParam;
-// 参数
-@property (nonatomic, copy) id pageViewControllerParam;
-// 消除 子类 滚动 限制
-@property (nonatomic, assign) BOOL eliminateSubViewScrollLimit;
 // 是否 可滚动
 @property (nonatomic, assign, getter=isEnableScroll) BOOL enableScroll;
 

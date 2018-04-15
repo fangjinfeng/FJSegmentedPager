@@ -6,6 +6,8 @@
 //  Copyright © 2017年 fjf. All rights reserved.
 //
 
+#import <objc/runtime.h>
+#import "FJSegmentPageChildVcDelegate.h"
 #import "UIViewController+FJCurrentViewController.h"
 
 @implementation UIViewController (FJCurrentViewController)
@@ -68,5 +70,15 @@
     return nil;
 }
 
+
+static char FJIndexKey;
+
+- (void)setFj_currentIndex:(NSInteger)fj_currentIndex {
+    objc_setAssociatedObject(self, &FJIndexKey, [NSNumber numberWithInteger:fj_currentIndex], OBJC_ASSOCIATION_ASSIGN);
+}
+
+- (NSInteger)fj_currentIndex {
+    return [objc_getAssociatedObject(self, &FJIndexKey) integerValue];
+}
 
 @end

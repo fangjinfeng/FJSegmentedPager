@@ -17,6 +17,16 @@ typedef NS_ENUM(NSInteger, FJSegmentIndicatorWidthShowType) {
     FJSegmentIndicatorWidthShowTypeAdaptionFixedWidth,
 };
 
+
+// 标题 view 字体颜色 改变 类型
+typedef NS_ENUM(NSInteger, FJSegmentTitleViewTitleColorChangeType) {
+    // 选中 之后 再 颜色 改变
+    FJSegmentTitleViewTitleColorChangeTypeSelectedChange = 0,
+    // 颜色 渐变
+    FJSegmentTitleViewTitleColorChangeTypeGradualChange,
+};
+
+
 @interface FJSegmentViewStyle : NSObject
 // 选择 第几个 tag
 @property (nonatomic, assign) NSInteger selectedIndex;
@@ -58,6 +68,6 @@ typedef NS_ENUM(NSInteger, FJSegmentIndicatorWidthShowType) {
 @property (nonatomic, strong) UIColor *indicatorViewBackgroundColor;
 // 指示器 宽度 显示 类型
 @property (nonatomic, assign) FJSegmentIndicatorWidthShowType segmentIndicatorWidthShowType;
-// 消除 子类 滚动 限制
-@property (nonatomic, assign, getter=isEliminateSubViewScrollLimit) BOOL eliminateSubViewScrollLimit;
+// 标题 字体 颜色 改变 类型
+@property (nonatomic, assign) FJSegmentTitleViewTitleColorChangeType titleColorChangeType;
 @end

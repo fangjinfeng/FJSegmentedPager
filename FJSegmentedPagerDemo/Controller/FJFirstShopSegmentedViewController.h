@@ -9,7 +9,6 @@
 
 #import "FJSegmentedBaseViewController.h"
 
-@interface FJShopViewController : FJSegmentedBaseViewController
-// 是否 超过 一屏
-@property (nonatomic, getter=isBeyondScreenWidth, assign) BOOL beyondScreenWidth;
+@interface FJFirstShopSegmentedViewController : FJSegmentedBaseViewController
+
 @end

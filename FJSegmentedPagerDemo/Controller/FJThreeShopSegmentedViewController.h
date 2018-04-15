@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface FJShopSegmentedViewController : UIViewController
+@interface FJThreeShopSegmentedViewController : UIViewController
 
 @end

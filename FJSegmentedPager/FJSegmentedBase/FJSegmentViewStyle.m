@@ -18,7 +18,6 @@
         _selectedIndex = 0;
         _itemTitleFont = kFJSegmentedTitleFontSize;
         _itemTitleSelectedFont = kFJSegmentedTitleFontSize;
-        _eliminateSubViewScrollLimit = NO;
         _tagSectionViewHeight = kFJSegmentedTitleViewHeight;
         _segmentToolbackgroundColor = kFJSegmentToolbackgroundColor;
         _itemTitleColorStateNormal = kFJSegmentedTitleNormalColor;
@@ -34,8 +33,9 @@
         _segmentedTitleViewTitleWidth = kFJSegmentedTitleViewTitleWidth;
         _segmentedTagSectionCellSpacing = kFJSegmentedTagSectionCellSpacing;
         _segmentedTagSectionHorizontalEdgeSpacing = kFJSegmentedTagSectionHorizontalEdgeSpacing;
-        _segmentIndicatorWidthShowType = FJSegmentIndicatorWidthShowTypeAdaption;
         _segmentedIndicatorViewWidthToBottomSpacing = 0.0f;
+        _segmentIndicatorWidthShowType = FJSegmentIndicatorWidthShowTypeAdaption;
+        _titleColorChangeType = FJSegmentTitleViewTitleColorChangeTypeSelectedChange;
     }
     return self;
 }

@@ -7,8 +7,9 @@
 //
 
 #import "ViewController.h"
-#import "FJShopViewController.h"
-#import "FJShopSegmentedViewController.h"
+#import "FJFirstShopSegmentedViewController.h"
+#import "FJSecondShopSegmentedViewController.h"
+#import "FJThreeShopSegmentedViewController.h"
 
 
 @interface ViewController ()<UITableViewDelegate, UITableViewDataSource>
@@ -36,7 +37,7 @@
 #pragma mark --- system delegate
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-
+    
     return 1;
 }
 
@@ -54,7 +55,7 @@
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellId];
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
     }
-
+    
     if (indexPath.row == 0) {
         cell.textLabel.text = @"一屏内";
     }
@@ -68,7 +69,7 @@
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-
+    
     return 100;
 }
 
@@ -91,18 +92,22 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     [tableView deselectRowAtIndexPath:indexPath animated:NO];
-    if (indexPath.row < 2) {
-        FJShopViewController *shopViewController = [[FJShopViewController alloc] init];
+    if (indexPath.row == 0) {
+        FJFirstShopSegmentedViewController *shopViewController = [[FJFirstShopSegmentedViewController alloc] init];
         shopViewController.hidesBottomBarWhenPushed = YES;
-        shopViewController.beyondScreenWidth = indexPath.row;
         [self.navigationController pushViewController:shopViewController animated:YES];
     }
-    else {
-        FJShopSegmentedViewController *segmentViewController = [[FJShopSegmentedViewController alloc] init];
+    else if(indexPath.row == 1){
+        FJSecondShopSegmentedViewController *segmentViewController = [[FJSecondShopSegmentedViewController alloc] init];
         segmentViewController.hidesBottomBarWhenPushed = YES;
-         [self.navigationController pushViewController:segmentViewController animated:YES];
+        [self.navigationController pushViewController:segmentViewController animated:YES];
     }
-   
+    else {
+        FJThreeShopSegmentedViewController *segmentViewController = [[FJThreeShopSegmentedViewController alloc] init];
+        segmentViewController.hidesBottomBarWhenPushed = YES;
+        [self.navigationController pushViewController:segmentViewController animated:YES];
+    }
+    
 }
 
 #pragma mark --- getter method
@@ -116,9 +121,10 @@
         _tableView.estimatedSectionFooterHeight = 0;
         _tableView.estimatedSectionHeaderHeight = 0;
         _tableView.showsVerticalScrollIndicator = NO;
+        if (@available(iOS 11.0, *)) {
+            _tableView.contentInsetAdjustmentBehavior = UIScrollViewContentInsetAdjustmentAutomatic;
+        }
     }
     return _tableView;
 }
-
-
 @end

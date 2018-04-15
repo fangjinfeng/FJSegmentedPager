@@ -97,7 +97,12 @@
     }
 }
 
-#pragma mark --- getter method
+#pragma mark --------------- Getter / Setter
+
+- (void)setTextColor:(UIColor *)textColor {
+    _textColor = textColor;
+    self.titleLabel.textColor = textColor;
+}
 
 // title Label
 - (UILabel *)titleLabel {

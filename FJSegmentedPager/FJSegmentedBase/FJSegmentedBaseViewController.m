@@ -6,7 +6,7 @@
 //  Copyright © 2017年 Qingning Science & Technology Development Co.,Ltd. All rights reserved.
 //
 
-#import "FJSegementContentView.h"
+#import "FJSegementPageView.h"
 #import "FJSegmentedPageDefine.h"
 #import "FJSegmentedBaseViewController.h"
 
@@ -133,7 +133,7 @@ static void * const kFJScrollViewKVOContext = (void*)&kFJScrollViewKVOContext;
     }
 }
 
-#pragma mark --- response event
+#pragma mark --------------- Response Event
 // 滚动 到顶部
 - (void)postScrollToTopViewNoti {
     
@@ -141,14 +141,7 @@ static void * const kFJScrollViewKVOContext = (void*)&kFJScrollViewKVOContext;
     [[NSNotificationCenter defaultCenter] postNotificationName:kFJSubScrollViewScrollToTopNoti object:tmpSelectedIndex];
 }
 
-#pragma mark --- getter method
-// 配置 模型 数组
-- (NSMutableArray  <FJConfigModel *>*)configModelArray {
-    if (!_configModelArray) {
-        _configModelArray = [NSMutableArray array];
-    }
-    return _configModelArray;
-}
+#pragma mark --------------- Getter / Setter
 
 // tableView
 - (UITableView *)tableView {

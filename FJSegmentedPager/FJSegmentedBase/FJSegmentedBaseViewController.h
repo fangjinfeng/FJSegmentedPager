@@ -7,7 +7,6 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "FJConfigModel.h"
 #import "FJSegementContentCell.h"
 
 @interface FJSegmentedBaseViewController : UIViewController<UITableViewDelegate,UITableViewDataSource>
@@ -15,7 +14,4 @@
 @property (nonatomic, assign) CGFloat tableViewOffsetY;
 // tableView
 @property (nonatomic, strong) UITableView *tableView;
-// 配置 模型 数组
-@property (nonatomic, strong) NSMutableArray <FJConfigModel *>*configModelArray;
-
 @end

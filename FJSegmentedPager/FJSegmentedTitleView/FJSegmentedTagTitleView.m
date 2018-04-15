@@ -14,6 +14,13 @@
 
 
 @interface FJSegmentedTagTitleView() <UIScrollViewDelegate>
+// 用于懒加载计算文字的rgba差值, 用于颜色渐变的时候设置
+@property (strong, nonatomic) NSArray *deltaRGBA;
+@property (strong, nonatomic) NSArray *selectedColorRGBA;
+@property (strong, nonatomic) NSArray *normalColorRGBA;
+
+// 标题 数据 数组
+@property (nonatomic, strong) NSArray *tagTitleArray;
 // 指示器 indicator
 @property (nonatomic, strong) UIView *indicatorView;
 // 分割 view
@@ -48,6 +55,15 @@
 
 #pragma mark --------------- Public Methods
 
+- (void)reloadData {
+    if (self.segmentPageDataSource && [self.segmentPageDataSource respondsToSelector:@selector(titlesArrayOfChildViewControllers)]) {
+        self.tagTitleArray = [self.segmentPageDataSource titlesArrayOfChildViewControllers];
+    }
+    else {
+        NSAssert(NO, @"必须实现的代理方法:titlesArrayOfChildViewControllers");
+    }
+}
+
 // 依据 参数 更新 控件
 - (void)updateControlsWithPreviousIndex:(NSInteger)previousIndex currentIndex:(NSInteger)currentIndex progress:(CGFloat)progress {
     if (previousIndex < 0 ||
@@ -57,7 +73,6 @@
         ) {
         return;
     }
-    _previousIndex = currentIndex;
     
     FJSegmentedTagTitleCell *oldTitleView = (FJSegmentedTagTitleCell *)self.titleCellMarray[previousIndex];
     FJSegmentedTagTitleCell *currentTitleView = (FJSegmentedTagTitleCell *)self.titleCellMarray[currentIndex];
@@ -90,6 +105,24 @@
         self.indicatorView.fj_x = oldTitleViewX + xDistance * progress;
         self.indicatorView.fj_width = _segmentViewStyle.segmentedIndicatorViewWidth;
     }
+    
+
+    // 颜色 渐变
+    if(_segmentViewStyle.titleColorChangeType == FJSegmentTitleViewTitleColorChangeTypeGradualChange) {
+        oldTitleView.textColor = [UIColor
+                                  colorWithRed:[self.selectedColorRGBA[0] floatValue] + [self.deltaRGBA[0] floatValue] * progress
+                                  green:[self.selectedColorRGBA[1] floatValue] + [self.deltaRGBA[1] floatValue] * progress
+                                  blue:[self.selectedColorRGBA[2] floatValue] + [self.deltaRGBA[2] floatValue] * progress
+                                  alpha:[self.selectedColorRGBA[3] floatValue] + [self.deltaRGBA[3] floatValue] * progress];
+        
+        currentTitleView.textColor = [UIColor
+                                      colorWithRed:[self.normalColorRGBA[0] floatValue] - [self.deltaRGBA[0] floatValue] * progress
+                                      green:[self.normalColorRGBA[1] floatValue] - [self.deltaRGBA[1] floatValue] * progress
+                                      blue:[self.normalColorRGBA[2] floatValue] - [self.deltaRGBA[2] floatValue] * progress
+                                      alpha:[self.normalColorRGBA[3] floatValue] - [self.deltaRGBA[3] floatValue] * progress];
+    }
+    
+    _previousIndex = currentIndex;
 }
 
 // 更新 控件 选中 状态
@@ -162,10 +195,20 @@
 // 标题 宽度
 - (CGFloat)titleWidthWithIndex:(NSUInteger)index {
     NSString *tagTitle = [self.tagTitleArray objectAtIndex:index];
-    CGFloat titleWidth = [tagTitle boundingRectWithSize:CGSizeMake(MAXFLOAT, MAXFLOAT) options:NSStringDrawingUsesLineFragmentOrigin attributes:@{NSFontAttributeName:_segmentViewStyle.itemTitleFont} context:nil].size.width;
+    CGFloat titleWidth = [tagTitle boundingRectWithSize:CGSizeMake(MAXFLOAT, MAXFLOAT) options:NSStringDrawingUsesLineFragmentOrigin attributes:@{NSFontAttributeName:[self correctCalculateFont]} context:nil].size.width;
     return titleWidth + _segmentViewStyle.segmentedIndicatorViewExtendWidth;
 }
 
+// 用于 计算 的 字体
+- (UIFont *)correctCalculateFont {
+    // 如果
+    if (_segmentViewStyle.itemTitleFont.pointSize > _segmentViewStyle.itemTitleSelectedFont.pointSize) {
+        return _segmentViewStyle.itemTitleFont;
+    }
+    else {
+        return _segmentViewStyle.itemTitleSelectedFont;
+    }
+}
 
 #pragma mark --------------- Private Methods
 // 设置 子控件
@@ -183,8 +226,6 @@
     [self.titleCellFrameMarray removeAllObjects];
     if (tagTitleArray.count) {
         // 如果 超过 屏幕
-        
-       
         if (self.isBeyondLimitWidth) {
              __block  CGFloat tmpOffsetX = _segmentViewStyle.segmentedTagSectionHorizontalEdgeSpacing;
             [tagTitleArray enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
@@ -302,7 +343,13 @@
     [[NSNotificationCenter defaultCenter] postNotificationName:kFJScrollToSegmentedPageNoti object:[NSNumber numberWithUnsignedInteger:selectedIndex]];
 }
 
-
+// 设置 数据源
+- (void)setSegmentPageDataSource:(id<FJSegmentPageViewDataSource>)segmentPageDataSource {
+    _segmentPageDataSource = segmentPageDataSource;
+    if (segmentPageDataSource) {
+        [self reloadData];
+    }
+}
 
 // 设置 标题 数组
 - (void)setTagTitleArray:(NSArray *)tagTitleArray {
@@ -410,4 +457,54 @@
     return _bottomLineView;
 }
 
+
+- (NSArray *)deltaRGBA {
+    if (_deltaRGBA == nil) {
+        NSArray *normalColorRgb = self.normalColorRGBA;
+        NSArray *selectedColorRgb = self.selectedColorRGBA;
+        
+        NSArray *delta;
+        if (normalColorRgb && selectedColorRgb) {
+            CGFloat deltaR = [normalColorRgb[0] floatValue] - [selectedColorRgb[0] floatValue];
+            CGFloat deltaG = [normalColorRgb[1] floatValue] - [selectedColorRgb[1] floatValue];
+            CGFloat deltaB = [normalColorRgb[2] floatValue] - [selectedColorRgb[2] floatValue];
+            CGFloat deltaA = [normalColorRgb[3] floatValue] - [selectedColorRgb[3] floatValue];
+            delta = [NSArray arrayWithObjects:@(deltaR), @(deltaG), @(deltaB), @(deltaA), nil];
+            _deltaRGBA = delta;
+            
+        }
+    }
+    return _deltaRGBA;
+}
+
+- (NSArray *)normalColorRGBA {
+    if (!_normalColorRGBA) {
+        NSArray *normalColorRGBA = [self getColorRGBA:self.segmentViewStyle.itemTitleColorStateNormal];
+        NSAssert(normalColorRGBA, @"设置普通状态的文字颜色时 请使用RGBA空间的颜色值");
+        _normalColorRGBA = normalColorRGBA;
+        
+    }
+    return  _normalColorRGBA;
+}
+
+- (NSArray *)selectedColorRGBA {
+    if (!_selectedColorRGBA) {
+        NSArray *selectedColorRGBA = [self getColorRGBA:self.segmentViewStyle.itemTitleColorStateSelected];
+        NSAssert(selectedColorRGBA, @"设置选中状态的文字颜色时 请使用RGBA空间的颜色值");
+        _selectedColorRGBA = selectedColorRGBA;
+        
+    }
+    return  _selectedColorRGBA;
+}
+
+- (NSArray *)getColorRGBA:(UIColor *)color {
+    CGFloat numOfcomponents = CGColorGetNumberOfComponents(color.CGColor);
+    NSArray *rgbaComponents;
+    if (numOfcomponents == 4) {
+        const CGFloat *components = CGColorGetComponents(color.CGColor);
+        rgbaComponents = [NSArray arrayWithObjects:@(components[0]), @(components[1]), @(components[2]), @(components[3]), nil];
+    }
+    return rgbaComponents;
+    
+}
 @end

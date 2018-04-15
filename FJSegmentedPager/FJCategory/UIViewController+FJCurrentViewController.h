@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @interface UIViewController (FJCurrentViewController)
+@property (nonatomic, assign) NSInteger fj_currentIndex;
 // 查找 当前 控制器
 + (UIViewController *)fj_currentViewController;
 // 找到 navigation topViewController

@@ -7,13 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		302CD6B81F7DE064007E8926 /* FJSecondShopViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 302CD6B71F7DE064007E8926 /* FJSecondShopViewController.m */; };
-		302CD6BC1F7DE228007E8926 /* QNPersonalHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 302CD6B91F7DE227007E8926 /* QNPersonalHeaderView.m */; };
-		302CD6BD1F7DE244007E8926 /* QNPersonalHeaderView.h in Sources */ = {isa = PBXBuildFile; fileRef = 302CD6BB1F7DE227007E8926 /* QNPersonalHeaderView.h */; };
-		302CD6BE1F7DE244007E8926 /* QNPersonalHeaderView.xib in Sources */ = {isa = PBXBuildFile; fileRef = 302CD6BA1F7DE227007E8926 /* QNPersonalHeaderView.xib */; };
-		303A68741F8CBF7700D04C16 /* FJFirstShopViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 303A68731F8CBF7700D04C16 /* FJFirstShopViewController.m */; };
-		303A687E1F8CCCD100D04C16 /* UIViewController+FJCurrentViewController.h in Sources */ = {isa = PBXBuildFile; fileRef = 303A687C1F8CCCC000D04C16 /* UIViewController+FJCurrentViewController.h */; };
-		303A687F1F8CCCD100D04C16 /* UIViewController+FJCurrentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 303A687D1F8CCCC000D04C16 /* UIViewController+FJCurrentViewController.m */; };
 		3054BD031F7DD14E001243C5 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 3054BD021F7DD14E001243C5 /* AppDelegate.m */; };
 		3054BD061F7DD14E001243C5 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3054BD051F7DD14E001243C5 /* ViewController.m */; };
 		3054BD091F7DD14E001243C5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3054BD071F7DD14E001243C5 /* Main.storyboard */; };
@@ -22,30 +15,6 @@
 		3054BD111F7DD14E001243C5 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 3054BD101F7DD14E001243C5 /* main.m */; };
 		3054BD1B1F7DD14E001243C5 /* FJSegmentedPagerDemoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 3054BD1A1F7DD14E001243C5 /* FJSegmentedPagerDemoTests.m */; };
 		3054BD261F7DD14E001243C5 /* FJSegmentedPagerDemoUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 3054BD251F7DD14E001243C5 /* FJSegmentedPagerDemoUITests.m */; };
-		3054BD4C1F7DD2A7001243C5 /* FJBaseTableView.h in Sources */ = {isa = PBXBuildFile; fileRef = 3054BD351F7DD243001243C5 /* FJBaseTableView.h */; };
-		3054BD4D1F7DD2A7001243C5 /* FJBaseTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3054BD361F7DD243001243C5 /* FJBaseTableView.m */; };
-		3054BD4E1F7DD2A7001243C5 /* FJConfigModel.h in Sources */ = {isa = PBXBuildFile; fileRef = 3054BD371F7DD243001243C5 /* FJConfigModel.h */; };
-		3054BD4F1F7DD2A7001243C5 /* FJConfigModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 3054BD381F7DD243001243C5 /* FJConfigModel.m */; };
-		3054BD501F7DD2A7001243C5 /* FJSegmentedBaseViewController.h in Sources */ = {isa = PBXBuildFile; fileRef = 3054BD391F7DD243001243C5 /* FJSegmentedBaseViewController.h */; };
-		3054BD511F7DD2A7001243C5 /* FJSegmentedBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3054BD3A1F7DD243001243C5 /* FJSegmentedBaseViewController.m */; };
-		3054BD521F7DD2A7001243C5 /* FJSegmentdPageViewController.h in Sources */ = {isa = PBXBuildFile; fileRef = 3054BD3B1F7DD243001243C5 /* FJSegmentdPageViewController.h */; };
-		3054BD531F7DD2A7001243C5 /* FJSegmentdPageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3054BD3C1F7DD243001243C5 /* FJSegmentdPageViewController.m */; };
-		3054BD541F7DD2A7001243C5 /* FJSegementContentCell.h in Sources */ = {isa = PBXBuildFile; fileRef = 3054BD3D1F7DD243001243C5 /* FJSegementContentCell.h */; };
-		3054BD551F7DD2A7001243C5 /* FJSegementContentCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3054BD3E1F7DD243001243C5 /* FJSegementContentCell.m */; };
-		3054BD561F7DD2A7001243C5 /* FJSegmentedPageDefine.h in Sources */ = {isa = PBXBuildFile; fileRef = 3054BD3F1F7DD243001243C5 /* FJSegmentedPageDefine.h */; };
-		3054BD571F7DD2A7001243C5 /* FJSegementContentView.h in Sources */ = {isa = PBXBuildFile; fileRef = 3054BD401F7DD243001243C5 /* FJSegementContentView.h */; };
-		3054BD581F7DD2A7001243C5 /* FJSegementContentView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3054BD411F7DD243001243C5 /* FJSegementContentView.m */; };
-		3054BD591F7DD2A7001243C5 /* FJSegmentedPageContentView.h in Sources */ = {isa = PBXBuildFile; fileRef = 3054BD431F7DD243001243C5 /* FJSegmentedPageContentView.h */; };
-		3054BD5A1F7DD2A7001243C5 /* FJSegmentedPageContentView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3054BD441F7DD243001243C5 /* FJSegmentedPageContentView.m */; };
-		3054BD5B1F7DD2A7001243C5 /* FJPageCollectionViewCell.h in Sources */ = {isa = PBXBuildFile; fileRef = 3054BD451F7DD243001243C5 /* FJPageCollectionViewCell.h */; };
-		3054BD5C1F7DD2A7001243C5 /* FJPageCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3054BD461F7DD243001243C5 /* FJPageCollectionViewCell.m */; };
-		3054BD5D1F7DD2B1001243C5 /* FJSegmentedTagTitleCell.h in Sources */ = {isa = PBXBuildFile; fileRef = 3054BD481F7DD243001243C5 /* FJSegmentedTagTitleCell.h */; };
-		3054BD5E1F7DD2B1001243C5 /* FJSegmentedTagTitleCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3054BD491F7DD243001243C5 /* FJSegmentedTagTitleCell.m */; };
-		3054BD5F1F7DD2B1001243C5 /* FJSegmentedTagTitleView.h in Sources */ = {isa = PBXBuildFile; fileRef = 3054BD4A1F7DD243001243C5 /* FJSegmentedTagTitleView.h */; };
-		3054BD601F7DD2B1001243C5 /* FJSegmentedTagTitleView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3054BD4B1F7DD243001243C5 /* FJSegmentedTagTitleView.m */; };
-		30608F241FCE87DC00DFBB5D /* FJSegmentViewStyle.m in Sources */ = {isa = PBXBuildFile; fileRef = 30608F231FCE87DC00DFBB5D /* FJSegmentViewStyle.m */; };
-		30608F2A1FCEA4AF00DFBB5D /* FJShopSegmentedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 30608F291FCEA4AF00DFBB5D /* FJShopSegmentedViewController.m */; };
-		306F3A5E1FB19FA100401AB8 /* FJShopViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 306F3A5D1FB19FA100401AB8 /* FJShopViewController.m */; };
 		308FFF0B1F7E165E003CE28E /* icon_wode_leijishouyi@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 308FFF071F7DF939003CE28E /* icon_wode_leijishouyi@2x.png */; };
 		308FFF0C1F7E165E003CE28E /* icon_wode_leijishouyi@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 308FFF061F7DF939003CE28E /* icon_wode_leijishouyi@3x.png */; };
 		308FFF0D1F7E165E003CE28E /* icon_wode_kuajishouyi@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 308FFF081F7DF949003CE28E /* icon_wode_kuajishouyi@2x.png */; };
@@ -53,7 +22,24 @@
 		308FFF0F1F7E165E003CE28E /* icon_tongyong_xiaoxi@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 308FFF051F7DF922003CE28E /* icon_tongyong_xiaoxi@2x.png */; };
 		308FFF101F7E165E003CE28E /* icon_tongyong_xiaoxi@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 308FFF041F7DF922003CE28E /* icon_tongyong_xiaoxi@3x.png */; };
 		308FFF111F7E165E003CE28E /* icon_tongyong_zhibidongxiao@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 308FFF0A1F7DF970003CE28E /* icon_tongyong_zhibidongxiao@2x.png */; };
-		30CA3084206102B900EF77C5 /* UIView+FJFrame.m in Sources */ = {isa = PBXBuildFile; fileRef = 30CA3082206102B800EF77C5 /* UIView+FJFrame.m */; };
+		30E2FF8920834E22006E9432 /* UIView+FJFrame.m in Sources */ = {isa = PBXBuildFile; fileRef = 30E2FF6E20834E22006E9432 /* UIView+FJFrame.m */; };
+		30E2FF8A20834E22006E9432 /* UIViewController+FJCurrentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 30E2FF7120834E22006E9432 /* UIViewController+FJCurrentViewController.m */; };
+		30E2FF8B20834E22006E9432 /* FJSegmentedPageContentView.m in Sources */ = {isa = PBXBuildFile; fileRef = 30E2FF7320834E22006E9432 /* FJSegmentedPageContentView.m */; };
+		30E2FF8C20834E22006E9432 /* FJSegmentViewStyle.m in Sources */ = {isa = PBXBuildFile; fileRef = 30E2FF7720834E22006E9432 /* FJSegmentViewStyle.m */; };
+		30E2FF8D20834E22006E9432 /* FJSegmentedBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 30E2FF7920834E22006E9432 /* FJSegmentedBaseViewController.m */; };
+		30E2FF8E20834E22006E9432 /* FJBaseTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 30E2FF7C20834E22006E9432 /* FJBaseTableView.m */; };
+		30E2FF8F20834E22006E9432 /* FJSegementContentCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 30E2FF7E20834E22006E9432 /* FJSegementContentCell.m */; };
+		30E2FF9020834E22006E9432 /* FJSegementPageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 30E2FF8020834E22006E9432 /* FJSegementPageView.m */; };
+		30E2FF9120834E22006E9432 /* FJSegmentdPageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 30E2FF8220834E22006E9432 /* FJSegmentdPageViewController.m */; };
+		30E2FF9220834E22006E9432 /* FJSegmentedTagTitleCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 30E2FF8520834E22006E9432 /* FJSegmentedTagTitleCell.m */; };
+		30E2FF9320834E22006E9432 /* FJSegmentedTagTitleView.m in Sources */ = {isa = PBXBuildFile; fileRef = 30E2FF8620834E22006E9432 /* FJSegmentedTagTitleView.m */; };
+		30E2FF9F20834E56006E9432 /* FJSecondShopSegmentedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 30E2FF9520834E56006E9432 /* FJSecondShopSegmentedViewController.m */; };
+		30E2FFA020834E56006E9432 /* FJThreeShopSegmentedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 30E2FF9620834E56006E9432 /* FJThreeShopSegmentedViewController.m */; };
+		30E2FFA120834E56006E9432 /* FJFirstShopViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 30E2FF9920834E56006E9432 /* FJFirstShopViewController.m */; };
+		30E2FFA220834E56006E9432 /* FJFirstShopSegmentedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 30E2FF9C20834E56006E9432 /* FJFirstShopSegmentedViewController.m */; };
+		30E2FFA320834E56006E9432 /* FJSecondShopViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 30E2FF9E20834E56006E9432 /* FJSecondShopViewController.m */; };
+		30E2FFA820834E5C006E9432 /* QNPersonalHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 30E2FFA620834E5C006E9432 /* QNPersonalHeaderView.m */; };
+		30E2FFA920834E5C006E9432 /* QNPersonalHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 30E2FFA720834E5C006E9432 /* QNPersonalHeaderView.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -74,15 +60,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		302CD6B61F7DE064007E8926 /* FJSecondShopViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FJSecondShopViewController.h; sourceTree = "<group>"; };
-		302CD6B71F7DE064007E8926 /* FJSecondShopViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FJSecondShopViewController.m; sourceTree = "<group>"; };
-		302CD6B91F7DE227007E8926 /* QNPersonalHeaderView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = QNPersonalHeaderView.m; sourceTree = "<group>"; };
-		302CD6BA1F7DE227007E8926 /* QNPersonalHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = QNPersonalHeaderView.xib; sourceTree = "<group>"; };
-		302CD6BB1F7DE227007E8926 /* QNPersonalHeaderView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = QNPersonalHeaderView.h; sourceTree = "<group>"; };
-		303A68721F8CBF7700D04C16 /* FJFirstShopViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FJFirstShopViewController.h; sourceTree = "<group>"; };
-		303A68731F8CBF7700D04C16 /* FJFirstShopViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FJFirstShopViewController.m; sourceTree = "<group>"; };
-		303A687C1F8CCCC000D04C16 /* UIViewController+FJCurrentViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIViewController+FJCurrentViewController.h"; sourceTree = "<group>"; };
-		303A687D1F8CCCC000D04C16 /* UIViewController+FJCurrentViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+FJCurrentViewController.m"; sourceTree = "<group>"; };
 		3054BCFE1F7DD14E001243C5 /* FJSegmentedPagerDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FJSegmentedPagerDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3054BD011F7DD14E001243C5 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		3054BD021F7DD14E001243C5 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -99,33 +76,6 @@
 		3054BD211F7DD14E001243C5 /* FJSegmentedPagerDemoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FJSegmentedPagerDemoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3054BD251F7DD14E001243C5 /* FJSegmentedPagerDemoUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FJSegmentedPagerDemoUITests.m; sourceTree = "<group>"; };
 		3054BD271F7DD14E001243C5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		3054BD351F7DD243001243C5 /* FJBaseTableView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FJBaseTableView.h; sourceTree = "<group>"; };
-		3054BD361F7DD243001243C5 /* FJBaseTableView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FJBaseTableView.m; sourceTree = "<group>"; };
-		3054BD371F7DD243001243C5 /* FJConfigModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FJConfigModel.h; sourceTree = "<group>"; };
-		3054BD381F7DD243001243C5 /* FJConfigModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FJConfigModel.m; sourceTree = "<group>"; };
-		3054BD391F7DD243001243C5 /* FJSegmentedBaseViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FJSegmentedBaseViewController.h; sourceTree = "<group>"; };
-		3054BD3A1F7DD243001243C5 /* FJSegmentedBaseViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FJSegmentedBaseViewController.m; sourceTree = "<group>"; };
-		3054BD3B1F7DD243001243C5 /* FJSegmentdPageViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FJSegmentdPageViewController.h; sourceTree = "<group>"; };
-		3054BD3C1F7DD243001243C5 /* FJSegmentdPageViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FJSegmentdPageViewController.m; sourceTree = "<group>"; };
-		3054BD3D1F7DD243001243C5 /* FJSegementContentCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FJSegementContentCell.h; sourceTree = "<group>"; };
-		3054BD3E1F7DD243001243C5 /* FJSegementContentCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FJSegementContentCell.m; sourceTree = "<group>"; };
-		3054BD3F1F7DD243001243C5 /* FJSegmentedPageDefine.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FJSegmentedPageDefine.h; sourceTree = "<group>"; };
-		3054BD401F7DD243001243C5 /* FJSegementContentView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FJSegementContentView.h; sourceTree = "<group>"; };
-		3054BD411F7DD243001243C5 /* FJSegementContentView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FJSegementContentView.m; sourceTree = "<group>"; };
-		3054BD431F7DD243001243C5 /* FJSegmentedPageContentView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FJSegmentedPageContentView.h; sourceTree = "<group>"; };
-		3054BD441F7DD243001243C5 /* FJSegmentedPageContentView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FJSegmentedPageContentView.m; sourceTree = "<group>"; };
-		3054BD451F7DD243001243C5 /* FJPageCollectionViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FJPageCollectionViewCell.h; sourceTree = "<group>"; };
-		3054BD461F7DD243001243C5 /* FJPageCollectionViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FJPageCollectionViewCell.m; sourceTree = "<group>"; };
-		3054BD481F7DD243001243C5 /* FJSegmentedTagTitleCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FJSegmentedTagTitleCell.h; sourceTree = "<group>"; };
-		3054BD491F7DD243001243C5 /* FJSegmentedTagTitleCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FJSegmentedTagTitleCell.m; sourceTree = "<group>"; };
-		3054BD4A1F7DD243001243C5 /* FJSegmentedTagTitleView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FJSegmentedTagTitleView.h; sourceTree = "<group>"; };
-		3054BD4B1F7DD243001243C5 /* FJSegmentedTagTitleView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FJSegmentedTagTitleView.m; sourceTree = "<group>"; };
-		30608F221FCE87DC00DFBB5D /* FJSegmentViewStyle.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FJSegmentViewStyle.h; sourceTree = "<group>"; };
-		30608F231FCE87DC00DFBB5D /* FJSegmentViewStyle.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FJSegmentViewStyle.m; sourceTree = "<group>"; };
-		30608F281FCEA4AF00DFBB5D /* FJShopSegmentedViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FJShopSegmentedViewController.h; sourceTree = "<group>"; };
-		30608F291FCEA4AF00DFBB5D /* FJShopSegmentedViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FJShopSegmentedViewController.m; sourceTree = "<group>"; };
-		306F3A5C1FB19FA100401AB8 /* FJShopViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FJShopViewController.h; sourceTree = "<group>"; };
-		306F3A5D1FB19FA100401AB8 /* FJShopViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FJShopViewController.m; sourceTree = "<group>"; };
 		308FFF041F7DF922003CE28E /* icon_tongyong_xiaoxi@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_tongyong_xiaoxi@3x.png"; sourceTree = "<group>"; };
 		308FFF051F7DF922003CE28E /* icon_tongyong_xiaoxi@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_tongyong_xiaoxi@2x.png"; sourceTree = "<group>"; };
 		308FFF061F7DF939003CE28E /* icon_wode_leijishouyi@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_wode_leijishouyi@3x.png"; sourceTree = "<group>"; };
@@ -133,8 +83,43 @@
 		308FFF081F7DF949003CE28E /* icon_wode_kuajishouyi@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_wode_kuajishouyi@2x.png"; sourceTree = "<group>"; };
 		308FFF091F7DF949003CE28E /* icon_wode_kuajishouyi@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_wode_kuajishouyi@3x.png"; sourceTree = "<group>"; };
 		308FFF0A1F7DF970003CE28E /* icon_tongyong_zhibidongxiao@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_tongyong_zhibidongxiao@2x.png"; sourceTree = "<group>"; };
-		30CA3082206102B800EF77C5 /* UIView+FJFrame.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+FJFrame.m"; sourceTree = "<group>"; };
-		30CA3083206102B900EF77C5 /* UIView+FJFrame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+FJFrame.h"; sourceTree = "<group>"; };
+		30E2FF6E20834E22006E9432 /* UIView+FJFrame.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+FJFrame.m"; sourceTree = "<group>"; };
+		30E2FF6F20834E22006E9432 /* UIViewController+FJCurrentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+FJCurrentViewController.h"; sourceTree = "<group>"; };
+		30E2FF7020834E22006E9432 /* UIView+FJFrame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+FJFrame.h"; sourceTree = "<group>"; };
+		30E2FF7120834E22006E9432 /* UIViewController+FJCurrentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+FJCurrentViewController.m"; sourceTree = "<group>"; };
+		30E2FF7320834E22006E9432 /* FJSegmentedPageContentView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FJSegmentedPageContentView.m; sourceTree = "<group>"; };
+		30E2FF7420834E22006E9432 /* FJSegmentedPageContentView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FJSegmentedPageContentView.h; sourceTree = "<group>"; };
+		30E2FF7620834E22006E9432 /* FJSegementContentCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FJSegementContentCell.h; sourceTree = "<group>"; };
+		30E2FF7720834E22006E9432 /* FJSegmentViewStyle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FJSegmentViewStyle.m; sourceTree = "<group>"; };
+		30E2FF7820834E22006E9432 /* FJSegmentdPageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FJSegmentdPageViewController.h; sourceTree = "<group>"; };
+		30E2FF7920834E22006E9432 /* FJSegmentedBaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FJSegmentedBaseViewController.m; sourceTree = "<group>"; };
+		30E2FF7A20834E22006E9432 /* FJSegementPageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FJSegementPageView.h; sourceTree = "<group>"; };
+		30E2FF7B20834E22006E9432 /* FJSegmentedPageDefine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FJSegmentedPageDefine.h; sourceTree = "<group>"; };
+		30E2FF7C20834E22006E9432 /* FJBaseTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FJBaseTableView.m; sourceTree = "<group>"; };
+		30E2FF7D20834E22006E9432 /* FJSegmentViewStyle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FJSegmentViewStyle.h; sourceTree = "<group>"; };
+		30E2FF7E20834E22006E9432 /* FJSegementContentCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FJSegementContentCell.m; sourceTree = "<group>"; };
+		30E2FF7F20834E22006E9432 /* FJSegmentPageChildVcDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FJSegmentPageChildVcDelegate.h; sourceTree = "<group>"; };
+		30E2FF8020834E22006E9432 /* FJSegementPageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FJSegementPageView.m; sourceTree = "<group>"; };
+		30E2FF8120834E22006E9432 /* FJSegmentedBaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FJSegmentedBaseViewController.h; sourceTree = "<group>"; };
+		30E2FF8220834E22006E9432 /* FJSegmentdPageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FJSegmentdPageViewController.m; sourceTree = "<group>"; };
+		30E2FF8320834E22006E9432 /* FJBaseTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FJBaseTableView.h; sourceTree = "<group>"; };
+		30E2FF8520834E22006E9432 /* FJSegmentedTagTitleCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FJSegmentedTagTitleCell.m; sourceTree = "<group>"; };
+		30E2FF8620834E22006E9432 /* FJSegmentedTagTitleView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FJSegmentedTagTitleView.m; sourceTree = "<group>"; };
+		30E2FF8720834E22006E9432 /* FJSegmentedTagTitleCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FJSegmentedTagTitleCell.h; sourceTree = "<group>"; };
+		30E2FF8820834E22006E9432 /* FJSegmentedTagTitleView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FJSegmentedTagTitleView.h; sourceTree = "<group>"; };
+		30E2FF9520834E56006E9432 /* FJSecondShopSegmentedViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FJSecondShopSegmentedViewController.m; sourceTree = "<group>"; };
+		30E2FF9620834E56006E9432 /* FJThreeShopSegmentedViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FJThreeShopSegmentedViewController.m; sourceTree = "<group>"; };
+		30E2FF9720834E56006E9432 /* FJFirstShopSegmentedViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FJFirstShopSegmentedViewController.h; sourceTree = "<group>"; };
+		30E2FF9820834E56006E9432 /* FJSecondShopViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FJSecondShopViewController.h; sourceTree = "<group>"; };
+		30E2FF9920834E56006E9432 /* FJFirstShopViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FJFirstShopViewController.m; sourceTree = "<group>"; };
+		30E2FF9A20834E56006E9432 /* FJSecondShopSegmentedViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FJSecondShopSegmentedViewController.h; sourceTree = "<group>"; };
+		30E2FF9B20834E56006E9432 /* FJThreeShopSegmentedViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FJThreeShopSegmentedViewController.h; sourceTree = "<group>"; };
+		30E2FF9C20834E56006E9432 /* FJFirstShopSegmentedViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FJFirstShopSegmentedViewController.m; sourceTree = "<group>"; };
+		30E2FF9D20834E56006E9432 /* FJFirstShopViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FJFirstShopViewController.h; sourceTree = "<group>"; };
+		30E2FF9E20834E56006E9432 /* FJSecondShopViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FJSecondShopViewController.m; sourceTree = "<group>"; };
+		30E2FFA520834E5C006E9432 /* QNPersonalHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QNPersonalHeaderView.h; sourceTree = "<group>"; };
+		30E2FFA620834E5C006E9432 /* QNPersonalHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QNPersonalHeaderView.m; sourceTree = "<group>"; };
+		30E2FFA720834E5C006E9432 /* QNPersonalHeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = QNPersonalHeaderView.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -176,21 +161,10 @@
 			path = Resource;
 			sourceTree = "<group>";
 		};
-		303A687B1F8CCCC000D04C16 /* FJCategory */ = {
-			isa = PBXGroup;
-			children = (
-				30CA3083206102B900EF77C5 /* UIView+FJFrame.h */,
-				30CA3082206102B800EF77C5 /* UIView+FJFrame.m */,
-				303A687C1F8CCCC000D04C16 /* UIViewController+FJCurrentViewController.h */,
-				303A687D1F8CCCC000D04C16 /* UIViewController+FJCurrentViewController.m */,
-			);
-			path = FJCategory;
-			sourceTree = "<group>";
-		};
 		3054BCF51F7DD14D001243C5 = {
 			isa = PBXGroup;
 			children = (
-				3054BD331F7DD243001243C5 /* FJSegmentedPager */,
+				30E2FF6C20834E22006E9432 /* FJSegmentedPager */,
 				3054BD001F7DD14E001243C5 /* FJSegmentedPagerDemo */,
 				3054BD191F7DD14E001243C5 /* FJSegmentedPagerDemoTests */,
 				3054BD241F7DD14E001243C5 /* FJSegmentedPagerDemoUITests */,
@@ -211,22 +185,13 @@
 		3054BD001F7DD14E001243C5 /* FJSegmentedPagerDemo */ = {
 			isa = PBXGroup;
 			children = (
+				30E2FFA420834E5C006E9432 /* View */,
+				30E2FF9420834E56006E9432 /* Controller */,
 				302CD6BF1F7DE2CC007E8926 /* Resource */,
 				3054BD011F7DD14E001243C5 /* AppDelegate.h */,
 				3054BD021F7DD14E001243C5 /* AppDelegate.m */,
 				3054BD041F7DD14E001243C5 /* ViewController.h */,
 				3054BD051F7DD14E001243C5 /* ViewController.m */,
-				306F3A5C1FB19FA100401AB8 /* FJShopViewController.h */,
-				306F3A5D1FB19FA100401AB8 /* FJShopViewController.m */,
-				30608F281FCEA4AF00DFBB5D /* FJShopSegmentedViewController.h */,
-				30608F291FCEA4AF00DFBB5D /* FJShopSegmentedViewController.m */,
-				302CD6BB1F7DE227007E8926 /* QNPersonalHeaderView.h */,
-				302CD6B91F7DE227007E8926 /* QNPersonalHeaderView.m */,
-				302CD6BA1F7DE227007E8926 /* QNPersonalHeaderView.xib */,
-				303A68721F8CBF7700D04C16 /* FJFirstShopViewController.h */,
-				303A68731F8CBF7700D04C16 /* FJFirstShopViewController.m */,
-				302CD6B61F7DE064007E8926 /* FJSecondShopViewController.h */,
-				302CD6B71F7DE064007E8926 /* FJSecondShopViewController.m */,
 				3054BD071F7DD14E001243C5 /* Main.storyboard */,
 				3054BD0A1F7DD14E001243C5 /* Assets.xcassets */,
 				3054BD0C1F7DD14E001243C5 /* LaunchScreen.storyboard */,
@@ -254,59 +219,94 @@
 			path = FJSegmentedPagerDemoUITests;
 			sourceTree = "<group>";
 		};
-		3054BD331F7DD243001243C5 /* FJSegmentedPager */ = {
+		30E2FF6C20834E22006E9432 /* FJSegmentedPager */ = {
 			isa = PBXGroup;
 			children = (
-				303A687B1F8CCCC000D04C16 /* FJCategory */,
-				3054BD341F7DD243001243C5 /* FJSegmentedBase */,
-				3054BD421F7DD243001243C5 /* FJSegmentedPageView */,
-				3054BD471F7DD243001243C5 /* FJSegmentedTitleView */,
+				30E2FF6D20834E22006E9432 /* FJCategory */,
+				30E2FF7220834E22006E9432 /* FJSegmentedPageView */,
+				30E2FF7520834E22006E9432 /* FJSegmentedBase */,
+				30E2FF8420834E22006E9432 /* FJSegmentedTitleView */,
 			);
 			path = FJSegmentedPager;
-			sourceTree = SOURCE_ROOT;
-		};
-		3054BD341F7DD243001243C5 /* FJSegmentedBase */ = {
-			isa = PBXGroup;
-			children = (
-				3054BD371F7DD243001243C5 /* FJConfigModel.h */,
-				3054BD381F7DD243001243C5 /* FJConfigModel.m */,
-				3054BD351F7DD243001243C5 /* FJBaseTableView.h */,
-				3054BD361F7DD243001243C5 /* FJBaseTableView.m */,
-				30608F221FCE87DC00DFBB5D /* FJSegmentViewStyle.h */,
-				30608F231FCE87DC00DFBB5D /* FJSegmentViewStyle.m */,
-				3054BD3D1F7DD243001243C5 /* FJSegementContentCell.h */,
-				3054BD3E1F7DD243001243C5 /* FJSegementContentCell.m */,
-				3054BD3F1F7DD243001243C5 /* FJSegmentedPageDefine.h */,
-				3054BD401F7DD243001243C5 /* FJSegementContentView.h */,
-				3054BD411F7DD243001243C5 /* FJSegementContentView.m */,
-				3054BD391F7DD243001243C5 /* FJSegmentedBaseViewController.h */,
-				3054BD3A1F7DD243001243C5 /* FJSegmentedBaseViewController.m */,
-				3054BD3B1F7DD243001243C5 /* FJSegmentdPageViewController.h */,
-				3054BD3C1F7DD243001243C5 /* FJSegmentdPageViewController.m */,
-			);
-			path = FJSegmentedBase;
 			sourceTree = "<group>";
 		};
-		3054BD421F7DD243001243C5 /* FJSegmentedPageView */ = {
+		30E2FF6D20834E22006E9432 /* FJCategory */ = {
 			isa = PBXGroup;
 			children = (
-				3054BD431F7DD243001243C5 /* FJSegmentedPageContentView.h */,
-				3054BD441F7DD243001243C5 /* FJSegmentedPageContentView.m */,
-				3054BD451F7DD243001243C5 /* FJPageCollectionViewCell.h */,
-				3054BD461F7DD243001243C5 /* FJPageCollectionViewCell.m */,
+				30E2FF6E20834E22006E9432 /* UIView+FJFrame.m */,
+				30E2FF6F20834E22006E9432 /* UIViewController+FJCurrentViewController.h */,
+				30E2FF7020834E22006E9432 /* UIView+FJFrame.h */,
+				30E2FF7120834E22006E9432 /* UIViewController+FJCurrentViewController.m */,
+			);
+			path = FJCategory;
+			sourceTree = "<group>";
+		};
+		30E2FF7220834E22006E9432 /* FJSegmentedPageView */ = {
+			isa = PBXGroup;
+			children = (
+				30E2FF7320834E22006E9432 /* FJSegmentedPageContentView.m */,
+				30E2FF7420834E22006E9432 /* FJSegmentedPageContentView.h */,
 			);
 			path = FJSegmentedPageView;
 			sourceTree = "<group>";
 		};
-		3054BD471F7DD243001243C5 /* FJSegmentedTitleView */ = {
+		30E2FF7520834E22006E9432 /* FJSegmentedBase */ = {
 			isa = PBXGroup;
 			children = (
-				3054BD481F7DD243001243C5 /* FJSegmentedTagTitleCell.h */,
-				3054BD491F7DD243001243C5 /* FJSegmentedTagTitleCell.m */,
-				3054BD4A1F7DD243001243C5 /* FJSegmentedTagTitleView.h */,
-				3054BD4B1F7DD243001243C5 /* FJSegmentedTagTitleView.m */,
+				30E2FF7620834E22006E9432 /* FJSegementContentCell.h */,
+				30E2FF7720834E22006E9432 /* FJSegmentViewStyle.m */,
+				30E2FF7820834E22006E9432 /* FJSegmentdPageViewController.h */,
+				30E2FF7920834E22006E9432 /* FJSegmentedBaseViewController.m */,
+				30E2FF7A20834E22006E9432 /* FJSegementPageView.h */,
+				30E2FF7B20834E22006E9432 /* FJSegmentedPageDefine.h */,
+				30E2FF7C20834E22006E9432 /* FJBaseTableView.m */,
+				30E2FF7D20834E22006E9432 /* FJSegmentViewStyle.h */,
+				30E2FF7E20834E22006E9432 /* FJSegementContentCell.m */,
+				30E2FF7F20834E22006E9432 /* FJSegmentPageChildVcDelegate.h */,
+				30E2FF8020834E22006E9432 /* FJSegementPageView.m */,
+				30E2FF8120834E22006E9432 /* FJSegmentedBaseViewController.h */,
+				30E2FF8220834E22006E9432 /* FJSegmentdPageViewController.m */,
+				30E2FF8320834E22006E9432 /* FJBaseTableView.h */,
+			);
+			path = FJSegmentedBase;
+			sourceTree = "<group>";
+		};
+		30E2FF8420834E22006E9432 /* FJSegmentedTitleView */ = {
+			isa = PBXGroup;
+			children = (
+				30E2FF8520834E22006E9432 /* FJSegmentedTagTitleCell.m */,
+				30E2FF8620834E22006E9432 /* FJSegmentedTagTitleView.m */,
+				30E2FF8720834E22006E9432 /* FJSegmentedTagTitleCell.h */,
+				30E2FF8820834E22006E9432 /* FJSegmentedTagTitleView.h */,
 			);
 			path = FJSegmentedTitleView;
+			sourceTree = "<group>";
+		};
+		30E2FF9420834E56006E9432 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				30E2FF9520834E56006E9432 /* FJSecondShopSegmentedViewController.m */,
+				30E2FF9620834E56006E9432 /* FJThreeShopSegmentedViewController.m */,
+				30E2FF9720834E56006E9432 /* FJFirstShopSegmentedViewController.h */,
+				30E2FF9820834E56006E9432 /* FJSecondShopViewController.h */,
+				30E2FF9920834E56006E9432 /* FJFirstShopViewController.m */,
+				30E2FF9A20834E56006E9432 /* FJSecondShopSegmentedViewController.h */,
+				30E2FF9B20834E56006E9432 /* FJThreeShopSegmentedViewController.h */,
+				30E2FF9C20834E56006E9432 /* FJFirstShopSegmentedViewController.m */,
+				30E2FF9D20834E56006E9432 /* FJFirstShopViewController.h */,
+				30E2FF9E20834E56006E9432 /* FJSecondShopViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		30E2FFA420834E5C006E9432 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				30E2FFA520834E5C006E9432 /* QNPersonalHeaderView.h */,
+				30E2FFA620834E5C006E9432 /* QNPersonalHeaderView.m */,
+				30E2FFA720834E5C006E9432 /* QNPersonalHeaderView.xib */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -422,6 +422,7 @@
 				308FFF0F1F7E165E003CE28E /* icon_tongyong_xiaoxi@2x.png in Resources */,
 				308FFF101F7E165E003CE28E /* icon_tongyong_xiaoxi@3x.png in Resources */,
 				308FFF111F7E165E003CE28E /* icon_tongyong_zhibidongxiao@2x.png in Resources */,
+				30E2FFA920834E5C006E9432 /* QNPersonalHeaderView.xib in Resources */,
 				3054BD0E1F7DD14E001243C5 /* LaunchScreen.storyboard in Resources */,
 				3054BD0B1F7DD14E001243C5 /* Assets.xcassets in Resources */,
 				3054BD091F7DD14E001243C5 /* Main.storyboard in Resources */,
@@ -449,41 +450,26 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				303A687E1F8CCCD100D04C16 /* UIViewController+FJCurrentViewController.h in Sources */,
-				303A687F1F8CCCD100D04C16 /* UIViewController+FJCurrentViewController.m in Sources */,
-				302CD6BD1F7DE244007E8926 /* QNPersonalHeaderView.h in Sources */,
-				302CD6BE1F7DE244007E8926 /* QNPersonalHeaderView.xib in Sources */,
-				3054BD5D1F7DD2B1001243C5 /* FJSegmentedTagTitleCell.h in Sources */,
-				30608F241FCE87DC00DFBB5D /* FJSegmentViewStyle.m in Sources */,
-				3054BD5E1F7DD2B1001243C5 /* FJSegmentedTagTitleCell.m in Sources */,
-				302CD6B81F7DE064007E8926 /* FJSecondShopViewController.m in Sources */,
-				3054BD5F1F7DD2B1001243C5 /* FJSegmentedTagTitleView.h in Sources */,
-				3054BD601F7DD2B1001243C5 /* FJSegmentedTagTitleView.m in Sources */,
-				3054BD4C1F7DD2A7001243C5 /* FJBaseTableView.h in Sources */,
-				3054BD4D1F7DD2A7001243C5 /* FJBaseTableView.m in Sources */,
-				3054BD4E1F7DD2A7001243C5 /* FJConfigModel.h in Sources */,
-				3054BD4F1F7DD2A7001243C5 /* FJConfigModel.m in Sources */,
-				3054BD501F7DD2A7001243C5 /* FJSegmentedBaseViewController.h in Sources */,
-				303A68741F8CBF7700D04C16 /* FJFirstShopViewController.m in Sources */,
-				3054BD511F7DD2A7001243C5 /* FJSegmentedBaseViewController.m in Sources */,
-				3054BD521F7DD2A7001243C5 /* FJSegmentdPageViewController.h in Sources */,
-				3054BD531F7DD2A7001243C5 /* FJSegmentdPageViewController.m in Sources */,
-				3054BD541F7DD2A7001243C5 /* FJSegementContentCell.h in Sources */,
-				30CA3084206102B900EF77C5 /* UIView+FJFrame.m in Sources */,
-				3054BD551F7DD2A7001243C5 /* FJSegementContentCell.m in Sources */,
-				3054BD561F7DD2A7001243C5 /* FJSegmentedPageDefine.h in Sources */,
-				3054BD571F7DD2A7001243C5 /* FJSegementContentView.h in Sources */,
-				3054BD581F7DD2A7001243C5 /* FJSegementContentView.m in Sources */,
-				3054BD591F7DD2A7001243C5 /* FJSegmentedPageContentView.h in Sources */,
-				30608F2A1FCEA4AF00DFBB5D /* FJShopSegmentedViewController.m in Sources */,
-				3054BD5A1F7DD2A7001243C5 /* FJSegmentedPageContentView.m in Sources */,
-				3054BD5B1F7DD2A7001243C5 /* FJPageCollectionViewCell.h in Sources */,
-				306F3A5E1FB19FA100401AB8 /* FJShopViewController.m in Sources */,
-				3054BD5C1F7DD2A7001243C5 /* FJPageCollectionViewCell.m in Sources */,
+				30E2FFA820834E5C006E9432 /* QNPersonalHeaderView.m in Sources */,
+				30E2FF9220834E22006E9432 /* FJSegmentedTagTitleCell.m in Sources */,
+				30E2FF9320834E22006E9432 /* FJSegmentedTagTitleView.m in Sources */,
+				30E2FFA120834E56006E9432 /* FJFirstShopViewController.m in Sources */,
+				30E2FF8B20834E22006E9432 /* FJSegmentedPageContentView.m in Sources */,
+				30E2FF8A20834E22006E9432 /* UIViewController+FJCurrentViewController.m in Sources */,
+				30E2FF8F20834E22006E9432 /* FJSegementContentCell.m in Sources */,
+				30E2FF9020834E22006E9432 /* FJSegementPageView.m in Sources */,
+				30E2FFA320834E56006E9432 /* FJSecondShopViewController.m in Sources */,
 				3054BD061F7DD14E001243C5 /* ViewController.m in Sources */,
 				3054BD111F7DD14E001243C5 /* main.m in Sources */,
+				30E2FF8E20834E22006E9432 /* FJBaseTableView.m in Sources */,
+				30E2FFA220834E56006E9432 /* FJFirstShopSegmentedViewController.m in Sources */,
+				30E2FF8920834E22006E9432 /* UIView+FJFrame.m in Sources */,
+				30E2FF8D20834E22006E9432 /* FJSegmentedBaseViewController.m in Sources */,
 				3054BD031F7DD14E001243C5 /* AppDelegate.m in Sources */,
-				302CD6BC1F7DE228007E8926 /* QNPersonalHeaderView.m in Sources */,
+				30E2FFA020834E56006E9432 /* FJThreeShopSegmentedViewController.m in Sources */,
+				30E2FF9120834E22006E9432 /* FJSegmentdPageViewController.m in Sources */,
+				30E2FF9F20834E56006E9432 /* FJSecondShopSegmentedViewController.m in Sources */,
+				30E2FF8C20834E22006E9432 /* FJSegmentViewStyle.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

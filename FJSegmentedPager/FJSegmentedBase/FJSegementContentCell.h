@@ -7,22 +7,17 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#import "FJSegementPageView.h"
 @class FJSegmentViewStyle;
 
 @interface FJSegementContentCell : UITableViewCell
 
 + (instancetype)cellWithTableView:(UITableView *)tableView;
+// 滚动 栏
+@property (nonatomic, strong) FJSegementPageView *segementPageView;
 // 滚动 view frame
 @property (nonatomic, assign) CGRect rollViewFrame;
-// 配置 数据 模型
-@property (nonatomic, strong) NSArray *configModelArray;
 // 属性 配置
 @property (nonatomic, strong) FJSegmentViewStyle *segmentViewStyle;
-// baseViewControllerParam 参数
-@property (nonatomic, strong) id baseViewControllerParam;
-// 获取 view controller array
-- (NSMutableArray *)getViewControllerArray;
-// 改变 doubleDeckRollView 高度
-- (void)changeDoubleDeckRollViewHeight:(CGFloat)height;
+
 @end

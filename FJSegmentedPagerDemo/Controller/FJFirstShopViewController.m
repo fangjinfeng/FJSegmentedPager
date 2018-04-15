@@ -7,6 +7,7 @@
 //  Copyright © 2017年 fjf. All rights reserved.
 //
 
+#import "UIView+FJFrame.h"
 #import "FJFirstShopViewController.h"
 
 @interface FJFirstShopViewController ()
@@ -18,8 +19,8 @@
 #pragma mark --------------- Public Methods
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
-    
+
+    [self setupViewControls];
 }
 
 #pragma mark --------------- System Delegate
@@ -44,6 +45,10 @@
     return 300.0f;
 }
 
+#pragma mark --------------- Private Methods
 
+- (void)setupViewControls {
+    self.tableView.fj_height += 20.0f;
+}
 
 @end

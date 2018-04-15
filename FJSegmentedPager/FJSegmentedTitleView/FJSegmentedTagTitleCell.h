@@ -13,6 +13,7 @@
 @interface FJSegmentedTagTitleCell : UIView
 // 标题 内容
 @property (nonatomic, copy)   NSString *titleStr;
+@property (strong, nonatomic) UIColor *textColor;
 // 属性 配置
 @property (nonatomic, strong) FJSegmentViewStyle *segmentViewStyle;
 // 设置 选中

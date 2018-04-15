@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "FJSegmentPageChildVcDelegate.h"
 
 @class FJSegmentViewStyle;
 @class FJSegmentedPageContentView;
@@ -27,14 +28,9 @@
 
 @interface FJSegmentedPageContentView : UIView
 
+
 // 选中 索引
 @property (nonatomic, assign) NSInteger selectedIndex;
-
-// baseViewControllerParam 参数
-@property (nonatomic, strong) id baseViewControllerParam;
-
-// 内容 viewArray
-@property (nonatomic, strong) NSArray *detailContentViewArray;
 
 // 属性 配置
 @property (nonatomic, strong) FJSegmentViewStyle *segmentViewStyle;
@@ -42,6 +38,14 @@
 // 代理
 @property (nonatomic, weak)  id <FJDetailContentViewDelegate> delegate;
 
-// viewController Array
-@property (nonatomic, strong) NSMutableArray <FJSegmentdPageViewController *>*viewControllerArray;
+// delegate 委托
+@property (nonatomic, weak) id<FJSegmentPageViewDelegate> segmentPagedelegate;
+
+// dataSource 数据源
+@property (nonatomic, weak) id<FJSegmentPageViewDataSource> segmentPageDataSource;
+
+// 刷新
+- (void)reloadData;
+// 给外界可以设置ContentOffSet的方法
+- (void)setContentOffSet:(CGPoint)offset animated:(BOOL)animated ;
 @end

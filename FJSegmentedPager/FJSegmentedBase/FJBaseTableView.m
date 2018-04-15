@@ -12,13 +12,13 @@
 @implementation FJBaseTableView
 // 当有 多个手势 都可以 响应
 - (BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldRecognizeSimultaneouslyWithGestureRecognizer:(UIGestureRecognizer *)otherGestureRecognizer {
-    
+
     // Ignore other gesture than pan
     if ([otherGestureRecognizer.view isKindOfClass:[UICollectionView class]]) {
         return NO;
     }
-    
-    return YES;
+
+    return [gestureRecognizer isKindOfClass:[UIPanGestureRecognizer class]] && [otherGestureRecognizer isKindOfClass:[UIPanGestureRecognizer class]];
 }
 
 

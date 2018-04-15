@@ -80,14 +80,12 @@
 /************************ UIScrollViewDelegate **********************/
 
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView{
-    if (self.eliminateSubViewScrollLimit == NO) {
-        if (!self.isEnableScroll) {
-            [scrollView setContentOffset:CGPointZero];
-        }
-        CGFloat offsetY = scrollView.contentOffset.y;
-        if (offsetY < 0) {
-            [[NSNotificationCenter defaultCenter] postNotificationName:kLeaveTopNotificationName object:[NSNumber numberWithBool:YES] userInfo:nil];
-        }
+    if (!self.isEnableScroll) {
+        [scrollView setContentOffset:CGPointZero];
+    }
+    CGFloat offsetY = scrollView.contentOffset.y;
+    if (offsetY < 0) {
+        [[NSNotificationCenter defaultCenter] postNotificationName:kLeaveTopNotificationName object:[NSNumber numberWithBool:YES] userInfo:nil];
     }
 }
 
@@ -130,7 +128,7 @@
 // tableView
 - (FJBaseTableView *)tableView {
     if (!_tableView) {
-        _tableView = [[FJBaseTableView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height) style:UITableViewStylePlain];
+        _tableView = [[FJBaseTableView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height - FJ_SEGMENT_NAVIGATION_BAR_HEIGHT) style:UITableViewStylePlain];
         _tableView.delegate = self;
         _tableView.dataSource = self;
         _tableView.estimatedRowHeight = 0;
@@ -147,10 +145,10 @@
 - (CGFloat)tableFooterViewHeight {
     CGFloat footerViewHeight = _tagSectionViewHeight;
     if ([UIViewController fj_currentViewController].navigationController && [UIViewController fj_currentViewController].navigationController.navigationBar.isHidden == NO) {
-        footerViewHeight += NAVIGATION_BAR_HEIGHT;
+        footerViewHeight += FJ_SEGMENT_NAVIGATION_BAR_HEIGHT;
     }
     if ([UIViewController fj_currentViewController].tabBarController && [UIViewController fj_currentViewController].tabBarController.tabBar.isHidden == NO) {
-        footerViewHeight += TABBAR_HEIGHT;
+        footerViewHeight += FJ_SEGMENT_TABBAR_HEIGHT;
     }
     return footerViewHeight;
 }

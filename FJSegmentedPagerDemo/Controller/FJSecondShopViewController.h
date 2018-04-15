@@ -6,8 +6,9 @@
 //  Copyright © 2017年 fjf. All rights reserved.
 //
 
+#import "FJSegmentPageChildVcDelegate.h"
 #import "FJSegmentdPageViewController.h"
 
-@interface FJSecondShopViewController : FJSegmentdPageViewController
+@interface FJSecondShopViewController : UIViewController<FJSegmentPageChildVcDelegate>
 
 @end

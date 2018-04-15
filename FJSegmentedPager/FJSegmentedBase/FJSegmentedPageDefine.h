@@ -9,10 +9,9 @@
 #ifndef FJSegmentedPageDefine_h
 #define FJSegmentedPageDefine_h
 
-#import "FJConfigModel.h"
 #import "FJBaseTableView.h"
 #import "UIView+FJFrame.h"
-#import "FJSegementContentView.h"
+#import "FJSegementPageView.h"
 
 // go top tip
 static NSString *const kGoTopNotificationName = @"kGoTopNotificationName";
@@ -25,15 +24,15 @@ static NSString *const kFJScrollToSegmentedPageNoti = @"kFJScrollToSegmentedPage
 static NSString *const kFJSubScrollViewScrollToTopNoti = @"kFJSubScrollViewScrollToTopNoti";
 
 // 屏幕 宽度
-#define SCREEN_WIDTH [UIScreen mainScreen].bounds.size.width
+#define FJ_SEGMENT_SCREEN_WIDTH [UIScreen mainScreen].bounds.size.width
 // 屏幕 高度
-#define SCREEN_HEIGHT [UIScreen mainScreen].bounds.size.height
+#define FJ_SEGMENT_SCREEN_HEIGHT [UIScreen mainScreen].bounds.size.height
 // 适配iPhone X 导航栏高度
-#define  NAVIGATION_BAR_HEIGHT  (ISIPONEX ? 88.f : 64.f)
+#define  FJ_SEGMENT_NAVIGATION_BAR_HEIGHT  (FJ_SEGMENT_ISIPONEX ? 88.f : 64.f)
 // 适配iPhone X Tabbar高度
-#define  TABBAR_HEIGHT         (ISIPONEX ? (49.f+34.f) : 49.f)
+#define  FJ_SEGMENT_TABBAR_HEIGHT         (FJ_SEGMENT_ISIPONEX ? (49.f+34.f) : 49.f)
 // iPhone X 宏定义
-#define  ISIPONEX (SCREEN_WIDTH == 375.f && SCREEN_HEIGHT == 812.f ? YES : NO)
+#define  FJ_SEGMENT_ISIPONEX (FJ_SEGMENT_SCREEN_WIDTH == 375.f && FJ_SEGMENT_SCREEN_HEIGHT == 812.f ? YES : NO)
 
 // 颜色
 
