@@ -48,11 +48,11 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
-    FJSegementContentCell *doubleDeckCell = [FJSegementContentCell cellWithTableView:tableView];
-    doubleDeckCell.segmentViewStyle = self.segmentViewStyle;
-    doubleDeckCell.segementPageView.dataSource = self;
-    doubleDeckCell.segementPageView.delegate = self;
-    return doubleDeckCell;
+    FJSegementContentCell *segementContentCell = [FJSegementContentCell cellWithTableView:tableView];
+    segementContentCell.segmentViewStyle = self.segmentViewStyle;
+    segementContentCell.segementPageView.dataSource = self;
+    segementContentCell.segementPageView.delegate = self;
+    return segementContentCell;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {

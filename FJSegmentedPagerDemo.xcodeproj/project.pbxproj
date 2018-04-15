@@ -285,14 +285,14 @@
 		30E2FF9420834E56006E9432 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				30E2FF9720834E56006E9432 /* FJFirstShopSegmentedViewController.h */,
+				30E2FF9C20834E56006E9432 /* FJFirstShopSegmentedViewController.m */,
+				30E2FF9A20834E56006E9432 /* FJSecondShopSegmentedViewController.h */,
 				30E2FF9520834E56006E9432 /* FJSecondShopSegmentedViewController.m */,
 				30E2FF9620834E56006E9432 /* FJThreeShopSegmentedViewController.m */,
-				30E2FF9720834E56006E9432 /* FJFirstShopSegmentedViewController.h */,
+				30E2FF9B20834E56006E9432 /* FJThreeShopSegmentedViewController.h */,
 				30E2FF9820834E56006E9432 /* FJSecondShopViewController.h */,
 				30E2FF9920834E56006E9432 /* FJFirstShopViewController.m */,
-				30E2FF9A20834E56006E9432 /* FJSecondShopSegmentedViewController.h */,
-				30E2FF9B20834E56006E9432 /* FJThreeShopSegmentedViewController.h */,
-				30E2FF9C20834E56006E9432 /* FJFirstShopSegmentedViewController.m */,
 				30E2FF9D20834E56006E9432 /* FJFirstShopViewController.h */,
 				30E2FF9E20834E56006E9432 /* FJSecondShopViewController.m */,
 			);
