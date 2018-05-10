@@ -151,7 +151,7 @@
         _segmentViewStyle.itemTitleFont = [UIFont systemFontOfSize:14.0f];
         _segmentViewStyle.itemTitleSelectedFont = [UIFont boldSystemFontOfSize:16.0f];
         _segmentViewStyle.segmentedIndicatorViewWidth = 16.0f;
-        _segmentViewStyle.segmentedIndicatorViewWidthToBottomSpacing = 10.0f;
+        _segmentViewStyle.segmentedIndicatorViewToBottomSpacing = 10.0f;
         _segmentViewStyle.segmentIndicatorWidthShowType = FJSegmentIndicatorWidthShowTypeAdaptionFixedWidth;
         _segmentViewStyle.titleColorChangeType = FJSegmentTitleViewTitleColorChangeTypeGradualChange;
     }

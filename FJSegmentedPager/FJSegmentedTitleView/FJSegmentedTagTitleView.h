@@ -32,6 +32,8 @@
 @property (nonatomic, weak) id<FJSegmentPageViewDataSource> segmentPageDataSource;
 // 刷新 数据
 - (void)reloadData;
+// 设置 选中 索引
+- (void)setupSelectedIndex:(NSInteger )selectedIndex animated:(BOOL)animated;
 // 依据 索引 更新 控件 状态
 - (void)updateControlsStatusWithCurrentIndex:(NSInteger)currentIndex;
 // 依据 参数 更新 控件

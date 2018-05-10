@@ -80,8 +80,8 @@ static CGFloat kFJTitleTagSectionViewHeight = 50.0f;
 
 /** 给外界设置选中的下标的方法 */
 - (void)setSelectedIndex:(NSInteger)selectedIndex animated:(BOOL)animated {
-    self.tagSecionView.selectedIndex = selectedIndex;
-    self.detailContentView.selectedIndex = selectedIndex;
+    [self.tagSecionView setupSelectedIndex:selectedIndex animated:animated];
+    [self.detailContentView setupSelectedIndex:selectedIndex animated:animated];
 }
 
 
@@ -138,5 +138,9 @@ static CGFloat kFJTitleTagSectionViewHeight = 50.0f;
         _detailContentView.delegate = self;
     }
     return _detailContentView;
+}
+
+- (NSInteger)selectedIndex {
+    return self.detailContentView.selectedIndex;
 }
 @end

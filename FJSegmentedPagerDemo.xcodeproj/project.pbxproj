@@ -233,9 +233,9 @@
 		30E2FF6D20834E22006E9432 /* FJCategory */ = {
 			isa = PBXGroup;
 			children = (
+				30E2FF7020834E22006E9432 /* UIView+FJFrame.h */,
 				30E2FF6E20834E22006E9432 /* UIView+FJFrame.m */,
 				30E2FF6F20834E22006E9432 /* UIViewController+FJCurrentViewController.h */,
-				30E2FF7020834E22006E9432 /* UIView+FJFrame.h */,
 				30E2FF7120834E22006E9432 /* UIViewController+FJCurrentViewController.m */,
 			);
 			path = FJCategory;

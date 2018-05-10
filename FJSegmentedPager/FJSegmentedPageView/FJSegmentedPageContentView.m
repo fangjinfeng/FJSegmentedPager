@@ -143,11 +143,11 @@
     if (!self.forbidTouchToAdjustPosition) {
         if (_currentIndex == indexPath.row) {// 没有滚动完成
             if (_needManageLifeCycle) {
-                UIViewController<FJSegmentPageChildVcDelegate> *currentVc = [self.childVcsDic valueForKey:[NSString stringWithFormat:@"%ld", _oldIndex]];
+                UIViewController<FJSegmentPageChildVcDelegate> *currentVc = [self.childVcsDic valueForKey:[NSString stringWithFormat:@"%ld", (long)_oldIndex]];
                 // 开始出现
                 [currentVc beginAppearanceTransition:YES animated:NO];
                 
-                UIViewController<FJSegmentPageChildVcDelegate> *oldVc = [self.childVcsDic valueForKey:[NSString stringWithFormat:@"%ld", indexPath.row]];
+                UIViewController<FJSegmentPageChildVcDelegate> *oldVc = [self.childVcsDic valueForKey:[NSString stringWithFormat:@"%ld", (long)indexPath.row]];
                 // 开始消失
                 [oldVc beginAppearanceTransition:NO animated:NO];
                 
@@ -168,11 +168,11 @@
             else {
                 // 滚动没有完成又快速的反向打开了另一页
                 if (_needManageLifeCycle) {
-                    UIViewController<FJSegmentPageChildVcDelegate> *currentVc = [self.childVcsDic valueForKey:[NSString stringWithFormat:@"%ld", _oldIndex]];
+                    UIViewController<FJSegmentPageChildVcDelegate> *currentVc = [self.childVcsDic valueForKey:[NSString stringWithFormat:@"%ld", (long)_oldIndex]];
                     // 开始出现
                     [currentVc beginAppearanceTransition:YES animated:NO];
                     
-                    UIViewController<FJSegmentPageChildVcDelegate> *oldVc = [self.childVcsDic valueForKey:[NSString stringWithFormat:@"%ld", indexPath.row]];
+                    UIViewController<FJSegmentPageChildVcDelegate> *oldVc = [self.childVcsDic valueForKey:[NSString stringWithFormat:@"%ld", (long)indexPath.row]];
                     // 开始消失
                     [oldVc beginAppearanceTransition:NO animated:NO];
                     // 消失
@@ -282,25 +282,6 @@
     }];
     
 }
-#pragma mark --------------- Getter / Setter
-// 设置 选中 索引
-- (void)setSelectedIndex:(NSInteger)selectedIndex {
-    _selectedIndex = selectedIndex;
-    
-    if (CGSizeEqualToSize(self.pageCollectionView.contentSize, CGSizeZero)) {
-        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.01 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-            if (self.pageCollectionView.contentSize.width > 0) {
-                [self.pageCollectionView selectItemAtIndexPath:[NSIndexPath indexPathForItem:_selectedIndex inSection:0] animated:NO scrollPosition:UICollectionViewScrollPositionCenteredHorizontally];
-            }
-        });
-    }
-    else {
-        if (self.pageCollectionView.contentSize.width > _selectedIndex * _pageFlowLayout.itemSize.width) {
-            [self.pageCollectionView selectItemAtIndexPath:[NSIndexPath indexPathForItem:_selectedIndex inSection:0] animated:YES scrollPosition:UICollectionViewScrollPositionCenteredHorizontally];
-        }
-    }
-}
-
 
 #pragma mark --------------- Private Methods
 
@@ -354,7 +335,7 @@
 
 
 - (void)willAppearWithIndex:(NSInteger)index {
-    UIViewController<FJSegmentPageChildVcDelegate> *controller = [self.childVcsDic valueForKey:[NSString stringWithFormat:@"%ld", index]];
+    UIViewController<FJSegmentPageChildVcDelegate> *controller = [self.childVcsDic valueForKey:[NSString stringWithFormat:@"%ld", (long)index]];
     if (controller) {
         if ([controller respondsToSelector:@selector(fj_viewWillAppearWithIndex:)]) {
             [controller fj_viewWillAppearWithIndex:index];
@@ -372,7 +353,7 @@
 }
 
 - (void)didAppearWithIndex:(NSInteger)index {
-    UIViewController<FJSegmentPageChildVcDelegate> *controller = [self.childVcsDic valueForKey:[NSString stringWithFormat:@"%ld", index]];
+    UIViewController<FJSegmentPageChildVcDelegate> *controller = [self.childVcsDic valueForKey:[NSString stringWithFormat:@"%ld", (long)index]];
     if (controller) {
         if ([controller respondsToSelector:@selector(fj_viewDidAppearWithIndex:)]) {
             [controller fj_viewDidAppearWithIndex:index];
@@ -392,7 +373,7 @@
 }
 
 - (void)willDisappearWithIndex:(NSInteger)index {
-    UIViewController<FJSegmentPageChildVcDelegate> *controller = [self.childVcsDic valueForKey:[NSString stringWithFormat:@"%ld", index]];
+    UIViewController<FJSegmentPageChildVcDelegate> *controller = [self.childVcsDic valueForKey:[NSString stringWithFormat:@"%ld", (long)index]];
     if (controller) {
         if ([controller respondsToSelector:@selector(fj_viewWillDisappearWithIndex:)]) {
             [controller fj_viewWillDisappearWithIndex:index];
@@ -409,7 +390,7 @@
     
 }
 - (void)didDisappearWithIndex:(NSInteger)index {
-    UIViewController<FJSegmentPageChildVcDelegate> *controller = [self.childVcsDic valueForKey:[NSString stringWithFormat:@"%ld", index]];
+    UIViewController<FJSegmentPageChildVcDelegate> *controller = [self.childVcsDic valueForKey:[NSString stringWithFormat:@"%ld", (long)index]];
     if (controller) {
         if ([controller respondsToSelector:@selector(fj_viewDidDisappearWithIndex:)]) {
             [controller fj_viewDidDisappearWithIndex:index];
@@ -499,13 +480,37 @@
     return controller;
 }
 
+// 设置 选中 索引
+- (void)setupSelectedIndex:(NSInteger )selectedIndex animated:(BOOL)animated {
+    self.selectedIndex = selectedIndex;
+    
+    if (CGSizeEqualToSize(self.pageCollectionView.contentSize, CGSizeZero)) {
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.01 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+            if (self.pageCollectionView.contentSize.width > 0) {
+                [self.pageCollectionView selectItemAtIndexPath:[NSIndexPath indexPathForItem:_selectedIndex inSection:0] animated:NO scrollPosition:UICollectionViewScrollPositionCenteredHorizontally];
+            }
+        });
+    }
+    else {
+        if (self.pageCollectionView.contentSize.width > _selectedIndex * _pageFlowLayout.itemSize.width) {
+            [self.pageCollectionView selectItemAtIndexPath:[NSIndexPath indexPathForItem:_selectedIndex inSection:0] animated:animated scrollPosition:UICollectionViewScrollPositionCenteredHorizontally];
+        }
+    }
+}
 
 #pragma mark --------------- Getter / Setter
+
+// 设置 选中 索引
+- (void)setSelectedIndex:(NSInteger)selectedIndex {
+    _oldIndex = _selectedIndex;
+    _selectedIndex = selectedIndex;
+    _currentIndex = selectedIndex;
+}
 
 - (void)setSegmentViewStyle:(FJSegmentViewStyle *)segmentViewStyle {
     _segmentViewStyle = segmentViewStyle;
     if (segmentViewStyle) {
-        self.selectedIndex = segmentViewStyle.selectedIndex;
+        [self setupSelectedIndex:segmentViewStyle.selectedIndex animated:YES];
     }
 }
 

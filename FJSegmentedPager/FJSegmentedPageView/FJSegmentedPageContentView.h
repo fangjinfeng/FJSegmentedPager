@@ -47,5 +47,7 @@
 // 刷新
 - (void)reloadData;
 // 给外界可以设置ContentOffSet的方法
-- (void)setContentOffSet:(CGPoint)offset animated:(BOOL)animated ;
+- (void)setContentOffSet:(CGPoint)offset animated:(BOOL)animated;
+// 设置 选中 索引
+- (void)setupSelectedIndex:(NSInteger )selectedIndex animated:(BOOL)animated;
 @end

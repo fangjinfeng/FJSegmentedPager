@@ -39,7 +39,7 @@ typedef NS_ENUM(NSInteger, FJSegmentTitleViewTitleColorChangeType) {
 // 指示条 宽度
 @property (nonatomic, assign) CGFloat segmentedIndicatorViewWidth;
 // 指示条 距离 底部 间距
-@property (nonatomic, assign) CGFloat segmentedIndicatorViewWidthToBottomSpacing;
+@property (nonatomic, assign) CGFloat segmentedIndicatorViewToBottomSpacing;
 // 指示条 默认 扩展宽度
 @property (nonatomic, assign) CGFloat segmentedIndicatorViewExtendWidth;
 // 标题 默认 宽度

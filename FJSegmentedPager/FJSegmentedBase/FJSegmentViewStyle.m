@@ -33,7 +33,7 @@
         _segmentedTitleViewTitleWidth = kFJSegmentedTitleViewTitleWidth;
         _segmentedTagSectionCellSpacing = kFJSegmentedTagSectionCellSpacing;
         _segmentedTagSectionHorizontalEdgeSpacing = kFJSegmentedTagSectionHorizontalEdgeSpacing;
-        _segmentedIndicatorViewWidthToBottomSpacing = 0.0f;
+        _segmentedIndicatorViewToBottomSpacing = 0.0f;
         _segmentIndicatorWidthShowType = FJSegmentIndicatorWidthShowTypeAdaption;
         _titleColorChangeType = FJSegmentTitleViewTitleColorChangeTypeSelectedChange;
     }

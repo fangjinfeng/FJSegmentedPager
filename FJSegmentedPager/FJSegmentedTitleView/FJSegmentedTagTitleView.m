@@ -64,6 +64,12 @@
     }
 }
 
+// 设置 选中 索引
+- (void)setupSelectedIndex:(NSInteger )selectedIndex animated:(BOOL)animated {
+    self.selectedIndex = selectedIndex;
+    [self updateControlsStatusWithCurrentIndex:selectedIndex animated:animated];
+}
+
 // 依据 参数 更新 控件
 - (void)updateControlsWithPreviousIndex:(NSInteger)previousIndex currentIndex:(NSInteger)currentIndex progress:(CGFloat)progress {
     if (previousIndex < 0 ||
@@ -140,6 +146,11 @@
 
 // 依据 索引 更新 控件 状态
 - (void)updateControlsStatusWithCurrentIndex:(NSInteger)currentIndex {
+    [self updateControlsStatusWithCurrentIndex:currentIndex animated:YES];
+}
+
+// 依据 索引 更新 控件 状态
+- (void)updateControlsStatusWithCurrentIndex:(NSInteger)currentIndex animated:(BOOL)animated {
     // 更新 控件 选中 状态
     [self updateTitleViewSelectedStatus:currentIndex];
     
@@ -163,7 +174,7 @@
             offSetx = maxOffSetX;
         }
         
-        [self.titleScrollView setContentOffset:CGPointMake(offSetx, 0.0) animated:YES];
+        [self.titleScrollView setContentOffset:CGPointMake(offSetx, 0.0) animated:animated];
     }
     
     // 更新 indicatorView 位置
@@ -332,8 +343,10 @@
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.35 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
         [self updateControlsStatusWithCurrentIndex:_selectedIndex];
     });
-    
 }
+
+
+
 #pragma mark --------------- Getter / Setter
 // 设置 选中 索引
 - (void)setSelectedIndex:(NSUInteger)selectedIndex {
@@ -380,19 +393,18 @@
         
         self.selectedIndex = segmentViewStyle.selectedIndex;
         self.tagSectionViewHeight = segmentViewStyle.tagSectionViewHeight;
-        
+        self.backgroundColor = segmentViewStyle.segmentToolbackgroundColor;
         CGFloat indicatorWidth = _segmentViewStyle.segmentedIndicatorViewWidth;
         CGFloat indicatorHeight = _segmentViewStyle.segmentedIndicatorViewHeight;
         _bottomLineView.frame = CGRectMake(0, self.frame.size.height - _segmentViewStyle.separatorLineHeight, self.frame.size.width, _segmentViewStyle.separatorLineHeight);
         
         _bottomLineView.backgroundColor = _segmentViewStyle.separatorBackgroundColor;
-        CGFloat indicatorViiewY = self.frame.size.height - indicatorHeight - self.bottomLineView.frame.size.height - _segmentViewStyle.segmentedIndicatorViewWidthToBottomSpacing;
+        CGFloat indicatorViiewY = self.frame.size.height - indicatorHeight - self.bottomLineView.frame.size.height - _segmentViewStyle.segmentedIndicatorViewToBottomSpacing;
         _indicatorView.frame = CGRectMake(_segmentViewStyle.segmentedTagSectionHorizontalEdgeSpacing, indicatorViiewY, indicatorWidth, indicatorHeight);
         _indicatorView.backgroundColor = _segmentViewStyle.indicatorViewBackgroundColor;
     }
 }
 
-#pragma mark --- getter method
 
 // 标题 宽度
 - (NSMutableArray <NSNumber *>*)titleWidthMarray {
@@ -437,7 +449,7 @@
     if (!_indicatorView) {
         CGFloat indicatorWidth = _segmentViewStyle.segmentedIndicatorViewWidth;
         CGFloat indicatorHeight = _segmentViewStyle.segmentedIndicatorViewHeight;
-        CGFloat indicatorY = self.frame.size.height - indicatorHeight - self.bottomLineView.frame.size.height - _segmentViewStyle.segmentedIndicatorViewWidthToBottomSpacing;
+        CGFloat indicatorY = self.frame.size.height - indicatorHeight - self.bottomLineView.frame.size.height - _segmentViewStyle.segmentedIndicatorViewToBottomSpacing;
         _indicatorView = [[UIView alloc] initWithFrame:CGRectMake(_segmentViewStyle.segmentedTagSectionHorizontalEdgeSpacing, indicatorY, indicatorWidth, indicatorHeight)];
         _indicatorView.backgroundColor = _segmentViewStyle.indicatorViewBackgroundColor;
         _indicatorView.hidden = YES;

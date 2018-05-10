@@ -28,6 +28,5 @@
 - (void)reloadData;
 // 设置 选中 索引
 - (void)setSelectedIndex:(NSInteger)selectedIndex animated:(BOOL)animated;
-
-
+- (NSInteger)selectedIndex;
 @end
