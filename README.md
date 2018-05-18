@@ -6,7 +6,7 @@
 # 集成方法
 
 1. 静态：手动将``FJSegmentedPager``文件夹拖入到工程中。
-2. 动态：``CocoaPods：pod 'FJSegmentedPager', '~> 1.0.9'``。
+2. 动态：``CocoaPods：pod 'FJSegmentedPager'。
 
 # 效果图
 
