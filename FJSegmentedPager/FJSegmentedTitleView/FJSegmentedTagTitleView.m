@@ -224,7 +224,7 @@
 #pragma mark --------------- Private Methods
 // 设置 子控件
 - (void)setupControls {
-    
+    _segmentViewStyle = [[FJSegmentViewStyle alloc] init];
     [self addSubview:self.titleScrollView];
     [self addSubview:self.bottomLineView];
     [self.titleScrollView addSubview:self.indicatorView];

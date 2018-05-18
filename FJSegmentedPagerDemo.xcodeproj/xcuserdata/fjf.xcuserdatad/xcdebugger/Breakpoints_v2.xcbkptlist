@@ -14,28 +14,18 @@
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.ExceptionBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            scope = "0"
-            stopOnStyle = "0">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "FJSegmentedPager/FJSegmentedPageView/FJSegmentedPageContentView.m"
-            timestampString = "547615080.4162461"
+            timestampString = "548300812.491899"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "221"
-            endingLineNumber = "221"
-            landmarkName = "-scrollViewDidScroll:"
+            startingLineNumber = "484"
+            endingLineNumber = "484"
+            landmarkName = "-setupSelectedIndex:animated:"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -46,28 +36,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "FJSegmentedPager/FJSegmentedPageView/FJSegmentedPageContentView.m"
-            timestampString = "547615080.416353"
+            timestampString = "548300812.4919749"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "138"
-            endingLineNumber = "138"
-            landmarkName = "-collectionView:willDisplayCell:forItemAtIndexPath:"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "FJSegmentedPager/FJSegmentedPageView/FJSegmentedPageContentView.m"
-            timestampString = "547615080.416417"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "409"
-            endingLineNumber = "409"
-            landmarkName = "-setupChildVcForCell:atIndexPath:"
+            startingLineNumber = "83"
+            endingLineNumber = "83"
+            landmarkName = "-setContentOffSet:animated:"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

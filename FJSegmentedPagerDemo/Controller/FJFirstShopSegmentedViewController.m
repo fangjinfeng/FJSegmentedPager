@@ -148,6 +148,7 @@
 - (FJSegmentViewStyle *)segmentViewStyle {
     if (!_segmentViewStyle) {
         _segmentViewStyle = [[FJSegmentViewStyle alloc] init];
+        _segmentViewStyle.selectedIndex = 2;
         _segmentViewStyle.itemTitleFont = [UIFont systemFontOfSize:14.0f];
         _segmentViewStyle.itemTitleSelectedFont = [UIFont boldSystemFontOfSize:16.0f];
         _segmentViewStyle.segmentedIndicatorViewWidth = 16.0f;

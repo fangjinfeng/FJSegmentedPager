@@ -94,8 +94,7 @@
 
 
 - (void)reloadData {
-    [self setupDefaultValues];
-    
+    _forbidTouchToAdjustPosition = NO;
     self.childVcsDic = nil;
     if ([self.segmentPageDataSource respondsToSelector:@selector(numberOfChildViewControllers)]) {
         self.childVcCount = [self.segmentPageDataSource numberOfChildViewControllers];
@@ -104,8 +103,6 @@
         NSAssert(NO, @"必须实现的代理方法:numberOfChildViewControllers");
     }
     [self.pageCollectionView reloadData];
-    
-    [self setContentOffSet:CGPointZero animated:NO];
     
 }
 
@@ -483,11 +480,13 @@
 // 设置 选中 索引
 - (void)setupSelectedIndex:(NSInteger )selectedIndex animated:(BOOL)animated {
     self.selectedIndex = selectedIndex;
-    
+    self.forbidTouchToAdjustPosition = YES;
     if (CGSizeEqualToSize(self.pageCollectionView.contentSize, CGSizeZero)) {
         dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.01 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
             if (self.pageCollectionView.contentSize.width > 0) {
-                [self.pageCollectionView selectItemAtIndexPath:[NSIndexPath indexPathForItem:_selectedIndex inSection:0] animated:NO scrollPosition:UICollectionViewScrollPositionCenteredHorizontally];
+                NSIndexPath *tmpIndexPath = [NSIndexPath indexPathForItem:_selectedIndex inSection:0];
+                [self.pageCollectionView selectItemAtIndexPath:tmpIndexPath animated:NO scrollPosition:UICollectionViewScrollPositionCenteredHorizontally];
+                [self.pageCollectionView cellForItemAtIndexPath:tmpIndexPath];
             }
         });
     }
@@ -509,9 +508,6 @@
 
 - (void)setSegmentViewStyle:(FJSegmentViewStyle *)segmentViewStyle {
     _segmentViewStyle = segmentViewStyle;
-    if (segmentViewStyle) {
-        [self setupSelectedIndex:segmentViewStyle.selectedIndex animated:YES];
-    }
 }
 
 - (void)setSegmentPageDataSource:(id<FJSegmentPageViewDataSource>)segmentPageDataSource {

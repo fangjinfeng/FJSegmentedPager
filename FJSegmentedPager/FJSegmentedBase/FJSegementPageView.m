@@ -63,7 +63,7 @@ static CGFloat kFJTitleTagSectionViewHeight = 50.0f;
 // 当前 点击 index
 - (void)titleSectionView:(FJSegmentedTagTitleView *)titleSectionView clickIndex:(NSInteger)index {
     
-    self.detailContentView.selectedIndex = index;
+    [self.detailContentView setupSelectedIndex:index animated:YES];
 }
 
 /******************************* FJDetailContentViewDelegate ******************************/
