@@ -9,7 +9,7 @@
 #import "AppDelegate.h"
 #import "ViewController.h"
 
-@interface AppDelegate ()
+@interface AppDelegate ()<UIGestureRecognizerDelegate>
 
 @end
 
@@ -22,6 +22,7 @@
     UINavigationController *naviagtionController = [[UINavigationController alloc] initWithRootViewController:[[ViewController alloc] init]];
     [[UINavigationBar appearance] setBarTintColor:[UIColor whiteColor]];
     [[UINavigationBar appearance] setTintColor:[UIColor blackColor]];
+    naviagtionController.interactivePopGestureRecognizer.delegate = self;
     self.window.rootViewController = naviagtionController;
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];

@@ -486,7 +486,6 @@
             if (self.pageCollectionView.contentSize.width > 0) {
                 NSIndexPath *tmpIndexPath = [NSIndexPath indexPathForItem:_selectedIndex inSection:0];
                 [self.pageCollectionView selectItemAtIndexPath:tmpIndexPath animated:NO scrollPosition:UICollectionViewScrollPositionCenteredHorizontally];
-                [self.pageCollectionView cellForItemAtIndexPath:tmpIndexPath];
             }
         });
     }
