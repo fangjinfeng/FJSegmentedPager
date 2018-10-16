@@ -50,6 +50,9 @@ static CGFloat kFJTitleTagSectionViewHeight = 50.0f;
     [self.detailContentView reloadData];
 }
 
+- (void)setupParentViewController:(UIViewController *)parentViewController {
+    [self.detailContentView setupParentViewController:parentViewController];
+}
 #pragma mark --- privete method
 
 - (void)setupViewControls {

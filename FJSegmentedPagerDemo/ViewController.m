@@ -103,8 +103,11 @@
         [self.navigationController pushViewController:segmentViewController animated:YES];
     }
     else {
+        UIViewController *tmpViewController = [[UIViewController alloc] init];
+     
         FJThreeShopSegmentedViewController *segmentViewController = [[FJThreeShopSegmentedViewController alloc] init];
-        segmentViewController.hidesBottomBarWhenPushed = YES;
+        [tmpViewController.view addSubview:segmentViewController.view];
+        tmpViewController.hidesBottomBarWhenPushed = YES;
         [self.navigationController pushViewController:segmentViewController animated:YES];
     }
     

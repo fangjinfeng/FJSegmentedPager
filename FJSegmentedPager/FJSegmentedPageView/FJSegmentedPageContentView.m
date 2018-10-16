@@ -75,6 +75,10 @@
     [childVc removeFromParentViewController];
 }
 
+// 设置 parentViewController
+- (void)setupParentViewController:(UIViewController *)parentViewController {
+    self.parentViewController = parentViewController;
+}
 
 /** 给外界可以设置ContentOffSet的方法 */
 - (void)setContentOffSet:(CGPoint)offset animated:(BOOL)animated {
@@ -290,7 +294,7 @@
     _needManageLifeCycle = ![self.parentViewController shouldAutomaticallyForwardAppearanceMethods];
     if (!_needManageLifeCycle) {
 #if DEBUG
-        NSLog(@"\n请注意: 如果你希望所有的子控制器的view的系统生命周期方法被正确的调用\n请重写%@的'shouldAutomaticallyForwardAppearanceMethods'方法 并且返回NO\n当然如果你不做这个操作, 子控制器的生命周期方法将不会被正确的调用\n如果你仍然想利用子控制器的生命周期方法, 请使用'ZJScrollPageViewChildVcDelegate'提供的代理方法\n或者'ZJScrollPageViewDelegate'提供的代理方法", [self.parentViewController class]);
+        NSLog(@"\n请注意: 如果你希望所有的子控制器的view的系统生命周期方法被正确的调用\n请重写%@的'shouldAutomaticallyForwardAppearanceMethods'方法 并且返回NO\n当然如果你不做这个操作, 子控制器的生命周期方法将不会被正确的调用\n如果你仍然想利用子控制器的生命周期方法, 请使用'FJSegmentPageChildVcDelegate'提供的代理方法\n或者'FJSegmentPageViewDelegate'提供的代理方法", [self.parentViewController class]);
 #endif
     }
 }

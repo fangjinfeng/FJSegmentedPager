@@ -26,7 +26,11 @@
 
 // 刷新
 - (void)reloadData;
+// 获取 索引
+- (NSInteger)selectedIndex;
+// 设置 父控件
+- (void)setupParentViewController:(UIViewController *)parentViewController;
 // 设置 选中 索引
 - (void)setSelectedIndex:(NSInteger)selectedIndex animated:(BOOL)animated;
-- (NSInteger)selectedIndex;
+
 @end

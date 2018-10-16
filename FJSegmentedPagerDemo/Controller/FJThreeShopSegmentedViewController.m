@@ -93,6 +93,7 @@
         _segementPageView = [[FJSegementPageView alloc] initWithFrame:CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, self.view.frame.size.height)];
         _segementPageView.segmentViewStyle = self.segmentViewStyle;
         _segementPageView.dataSource = self;
+        [_segementPageView setupParentViewController:self];
     }
     return _segementPageView;
 }

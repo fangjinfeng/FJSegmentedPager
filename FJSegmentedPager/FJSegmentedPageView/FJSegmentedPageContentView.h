@@ -48,6 +48,8 @@
 - (void)reloadData;
 // 给外界可以设置ContentOffSet的方法
 - (void)setContentOffSet:(CGPoint)offset animated:(BOOL)animated;
+// 设置 parentViewController
+- (void)setupParentViewController:(UIViewController *)parentViewController;
 // 设置 选中 索引
 - (void)setupSelectedIndex:(NSInteger )selectedIndex animated:(BOOL)animated;
 @end
