@@ -148,12 +148,14 @@
 - (FJSegmentViewStyle *)segmentViewStyle {
     if (!_segmentViewStyle) {
         _segmentViewStyle = [[FJSegmentViewStyle alloc] init];
-        _segmentViewStyle.selectedIndex = 2;
+        _segmentViewStyle.selectedIndex = 1;
+        _segmentViewStyle.tagSectionViewHeight = 100;
         _segmentViewStyle.itemTitleFont = [UIFont systemFontOfSize:14.0f];
         _segmentViewStyle.itemTitleSelectedFont = [UIFont boldSystemFontOfSize:16.0f];
         _segmentViewStyle.segmentedIndicatorViewWidth = 16.0f;
+        _segmentViewStyle.forbidSectionViewDivideWidth = YES;
         _segmentViewStyle.segmentedIndicatorViewToBottomSpacing = 10.0f;
-        _segmentViewStyle.segmentIndicatorWidthShowType = FJSegmentIndicatorWidthShowTypeAdaptionFixedWidth;
+        _segmentViewStyle.segmentIndicatorWidthShowType = FJSegmentIndicatorWidthShowTypeAdaption;
         _segmentViewStyle.titleColorChangeType = FJSegmentTitleViewTitleColorChangeTypeGradualChange;
     }
     return _segmentViewStyle;
@@ -164,8 +166,6 @@
     if (!_titleArray) {
         _titleArray = [NSArray arrayWithObjects:@"店铺简介",
                        @"店铺课程",
-                       @"VIP",
-                       @"大礼包",
                        nil
                        ];
     }

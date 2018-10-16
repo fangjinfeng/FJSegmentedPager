@@ -244,8 +244,8 @@
 		30E2FF7220834E22006E9432 /* FJSegmentedPageView */ = {
 			isa = PBXGroup;
 			children = (
-				30E2FF7320834E22006E9432 /* FJSegmentedPageContentView.m */,
 				30E2FF7420834E22006E9432 /* FJSegmentedPageContentView.h */,
+				30E2FF7320834E22006E9432 /* FJSegmentedPageContentView.m */,
 			);
 			path = FJSegmentedPageView;
 			sourceTree = "<group>";
@@ -253,20 +253,20 @@
 		30E2FF7520834E22006E9432 /* FJSegmentedBase */ = {
 			isa = PBXGroup;
 			children = (
-				30E2FF7620834E22006E9432 /* FJSegementContentCell.h */,
-				30E2FF7720834E22006E9432 /* FJSegmentViewStyle.m */,
-				30E2FF7820834E22006E9432 /* FJSegmentdPageViewController.h */,
-				30E2FF7920834E22006E9432 /* FJSegmentedBaseViewController.m */,
-				30E2FF7A20834E22006E9432 /* FJSegementPageView.h */,
-				30E2FF7B20834E22006E9432 /* FJSegmentedPageDefine.h */,
-				30E2FF7C20834E22006E9432 /* FJBaseTableView.m */,
 				30E2FF7D20834E22006E9432 /* FJSegmentViewStyle.h */,
-				30E2FF7E20834E22006E9432 /* FJSegementContentCell.m */,
-				30E2FF7F20834E22006E9432 /* FJSegmentPageChildVcDelegate.h */,
-				30E2FF8020834E22006E9432 /* FJSegementPageView.m */,
-				30E2FF8120834E22006E9432 /* FJSegmentedBaseViewController.h */,
+				30E2FF7720834E22006E9432 /* FJSegmentViewStyle.m */,
+				30E2FF7B20834E22006E9432 /* FJSegmentedPageDefine.h */,
+				30E2FF7820834E22006E9432 /* FJSegmentdPageViewController.h */,
 				30E2FF8220834E22006E9432 /* FJSegmentdPageViewController.m */,
+				30E2FF7A20834E22006E9432 /* FJSegementPageView.h */,
+				30E2FF8020834E22006E9432 /* FJSegementPageView.m */,
 				30E2FF8320834E22006E9432 /* FJBaseTableView.h */,
+				30E2FF7C20834E22006E9432 /* FJBaseTableView.m */,
+				30E2FF7620834E22006E9432 /* FJSegementContentCell.h */,
+				30E2FF7E20834E22006E9432 /* FJSegementContentCell.m */,
+				30E2FF8120834E22006E9432 /* FJSegmentedBaseViewController.h */,
+				30E2FF7920834E22006E9432 /* FJSegmentedBaseViewController.m */,
+				30E2FF7F20834E22006E9432 /* FJSegmentPageChildVcDelegate.h */,
 			);
 			path = FJSegmentedBase;
 			sourceTree = "<group>";
@@ -274,10 +274,10 @@
 		30E2FF8420834E22006E9432 /* FJSegmentedTitleView */ = {
 			isa = PBXGroup;
 			children = (
-				30E2FF8520834E22006E9432 /* FJSegmentedTagTitleCell.m */,
+				30E2FF8820834E22006E9432 /* FJSegmentedTagTitleView.h */,
 				30E2FF8620834E22006E9432 /* FJSegmentedTagTitleView.m */,
 				30E2FF8720834E22006E9432 /* FJSegmentedTagTitleCell.h */,
-				30E2FF8820834E22006E9432 /* FJSegmentedTagTitleView.h */,
+				30E2FF8520834E22006E9432 /* FJSegmentedTagTitleCell.m */,
 			);
 			path = FJSegmentedTitleView;
 			sourceTree = "<group>";

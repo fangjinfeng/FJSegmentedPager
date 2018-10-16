@@ -159,7 +159,7 @@
 - (NSArray <NSString *> *)titleArray {
     if (!_titleArray) {
         _titleArray = [NSArray arrayWithObjects:@"店铺简介",
-                       @"店铺课程",
+                       @"店铺课程111111111",
                        @"店铺商品",
                        @"店铺专栏",
                        @"VIP",

@@ -280,6 +280,7 @@
             FJSegmentedTagTitleCell *cell = [[FJSegmentedTagTitleCell alloc] init];
             cell.frame = tmpFrame;
             cell.segmentViewStyle = self.segmentViewStyle;
+            cell.fj_height = self.segmentViewStyle.tagSectionViewHeight;
             cell.titleStr = titleString;
             cell.tag = idx;
             
@@ -308,17 +309,22 @@
 
 // 是否 超过 屏幕 宽度 限制
 - (void)beyondWidthLimitWithTitleArray:(NSArray *)titleArray {
-    self.isBeyondLimitWidth = NO;
-    [self.titleWidthMarray removeAllObjects];
-    __block CGFloat tmpTotalWidth = _segmentViewStyle.segmentedTagSectionCellSpacing;
-    [titleArray enumerateObjectsUsingBlock:^(NSString *tmpTitle, NSUInteger idx, BOOL * _Nonnull stop) {
-        CGFloat tmpTitleviewWidth = [self titleWidthWithIndex:idx];
-        [self.titleWidthMarray addObject:[NSNumber numberWithFloat:tmpTitleviewWidth]];
-        tmpTotalWidth += tmpTitleviewWidth;
-    }];
-    
-    if (tmpTotalWidth > self.frame.size.width) {
+    if (self.segmentViewStyle.forbidSectionViewDivideWidth) {
         self.isBeyondLimitWidth = YES;
+    }
+    else {
+        self.isBeyondLimitWidth = NO;
+        [self.titleWidthMarray removeAllObjects];
+        __block CGFloat tmpTotalWidth = _segmentViewStyle.segmentedTagSectionCellSpacing;
+        [titleArray enumerateObjectsUsingBlock:^(NSString *tmpTitle, NSUInteger idx, BOOL * _Nonnull stop) {
+            CGFloat tmpTitleviewWidth = [self titleWidthWithIndex:idx];
+            [self.titleWidthMarray addObject:[NSNumber numberWithFloat:tmpTitleviewWidth]];
+            tmpTotalWidth += tmpTitleviewWidth;
+        }];
+        
+        if (tmpTotalWidth > self.frame.size.width) {
+            self.isBeyondLimitWidth = YES;
+        }
     }
 }
 
@@ -380,7 +386,7 @@
     _tagSectionViewHeight = tagSectionViewHeight;
     
     self.fj_height = tagSectionViewHeight;
-    
+    self.titleScrollView.fj_height = self.fj_height;
     self.indicatorView.fj_y = self.frame.size.height - _segmentViewStyle.segmentedIndicatorViewHeight - self.bottomLineView.frame.size.height;
     
     self.bottomLineView.fj_y = self.frame.size.height - _segmentViewStyle.separatorLineHeight;;

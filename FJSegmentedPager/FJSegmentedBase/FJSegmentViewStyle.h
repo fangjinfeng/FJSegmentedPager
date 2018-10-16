@@ -66,6 +66,8 @@ typedef NS_ENUM(NSInteger, FJSegmentTitleViewTitleColorChangeType) {
 @property (nonatomic, strong) UIColor *tableViewBackgroundColor;
 // 指示器 背景色
 @property (nonatomic, strong) UIColor *indicatorViewBackgroundColor;
+// 禁止 宽度 平分
+@property (nonatomic, assign) BOOL  forbidSectionViewDivideWidth;
 // 指示器 宽度 显示 类型
 @property (nonatomic, assign) FJSegmentIndicatorWidthShowType segmentIndicatorWidthShowType;
 // 标题 字体 颜色 改变 类型
