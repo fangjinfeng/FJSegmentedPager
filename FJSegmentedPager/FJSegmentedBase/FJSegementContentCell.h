@@ -20,4 +20,6 @@
 // 属性 配置
 @property (nonatomic, strong) FJSegmentViewStyle *segmentViewStyle;
 
+// 刷新
+- (void)reloadData;
 @end

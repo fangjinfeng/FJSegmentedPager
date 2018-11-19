@@ -36,6 +36,10 @@
     return self;
 }
 
+#pragma mark --------------- Public Methos
+- (void)reloadData {
+    [self.segementPageView reloadData];
+}
 
 #pragma mark --------------- Custom Delegate
 

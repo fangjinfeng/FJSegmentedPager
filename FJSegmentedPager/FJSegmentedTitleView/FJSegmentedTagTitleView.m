@@ -200,6 +200,7 @@
             self.indicatorView.fj_width = _segmentViewStyle.segmentedIndicatorViewWidth;
         }
     }
+     _selectedIndex = currentIndex;
 }
 
 
