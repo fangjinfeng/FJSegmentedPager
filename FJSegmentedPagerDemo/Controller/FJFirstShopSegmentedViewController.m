@@ -149,7 +149,7 @@
     if (!_segmentViewStyle) {
         _segmentViewStyle = [[FJSegmentViewStyle alloc] init];
         _segmentViewStyle.selectedIndex = 1;
-        _segmentViewStyle.tagSectionViewHeight = 100;
+        _segmentViewStyle.segmentedTitleViewHeight = 100;
         _segmentViewStyle.itemTitleFont = [UIFont systemFontOfSize:14.0f];
         _segmentViewStyle.itemTitleSelectedFont = [UIFont boldSystemFontOfSize:16.0f];
         _segmentViewStyle.segmentedIndicatorViewWidth = 16.0f;

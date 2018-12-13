@@ -281,7 +281,7 @@
             FJSegmentedTagTitleCell *cell = [[FJSegmentedTagTitleCell alloc] init];
             cell.frame = tmpFrame;
             cell.segmentViewStyle = self.segmentViewStyle;
-            cell.fj_height = self.segmentViewStyle.tagSectionViewHeight;
+            cell.fj_height = self.segmentViewStyle.segmentedTitleViewHeight;
             cell.titleStr = titleString;
             cell.tag = idx;
             
@@ -399,16 +399,24 @@
     if (_segmentViewStyle) {
         
         self.selectedIndex = segmentViewStyle.selectedIndex;
-        self.tagSectionViewHeight = segmentViewStyle.tagSectionViewHeight;
+        self.tagSectionViewHeight = segmentViewStyle.segmentedTitleViewHeight;
         self.backgroundColor = segmentViewStyle.segmentToolbackgroundColor;
+        
+        self.fj_width = _segmentViewStyle.segmentedTitleViewWidth;
+        
+        // bottomLineView
         CGFloat indicatorWidth = _segmentViewStyle.segmentedIndicatorViewWidth;
         CGFloat indicatorHeight = _segmentViewStyle.segmentedIndicatorViewHeight;
         _bottomLineView.frame = CGRectMake(0, self.frame.size.height - _segmentViewStyle.separatorLineHeight, self.frame.size.width, _segmentViewStyle.separatorLineHeight);
-        
         _bottomLineView.backgroundColor = _segmentViewStyle.separatorBackgroundColor;
+        
+        // indicatorView
         CGFloat indicatorViiewY = self.frame.size.height - indicatorHeight - self.bottomLineView.frame.size.height - _segmentViewStyle.segmentedIndicatorViewToBottomSpacing;
         _indicatorView.frame = CGRectMake(_segmentViewStyle.segmentedTagSectionHorizontalEdgeSpacing, indicatorViiewY, indicatorWidth, indicatorHeight);
         _indicatorView.backgroundColor = _segmentViewStyle.indicatorViewBackgroundColor;
+        
+        // titleScrollView
+        self.titleScrollView.fj_width = self.fj_width;
     }
 }
 

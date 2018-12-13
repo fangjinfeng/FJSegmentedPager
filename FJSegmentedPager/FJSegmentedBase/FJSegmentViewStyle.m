@@ -18,7 +18,8 @@
         _selectedIndex = 0;
         _itemTitleFont = kFJSegmentedTitleFontSize;
         _itemTitleSelectedFont = kFJSegmentedTitleFontSize;
-        _tagSectionViewHeight = kFJSegmentedTitleViewHeight;
+        _segmentedTitleViewHeight = kFJSegmentedTitleViewHeight;
+        _segmentedTitleViewWidth = [UIScreen mainScreen].bounds.size.width;
         _segmentToolbackgroundColor = kFJSegmentToolbackgroundColor;
         _itemTitleColorStateNormal = kFJSegmentedTitleNormalColor;
         _itemTitleColorStateSelected = kFJSegmentedTitleSelectedColor;

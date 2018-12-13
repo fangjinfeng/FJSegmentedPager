@@ -30,8 +30,10 @@ typedef NS_ENUM(NSInteger, FJSegmentTitleViewTitleColorChangeType) {
 @interface FJSegmentViewStyle : NSObject
 // 选择 第几个 tag
 @property (nonatomic, assign) NSInteger selectedIndex;
+// 标题栏 宽度
+@property (nonatomic, assign) CGFloat segmentedTitleViewWidth;
 // 标题 栏 高度
-@property (nonatomic, assign) CGFloat tagSectionViewHeight;
+@property (nonatomic, assign) CGFloat segmentedTitleViewHeight;
 // 分割线 高度
 @property (nonatomic, assign) CGFloat separatorLineHeight;
 // 指示条 高度

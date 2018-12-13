@@ -30,6 +30,7 @@
     [super viewDidLoad];
     
     [self setupControls];
+
 }
 
 #pragma mark --------------- Custom Delegate
@@ -105,7 +106,7 @@
         _segmentViewStyle.itemTitleFont = [UIFont systemFontOfSize:14.0f];
         _segmentViewStyle.itemTitleSelectedFont = [UIFont boldSystemFontOfSize:14.0f];
         _segmentViewStyle.segmentedIndicatorViewWidth = 16.0f;
-        _segmentViewStyle.selectedIndex = 2;
+        _segmentViewStyle.selectedIndex = 0;
         _segmentViewStyle.segmentedIndicatorViewToBottomSpacing = 10.0f;
         _segmentViewStyle.segmentIndicatorWidthShowType = FJSegmentIndicatorWidthShowTypeAdaptionFixedWidth;
         _segmentViewStyle.titleColorChangeType = FJSegmentTitleViewTitleColorChangeTypeGradualChange;

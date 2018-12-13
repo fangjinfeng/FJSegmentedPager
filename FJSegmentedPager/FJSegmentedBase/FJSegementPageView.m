@@ -100,10 +100,9 @@ static CGFloat kFJTitleTagSectionViewHeight = 50.0f;
         
         CGRect detailContentViewFrame = self.detailContentView.frame;
         detailContentViewFrame.origin.y = CGRectGetMaxY(self.tagSecionView.frame);
-        detailContentViewFrame.size.height = self.frame.size.height - segmentViewStyle.tagSectionViewHeight;
+        detailContentViewFrame.size.height = self.frame.size.height - segmentViewStyle.segmentedTitleViewHeight;
         self.detailContentView.frame = detailContentViewFrame;
 
-        
         NSAssert(_segmentViewStyle, @"segmentViewStyle  must be passed in before configModelArray");
     }
 }
