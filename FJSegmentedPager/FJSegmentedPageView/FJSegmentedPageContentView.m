@@ -49,7 +49,7 @@
 
 @implementation FJSegmentedPageContentView
 
-#pragma mark --- init method
+#pragma mark -------------------------- Life Circle
 
 - (void)dealloc {
     [[NSNotificationCenter defaultCenter] removeObserver:self];
@@ -110,9 +110,14 @@
     
 }
 
+#pragma mark -------------------------- Override Methods
+- (void)layoutSubviews {
+    [super layoutSubviews];
+    self.pageCollectionView.frame = self.bounds;
+}
 
 
-#pragma mark --- system delegate
+#pragma mark -------------------------- System Delegate
 
 /***************************** UICollectionViewDataSource *************************/
 

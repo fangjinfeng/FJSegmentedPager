@@ -68,6 +68,11 @@
     self.edgesForExtendedLayout = UIRectEdgeNone;
     [self.view addSubview:self.segementPageView];
     self.view.backgroundColor = [UIColor whiteColor];
+    
+    UIButton *tmpButton = [[UIButton alloc] initWithFrame:CGRectMake(_segmentViewStyle.segmentedTitleViewWidth + 10, 0, 50, _segmentViewStyle.segmentedTitleViewHeight)];
+    [tmpButton setTitle:@"搜索" forState:UIControlStateNormal];
+    tmpButton.backgroundColor = [UIColor redColor];
+    [self.segementPageView addSubview:tmpButton];
 }
 
 #pragma mark --------------- Getter / Setter
@@ -105,6 +110,7 @@
         _segmentViewStyle = [[FJSegmentViewStyle alloc] init];
         _segmentViewStyle.itemTitleFont = [UIFont systemFontOfSize:14.0f];
         _segmentViewStyle.itemTitleSelectedFont = [UIFont boldSystemFontOfSize:14.0f];
+        _segmentViewStyle.segmentedTitleViewWidth = self.view.frame.size.width - 60;
         _segmentViewStyle.segmentedIndicatorViewWidth = 16.0f;
         _segmentViewStyle.selectedIndex = 0;
         _segmentViewStyle.segmentedIndicatorViewToBottomSpacing = 10.0f;
