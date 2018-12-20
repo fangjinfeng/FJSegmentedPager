@@ -32,6 +32,9 @@
     [self setupControls];
 }
 
+- (BOOL)shouldAutomaticallyForwardAppearanceMethods {
+    return YES;
+}
 #pragma mark --------------- System Delegate
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {

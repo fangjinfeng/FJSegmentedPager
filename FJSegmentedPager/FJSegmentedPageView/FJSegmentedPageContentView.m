@@ -296,7 +296,7 @@
 - (void)setupViewControls {
     [self addSubview:self.pageCollectionView];
     self.parentViewController = [UIViewController fj_currentViewController];
-    _needManageLifeCycle = ![self.parentViewController shouldAutomaticallyForwardAppearanceMethods];
+    _needManageLifeCycle = [self.parentViewController shouldAutomaticallyForwardAppearanceMethods];
     if (!_needManageLifeCycle) {
 #if DEBUG
         NSLog(@"\n请注意: 如果你希望所有的子控制器的view的系统生命周期方法被正确的调用\n请重写%@的'shouldAutomaticallyForwardAppearanceMethods'方法 并且返回NO\n当然如果你不做这个操作, 子控制器的生命周期方法将不会被正确的调用\n如果你仍然想利用子控制器的生命周期方法, 请使用'FJSegmentPageChildVcDelegate'提供的代理方法\n或者'FJSegmentPageViewDelegate'提供的代理方法", [self.parentViewController class]);
