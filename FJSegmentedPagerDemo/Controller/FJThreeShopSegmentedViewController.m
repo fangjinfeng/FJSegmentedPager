@@ -53,7 +53,9 @@
     UIViewController<FJSegmentPageChildVcDelegate> *childVc = reuseViewController;
     
     if (!childVc) {
-        childVc = [[FJSecondShopViewController alloc] init];
+        FJSecondShopViewController *shopViewController = [[FJSecondShopViewController alloc] init];
+        [shopViewController updateTableViewHeight:self.view.frame.size.height - self.segmentViewStyle.segmentedTitleViewHeight];
+        childVc = shopViewController;
     }
     return childVc;
 }
@@ -111,6 +113,7 @@
         _segmentViewStyle.itemTitleFont = [UIFont systemFontOfSize:14.0f];
         _segmentViewStyle.itemTitleSelectedFont = [UIFont boldSystemFontOfSize:14.0f];
         _segmentViewStyle.segmentedTitleViewWidth = self.view.frame.size.width - 60;
+        _segmentViewStyle.segmentedTitleViewHeight = 100.0f;
         _segmentViewStyle.segmentedIndicatorViewWidth = 16.0f;
         _segmentViewStyle.selectedIndex = 0;
         _segmentViewStyle.segmentedIndicatorViewToBottomSpacing = 10.0f;

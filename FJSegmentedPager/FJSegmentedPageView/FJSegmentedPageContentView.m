@@ -114,6 +114,7 @@
 - (void)layoutSubviews {
     [super layoutSubviews];
     self.pageCollectionView.frame = self.bounds;
+    self.pageFlowLayout.itemSize = self.frame.size;
 }
 
 

@@ -10,5 +10,10 @@
 #import "FJSegmentdPageViewController.h"
 
 @interface FJSecondShopViewController : UIViewController<FJSegmentPageChildVcDelegate>
-
+/**
+ 更新 tableView 高度
+ 
+ @param tableViewHeight tableView高度
+ */
+- (void)updateTableViewHeight:(CGFloat)tableViewHeight;
 @end

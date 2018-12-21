@@ -14,6 +14,8 @@
 @interface FJSecondShopViewController ()<UITableViewDataSource,UITableViewDelegate>
 // tableView
 @property (nonatomic, strong) UITableView *tableView;
+// tableViewHeight
+@property (nonatomic, assign) CGFloat  tableViewHeight;
 @end
 
 @implementation FJSecondShopViewController
@@ -41,11 +43,17 @@
 }
 
 
+#pragma mark --------------- Public Methods
+- (void)updateTableViewHeight:(CGFloat)tableViewHeight {
+    _tableViewHeight = tableViewHeight;
+}
 #pragma mark --------------- Private Methods
 // 设置 控件
 - (void)setupViewControls {
      self.edgesForExtendedLayout = UIRectEdgeNone;
-    self.tableView.fj_height = self.view.fj_height - FJ_SEGMENT_NAVIGATION_BAR_HEIGHT - 50.0f;
+    if (_tableViewHeight == 0) {
+        _tableViewHeight = self.view.fj_height;
+    }
     [self.view addSubview:self.tableView];
 }
 
@@ -75,7 +83,7 @@
 // tableView
 - (UITableView *)tableView {
     if (!_tableView) {
-        _tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height) style:UITableViewStylePlain];
+        _tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, _tableViewHeight) style:UITableViewStylePlain];
         _tableView.delegate = self;
         _tableView.dataSource = self;
         _tableView.estimatedRowHeight = 0;

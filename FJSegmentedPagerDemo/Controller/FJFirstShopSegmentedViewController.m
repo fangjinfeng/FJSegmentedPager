@@ -101,7 +101,10 @@
     UIViewController<FJSegmentPageChildVcDelegate> *childVc = reuseViewController;
     
     if (!childVc) {
-        childVc = [[FJFirstShopViewController alloc] init];
+        FJFirstShopViewController *shopViewController = [[FJFirstShopViewController alloc] init];
+        shopViewController.currentIndex = index;
+        shopViewController.tagSectionViewHeight = self.segmentViewStyle.segmentedTitleViewHeight;
+        childVc = shopViewController;
     }
     return childVc;
 }

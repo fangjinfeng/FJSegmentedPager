@@ -121,6 +121,14 @@
 // 设置 tagSectionViewHeight
 - (void)setTagSectionViewHeight:(CGFloat)tagSectionViewHeight {
     _tagSectionViewHeight = tagSectionViewHeight;
+    CGFloat footerViewHeight = _tagSectionViewHeight;
+    if ([UIViewController fj_currentViewController].navigationController && [UIViewController fj_currentViewController].navigationController.navigationBar.isHidden == NO) {
+        footerViewHeight += FJ_SEGMENT_NAVIGATION_BAR_HEIGHT;
+    }
+    if ([UIViewController fj_currentViewController].tabBarController && [UIViewController fj_currentViewController].tabBarController.tabBar.isHidden == NO) {
+        footerViewHeight += FJ_SEGMENT_TABBAR_HEIGHT;
+    }
+    self.tableView.fj_height = self.view.fj_height - footerViewHeight;
 }
 
 
@@ -136,21 +144,8 @@
         _tableView.estimatedSectionFooterHeight = 0;
         _tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
         _tableView.backgroundColor = kFJTableViewBackgroundColor;
-        _tableView.tableFooterView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, [self tableFooterViewHeight])];
     }
     return _tableView;
-}
-
-// tableFooter view height
-- (CGFloat)tableFooterViewHeight {
-    CGFloat footerViewHeight = _tagSectionViewHeight;
-    if ([UIViewController fj_currentViewController].navigationController && [UIViewController fj_currentViewController].navigationController.navigationBar.isHidden == NO) {
-        footerViewHeight += FJ_SEGMENT_NAVIGATION_BAR_HEIGHT;
-    }
-    if ([UIViewController fj_currentViewController].tabBarController && [UIViewController fj_currentViewController].tabBarController.tabBar.isHidden == NO) {
-        footerViewHeight += FJ_SEGMENT_TABBAR_HEIGHT;
-    }
-    return footerViewHeight;
 }
 
 #pragma mark --- dealloc method
