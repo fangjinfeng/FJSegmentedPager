@@ -39,6 +39,12 @@
     return self;
 }
 
+#pragma mark --- Public Methods
+
+- (void)updateTextNormalFont:(UIFont *)font {
+    self.titleLabel.font = font;
+}
+
 #pragma mark --- private method
 // 设置 默认 值
 - (void)setDefaultValues {

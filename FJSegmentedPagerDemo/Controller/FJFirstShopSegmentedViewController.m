@@ -162,7 +162,7 @@
         _segmentViewStyle.forbidSectionViewDivideWidth = YES;
         _segmentViewStyle.segmentedIndicatorViewToBottomSpacing = 10.0f;
         _segmentViewStyle.segmentIndicatorWidthShowType = FJSegmentIndicatorWidthShowTypeAdaption;
-        _segmentViewStyle.titleColorChangeType = FJSegmentTitleViewTitleColorChangeTypeGradualChange;
+        _segmentViewStyle.titleLabelChangeType = FJSegmentTitleViewTitleLabelChangeTypeGradualChange;
     }
     return _segmentViewStyle;
 }

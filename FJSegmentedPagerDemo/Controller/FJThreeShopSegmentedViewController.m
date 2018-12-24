@@ -118,7 +118,7 @@
         _segmentViewStyle.selectedIndex = 0;
         _segmentViewStyle.segmentedIndicatorViewToBottomSpacing = 10.0f;
         _segmentViewStyle.segmentIndicatorWidthShowType = FJSegmentIndicatorWidthShowTypeAdaptionFixedWidth;
-        _segmentViewStyle.titleColorChangeType = FJSegmentTitleViewTitleColorChangeTypeGradualChange;
+        _segmentViewStyle.titleLabelChangeType = FJSegmentTitleViewTitleLabelChangeTypeGradualChange;
     }
     return _segmentViewStyle;
 }

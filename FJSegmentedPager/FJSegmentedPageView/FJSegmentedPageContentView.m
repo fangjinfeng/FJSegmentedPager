@@ -490,7 +490,6 @@
 // 设置 选中 索引
 - (void)setupSelectedIndex:(NSInteger )selectedIndex animated:(BOOL)animated {
     self.selectedIndex = selectedIndex;
-    self.forbidTouchToAdjustPosition = YES;
     if (CGSizeEqualToSize(self.pageCollectionView.contentSize, CGSizeZero)) {
         dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.01 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
             if (self.pageCollectionView.contentSize.width > 0) {

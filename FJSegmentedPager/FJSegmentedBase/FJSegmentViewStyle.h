@@ -19,11 +19,11 @@ typedef NS_ENUM(NSInteger, FJSegmentIndicatorWidthShowType) {
 
 
 // 标题 view 字体颜色 改变 类型
-typedef NS_ENUM(NSInteger, FJSegmentTitleViewTitleColorChangeType) {
+typedef NS_ENUM(NSInteger, FJSegmentTitleViewTitleLabelChangeType) {
     // 选中 之后 再 颜色 改变
-    FJSegmentTitleViewTitleColorChangeTypeSelectedChange = 0,
+    FJSegmentTitleViewTitleLabelChangeTypeSelectedChange = 0,
     // 颜色 渐变
-    FJSegmentTitleViewTitleColorChangeTypeGradualChange,
+    FJSegmentTitleViewTitleLabelChangeTypeGradualChange,
 };
 
 
@@ -73,5 +73,5 @@ typedef NS_ENUM(NSInteger, FJSegmentTitleViewTitleColorChangeType) {
 // 指示器 宽度 显示 类型
 @property (nonatomic, assign) FJSegmentIndicatorWidthShowType segmentIndicatorWidthShowType;
 // 标题 字体 颜色 改变 类型
-@property (nonatomic, assign) FJSegmentTitleViewTitleColorChangeType titleColorChangeType;
+@property (nonatomic, assign) FJSegmentTitleViewTitleLabelChangeType titleLabelChangeType;
 @end

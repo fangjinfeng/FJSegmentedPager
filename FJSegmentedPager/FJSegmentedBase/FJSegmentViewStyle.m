@@ -37,7 +37,7 @@
         _segmentedIndicatorViewToBottomSpacing = 0.0f;
         _forbidSectionViewDivideWidth = NO;
         _segmentIndicatorWidthShowType = FJSegmentIndicatorWidthShowTypeAdaption;
-        _titleColorChangeType = FJSegmentTitleViewTitleColorChangeTypeSelectedChange;
+        _titleLabelChangeType = FJSegmentTitleViewTitleLabelChangeTypeGradualChange;
     }
     return self;
 }

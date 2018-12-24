@@ -114,18 +114,31 @@
     
 
     // 颜色 渐变
-    if(_segmentViewStyle.titleColorChangeType == FJSegmentTitleViewTitleColorChangeTypeGradualChange) {
+    if(_segmentViewStyle.titleLabelChangeType == FJSegmentTitleViewTitleLabelChangeTypeGradualChange) {
         oldTitleView.textColor = [UIColor
                                   colorWithRed:[self.selectedColorRGBA[0] floatValue] + [self.deltaRGBA[0] floatValue] * progress
                                   green:[self.selectedColorRGBA[1] floatValue] + [self.deltaRGBA[1] floatValue] * progress
                                   blue:[self.selectedColorRGBA[2] floatValue] + [self.deltaRGBA[2] floatValue] * progress
                                   alpha:[self.selectedColorRGBA[3] floatValue] + [self.deltaRGBA[3] floatValue] * progress];
+       
         
         currentTitleView.textColor = [UIColor
                                       colorWithRed:[self.normalColorRGBA[0] floatValue] - [self.deltaRGBA[0] floatValue] * progress
                                       green:[self.normalColorRGBA[1] floatValue] - [self.deltaRGBA[1] floatValue] * progress
                                       blue:[self.normalColorRGBA[2] floatValue] - [self.deltaRGBA[2] floatValue] * progress
                                       alpha:[self.normalColorRGBA[3] floatValue] - [self.deltaRGBA[3] floatValue] * progress];
+        
+        CGFloat titleFontProgress = progress;
+        
+        UIFont *normalFont = _segmentViewStyle.itemTitleFont;
+        UIFont *selectedFont = _segmentViewStyle.itemTitleSelectedFont;
+        CGFloat fontSpacing = fabs(selectedFont.pointSize - normalFont.pointSize);
+        
+        UIFont *oldTitleProgressFont = [UIFont fontWithName:normalFont.fontName size:selectedFont.pointSize - titleFontProgress * fontSpacing];
+        UIFont *currentTitleProgressFont = [UIFont fontWithName:selectedFont.fontName size:normalFont.pointSize + titleFontProgress * fontSpacing];
+
+        [oldTitleView updateTextNormalFont:oldTitleProgressFont];
+        [currentTitleView updateTextNormalFont:currentTitleProgressFont];
     }
     
     _previousIndex = currentIndex;
