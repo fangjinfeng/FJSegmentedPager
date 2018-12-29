@@ -19,6 +19,7 @@
 @property (strong, nonatomic) NSArray *selectedColorRGBA;
 @property (strong, nonatomic) NSArray *normalColorRGBA;
 
+
 // 标题 数据 数组
 @property (nonatomic, strong) NSArray *tagTitleArray;
 // 指示器 indicator
@@ -27,6 +28,8 @@
 @property (nonatomic, strong) UIView *bottomLineView;
 // 先前 索引
 @property (nonatomic, assign) NSUInteger previousIndex;;
+// 先前 进度
+@property (nonatomic, assign) CGFloat  previousProgress;
 // 是否 超过 宽度 限制
 @property (nonatomic, assign) BOOL isBeyondLimitWidth;
 // 标题 栏 高度
@@ -134,14 +137,24 @@
         UIFont *selectedFont = _segmentViewStyle.itemTitleSelectedFont;
         CGFloat fontSpacing = fabs(selectedFont.pointSize - normalFont.pointSize);
         
-        UIFont *oldTitleProgressFont = [UIFont fontWithName:normalFont.fontName size:selectedFont.pointSize - titleFontProgress * fontSpacing];
-        UIFont *currentTitleProgressFont = [UIFont fontWithName:selectedFont.fontName size:normalFont.pointSize + titleFontProgress * fontSpacing];
-
+        NSString *oldTitleFontName = normalFont.fontName;
+        NSString *currentTitleFontName = selectedFont.fontName;
+        if (progress < _previousProgress) {
+            oldTitleFontName = selectedFont.fontName;
+            currentTitleFontName = normalFont.fontName;
+        }
+        
+        UIFont *oldTitleProgressFont = [UIFont fontWithName:oldTitleFontName size:selectedFont.pointSize - titleFontProgress * fontSpacing];
+        UIFont *currentTitleProgressFont = [UIFont fontWithName:currentTitleFontName size:normalFont.pointSize + titleFontProgress * fontSpacing];
+        
+       
         [oldTitleView updateTextNormalFont:oldTitleProgressFont];
         [currentTitleView updateTextNormalFont:currentTitleProgressFont];
     }
     
     _previousIndex = currentIndex;
+    
+    _previousProgress = progress;
 }
 
 // 更新 控件 选中 状态
@@ -164,6 +177,9 @@
 
 // 依据 索引 更新 控件 状态
 - (void)updateControlsStatusWithCurrentIndex:(NSInteger)currentIndex animated:(BOOL)animated {
+    
+    // 更新 先前 进度
+    _previousProgress = 0;
     // 更新 控件 选中 状态
     [self updateTitleViewSelectedStatus:currentIndex];
     

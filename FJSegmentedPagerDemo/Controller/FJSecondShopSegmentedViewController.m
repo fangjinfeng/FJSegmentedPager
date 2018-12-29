@@ -162,7 +162,7 @@
 - (NSArray <NSString *> *)titleArray {
     if (!_titleArray) {
         _titleArray = [NSArray arrayWithObjects:@"店铺简介",
-                       @"店铺课程111111111",
+                       @"店铺课程",
                        @"店铺商品",
                        @"店铺专栏",
                        @"VIP",
@@ -183,7 +183,7 @@
         _segmentViewStyle = [[FJSegmentViewStyle alloc] init];
         _segmentViewStyle.itemTitleFont = [UIFont systemFontOfSize:14.0f];
         _segmentViewStyle.segmentedTitleViewHeight = 80.0f;
-        _segmentViewStyle.itemTitleSelectedFont = [UIFont boldSystemFontOfSize:30.0f];
+        _segmentViewStyle.itemTitleSelectedFont = [UIFont boldSystemFontOfSize:20.0f];
         _segmentViewStyle.segmentIndicatorWidthShowType = FJSegmentIndicatorWidthShowTypeAdaption;
         _segmentViewStyle.segmentedIndicatorViewToBottomSpacing = 10.0f;
         _segmentViewStyle.titleLabelChangeType = FJSegmentTitleViewTitleLabelChangeTypeGradualChange;

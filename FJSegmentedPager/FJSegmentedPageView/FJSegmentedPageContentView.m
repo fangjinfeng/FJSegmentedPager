@@ -134,8 +134,6 @@
     UICollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:NSStringFromClass([UICollectionViewCell class]) forIndexPath:indexPath];
     // 移除subviews 避免重用内容显示错误
     [cell.contentView.subviews makeObjectsPerformSelector:@selector(removeFromSuperview)];
-    
-    [self setupChildVcForCell:cell atIndexPath:indexPath];
     return cell;
 }
 
@@ -556,6 +554,7 @@
         _pageCollectionView.delegate = self;
         _pageCollectionView.bounces = NO;
         _pageCollectionView.pagingEnabled = YES;
+        _pageCollectionView.prefetchingEnabled = NO;
         _pageCollectionView.backgroundColor = [UIColor clearColor];
     }
     return _pageCollectionView;

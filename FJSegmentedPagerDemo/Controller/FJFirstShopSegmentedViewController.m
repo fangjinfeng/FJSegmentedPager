@@ -157,7 +157,7 @@
         _segmentViewStyle.selectedIndex = 1;
         _segmentViewStyle.segmentedTitleViewHeight = 100;
         _segmentViewStyle.itemTitleFont = [UIFont systemFontOfSize:14.0f];
-        _segmentViewStyle.itemTitleSelectedFont = [UIFont boldSystemFontOfSize:16.0f];
+        _segmentViewStyle.itemTitleSelectedFont = [UIFont boldSystemFontOfSize:25.0f];
         _segmentViewStyle.segmentedIndicatorViewWidth = 16.0f;
         _segmentViewStyle.forbidSectionViewDivideWidth = YES;
         _segmentViewStyle.segmentedIndicatorViewToBottomSpacing = 10.0f;

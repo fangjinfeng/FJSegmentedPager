@@ -30,11 +30,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "FJSegmentedPager/FJSegmentedPageView/FJSegmentedPageContentView.m"
-            timestampString = "567310791.47297"
+            timestampString = "567756194.908132"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "429"
-            endingLineNumber = "429"
+            startingLineNumber = "427"
+            endingLineNumber = "427"
             landmarkName = "-setupChildVcForCell:atIndexPath:"
             landmarkType = "7">
             <Locations>
@@ -46,11 +46,11 @@
                   moduleName = "FJSegmentedPagerDemo"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/fangjinfeng/Documents/MyProject/MyOpenSourceProject/FJSegmentedPagerDemo/FJSegmentedPager/FJSegmentedPageView/FJSegmentedPageContentView.m"
-                  timestampString = "567310274.382594"
+                  timestampString = "567756194.9706"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "429"
-                  endingLineNumber = "429"
+                  startingLineNumber = "427"
+                  endingLineNumber = "427"
                   offsetFromSymbolStart = "1094">
                </Location>
                <Location
@@ -61,11 +61,11 @@
                   moduleName = "FJSegmentedPagerDemo"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/fangjinfeng/Documents/MyProject/MyOpenSourceProject/FJSegmentedPagerDemo/FJSegmentedPager/FJSegmentedPageView/FJSegmentedPageContentView.m"
-                  timestampString = "567310274.384882"
+                  timestampString = "567756194.9752769"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "429"
-                  endingLineNumber = "429"
+                  startingLineNumber = "427"
+                  endingLineNumber = "427"
                   offsetFromSymbolStart = "1106">
                </Location>
             </Locations>
@@ -78,11 +78,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "FJSegmentedPager/FJSegmentedPageView/FJSegmentedPageContentView.m"
-            timestampString = "567310791.4730591"
+            timestampString = "567756194.908554"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "438"
-            endingLineNumber = "438"
+            startingLineNumber = "436"
+            endingLineNumber = "436"
             landmarkName = "-setupChildVcForCell:atIndexPath:"
             landmarkType = "7">
             <Locations>
@@ -94,11 +94,11 @@
                   moduleName = "FJSegmentedPagerDemo"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/fangjinfeng/Documents/MyProject/MyOpenSourceProject/FJSegmentedPagerDemo/FJSegmentedPager/FJSegmentedPageView/FJSegmentedPageContentView.m"
-                  timestampString = "567310274.393806"
+                  timestampString = "567756194.98286"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "438"
-                  endingLineNumber = "438"
+                  startingLineNumber = "436"
+                  endingLineNumber = "436"
                   offsetFromSymbolStart = "1809">
                </Location>
                <Location
@@ -109,11 +109,11 @@
                   moduleName = "FJSegmentedPagerDemo"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/fangjinfeng/Documents/MyProject/MyOpenSourceProject/FJSegmentedPagerDemo/FJSegmentedPager/FJSegmentedPageView/FJSegmentedPageContentView.m"
-                  timestampString = "567310274.399435"
+                  timestampString = "567756194.987034"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "438"
-                  endingLineNumber = "438"
+                  startingLineNumber = "436"
+                  endingLineNumber = "436"
                   offsetFromSymbolStart = "1821">
                </Location>
             </Locations>
@@ -126,11 +126,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "FJSegmentedPager/FJSegmentedPageView/FJSegmentedPageContentView.m"
-            timestampString = "567310791.473112"
+            timestampString = "567756194.908823"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "442"
-            endingLineNumber = "442"
+            startingLineNumber = "440"
+            endingLineNumber = "440"
             landmarkName = "-setupChildVcForCell:atIndexPath:"
             landmarkType = "7">
             <Locations>
@@ -142,11 +142,11 @@
                   moduleName = "FJSegmentedPagerDemo"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/fangjinfeng/Documents/MyProject/MyOpenSourceProject/FJSegmentedPagerDemo/FJSegmentedPager/FJSegmentedPageView/FJSegmentedPageContentView.m"
-                  timestampString = "567310274.405996"
+                  timestampString = "567756194.9971859"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "442"
-                  endingLineNumber = "442"
+                  startingLineNumber = "440"
+                  endingLineNumber = "440"
                   offsetFromSymbolStart = "2190">
                </Location>
                <Location
@@ -157,11 +157,11 @@
                   moduleName = "FJSegmentedPagerDemo"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/fangjinfeng/Documents/MyProject/MyOpenSourceProject/FJSegmentedPagerDemo/FJSegmentedPager/FJSegmentedPageView/FJSegmentedPageContentView.m"
-                  timestampString = "567310274.408396"
+                  timestampString = "567756195.004668"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "442"
-                  endingLineNumber = "442"
+                  startingLineNumber = "440"
+                  endingLineNumber = "440"
                   offsetFromSymbolStart = "2202">
                </Location>
             </Locations>
@@ -205,156 +205,12 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "FJSegmentedPagerDemo/Controller/FJSecondShopViewController.m"
-            timestampString = "567050028.637152"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "48"
-            endingLineNumber = "48"
-            landmarkName = "-updateTableViewHeight:"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "FJSegmentedPagerDemo/Controller/FJSecondShopViewController.m"
-            timestampString = "567050028.637403"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "57"
-            endingLineNumber = "57"
-            landmarkName = "-setupViewControls"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "FJSegmentedPagerDemo/Controller/FJSecondShopViewController.m"
-            timestampString = "567050028.637668"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "86"
-            endingLineNumber = "86"
-            landmarkName = "-tableView"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
             filePath = "FJSegmentedPager/FJSegmentedTitleView/FJSegmentedTagTitleView.m"
-            timestampString = "567310791.473325"
+            timestampString = "567742833.683596"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "141"
-            endingLineNumber = "141"
-            landmarkName = "-updateControlsWithPreviousIndex:currentIndex:progress:"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "FJSegmentedPager/FJSegmentedTitleView/FJSegmentedTagTitleView.m"
-            timestampString = "567310791.4734"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "134"
-            endingLineNumber = "134"
-            landmarkName = "-updateControlsWithPreviousIndex:currentIndex:progress:"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "FJSegmentedPager/FJSegmentedTitleView/FJSegmentedTagTitleView.m"
-            timestampString = "567310791.473454"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "75"
-            endingLineNumber = "75"
-            landmarkName = "-updateControlsWithPreviousIndex:currentIndex:progress:"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "FJSegmentedPager/FJSegmentedTitleView/FJSegmentedTagTitleView.m"
-            timestampString = "567310791.473505"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "190"
-            endingLineNumber = "190"
-            landmarkName = "-updateControlsStatusWithCurrentIndex:animated:"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "FJSegmentedPager/FJSegmentedTitleView/FJSegmentedTagTitleView.m"
-            timestampString = "567310791.473554"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "151"
-            endingLineNumber = "151"
-            landmarkName = "-updateTitleViewSelectedStatus:"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "FJSegmentedPager/FJSegmentedTitleView/FJSegmentedTagTitleView.m"
-            timestampString = "567310791.473605"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "168"
-            endingLineNumber = "168"
-            landmarkName = "-updateControlsStatusWithCurrentIndex:animated:"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "FJSegmentedPager/FJSegmentedTitleView/FJSegmentedTagTitleView.m"
-            timestampString = "567310791.473654"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "347"
-            endingLineNumber = "347"
+            startingLineNumber = "363"
+            endingLineNumber = "363"
             landmarkName = "-setDidSelectItemDelegateWay"
             landmarkType = "7">
          </BreakpointContent>
@@ -366,11 +222,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "FJSegmentedPager/FJSegmentedPageView/FJSegmentedPageContentView.m"
-            timestampString = "567310791.473704"
+            timestampString = "567756194.909174"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "502"
-            endingLineNumber = "502"
+            startingLineNumber = "500"
+            endingLineNumber = "500"
             landmarkName = "-setupSelectedIndex:animated:"
             landmarkType = "7">
          </BreakpointContent>
@@ -381,13 +237,45 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "FJSegmentedPager/FJSegmentedPageView/FJSegmentedPageContentView.m"
-            timestampString = "567310791.4737509"
+            filePath = "FJSegmentedPagerDemo/Controller/FJFirstShopViewController.m"
+            timestampString = "567756194.909445"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "222"
-            endingLineNumber = "222"
-            landmarkName = "-scrollViewDidScroll:"
+            startingLineNumber = "27"
+            endingLineNumber = "27"
+            landmarkName = "-viewWillAppear:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "FJSegmentedPager/FJSegmentedPageView/FJSegmentedPageContentView.m"
+            timestampString = "567756194.909499"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "349"
+            endingLineNumber = "349"
+            landmarkName = "-willAppearWithIndex:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "FJSegmentedPager/FJSegmentedPageView/FJSegmentedPageContentView.m"
+            timestampString = "567756194.90976"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "469"
+            endingLineNumber = "469"
+            landmarkName = "-setupChildVcForCell:atIndexPath:"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
