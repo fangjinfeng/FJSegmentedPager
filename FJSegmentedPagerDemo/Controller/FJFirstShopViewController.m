@@ -16,7 +16,7 @@
 
 @implementation FJFirstShopViewController
 
-#pragma mark --------------- Public Methods
+#pragma mark --------------- Life Circle
 - (void)viewDidLoad {
     [super viewDidLoad];
 

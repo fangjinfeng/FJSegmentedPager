@@ -411,10 +411,6 @@
 }
 
 - (void)setupChildVcForCell:(UICollectionViewCell *)cell atIndexPath:(NSIndexPath *)indexPath {
-    if (_currentIndex != indexPath.row) {
-        return; // 跳过中间的多页
-    }
-    
     cell.backgroundColor = [UIColor colorWithRed:arc4random_uniform(256.0f)/256.0 green:arc4random_uniform(256.0f)/256.0 blue:arc4random_uniform(256.0f)/256.0 alpha:1.0f];
     _currentChildVc = [self.childVcsDic valueForKey:[NSString stringWithFormat:@"%ld", (long)indexPath.row]];
     BOOL isFirstLoaded = _currentChildVc == nil;
@@ -554,7 +550,9 @@
         _pageCollectionView.delegate = self;
         _pageCollectionView.bounces = NO;
         _pageCollectionView.pagingEnabled = YES;
-        _pageCollectionView.prefetchingEnabled = NO;
+        if (@available(iOS 10.0, *)) {
+            _pageCollectionView.prefetchingEnabled = NO;
+        }
         _pageCollectionView.backgroundColor = [UIColor clearColor];
     }
     return _pageCollectionView;
